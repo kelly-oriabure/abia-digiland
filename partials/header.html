@@ -1,0 +1,55 @@
+<nav
+  class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 shadow-sm dark:shadow-none h-16 grid grid-cols-3 items-center px-6">
+  <div class="flex items-center">
+    <span class="text-xl font-black tracking-tighter text-[#004A7C] dark:text-blue-500 font-headline">DIGILAND
+      ABIA</span>
+  </div>
+  <div class="flex gap-6 items-center justify-center">
+    <a class="nav-link font-headline font-semibold text-sm tracking-tight text-slate-500 dark:text-slate-400 hover:text-[#004A7C] transition-colors"
+      data-page="admin.html" href="admin.html">Dashboard</a>
+    <!-- <a class="nav-link font-headline font-semibold text-sm tracking-tight text-slate-500 dark:text-slate-400 hover:text-[#004A7C] transition-colors"
+      data-page="map.html" href="map.html">Map</a> -->
+    <a class="nav-link font-headline font-semibold text-sm tracking-tight text-slate-500 dark:text-slate-400 hover:text-[#004A7C] transition-colors"
+      data-page="queue.html" href="queue.html">Registry</a>
+    <a class="nav-link font-headline font-semibold text-sm tracking-tight text-slate-500 dark:text-slate-400 hover:text-[#004A7C] transition-colors"
+      data-page="registration.html" href="registration.html">Registration</a>
+    <a class="nav-link font-headline font-semibold text-sm tracking-tight text-slate-500 dark:text-slate-400 hover:text-[#004A7C] transition-colors"
+      data-page="submission.html" href="submission.html">Submission</a>
+    <a class="nav-link font-headline font-semibold text-sm tracking-tight text-slate-500 dark:text-slate-400 hover:text-[#004A7C] transition-colors"
+      data-page="approval.html" href="approval.html">Approval</a>
+    <!-- <a class="nav-link font-headline font-semibold text-sm tracking-tight text-slate-500 dark:text-slate-400 hover:text-[#004A7C] transition-colors"
+      data-page="index.html" href="index.html">Transparency</a> -->
+  </div>
+  <div class="flex items-center gap-4 justify-end">
+    <div class="relative block">
+      <span
+        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+      <input
+        class="pl-10 pr-4 py-1.5 bg-surface-container-low border-none rounded-full text-sm focus:ring-2 focus:ring-primary/20 w-64"
+        placeholder="Search parcels..." type="text" />
+    </div>
+    <button
+      class="p-2 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 active:scale-[0.98]">
+      <span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+    </button>
+    <button
+      class="p-2 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 active:scale-[0.98]">
+      <span class="material-symbols-outlined text-on-surface-variant">settings</span>
+    </button>
+    <div class="h-8 w-8 rounded-full overflow-hidden bg-slate-200 ml-2">
+      <img alt="Administrator Profile" class="w-full h-full object-cover"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6sBosHlFsda5dt81UnguUVngQhqT8YKzTUoRr7J4AIwej1hZ_fO1TBTLHgDkdkhrpbWQzyTDnzN9Uw19MLsttNX92RsQ3bEo0h2F_kQWp0fvBGhQbydCk9EBJ2vIxH5KAYVX9oJJ30zvRYRfBdNfPlM0Q8cKjlS2UN40WbqKa7dsT5XdvmDDBieM-T7oWq27-gIYI37MBdDhqUEUS7uvTww1liN7kcM7JdtzFV9jHUUD8ajkpB9q4kSQ9q8ED5TXvM1G8tIUCNY7k" />
+    </div>
+  </div>
+</nav>
+<script>
+  (function () {
+    var current = (window.location.pathname.split('/').pop() || 'index.html');
+    document.querySelectorAll('.nav-link[data-page]').forEach(function (link) {
+      if (link.getAttribute('data-page') === current) {
+        link.classList.add('text-[#004A7C]', 'dark:text-blue-400', 'border-b-2', 'border-[#004A7C]', 'pb-1');
+        link.classList.remove('text-slate-500', 'dark:text-slate-400');
+      }
+    });
+  })();
+</script>

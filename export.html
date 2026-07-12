@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Certified Spatial Data Export - DIGILAND ABIA</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/output.css" />
+  <script src="js/htmx.min.js"></script>
+</head>
+
+<body class="bg-background font-body text-on-surface antialiased overflow-hidden">
+  <!-- TopNavBar -->
+  <div hx-get="partials/header.html" hx-trigger="load" hx-swap="outerHTML"></div>
+
+  <main class="flex min-h-[calc(100vh-64px)]">
+    <!-- Sidebar Shell (Collapsed-style for focused task) -->
+    <div hx-get="partials/sidebar-spatial-suite.html" hx-trigger="load" hx-swap="outerHTML"></div>
+    <!-- Main Task Canvas -->
+    <div class="flex-1 ml-64 p-8 flex justify-center items-start overflow-y-auto no-scrollbar h-[calc(100vh-64px)]">
+      <div class="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <!-- Left Column: Header & Context -->
+        <div class="lg:col-span-12 mb-2">
+          <button class="flex items-center text-primary text-sm font-semibold mb-4 gap-1 hover:underline">
+            <span class="material-symbols-outlined text-sm" data-icon="arrow_back">arrow_back</span>
+            Return to Registry Explorer
+          </button>
+          <h1 class="text-4xl font-extrabold font-headline text-on-surface tracking-tight mb-2">Certified Spatial Data
+            Export</h1>
+          <p class="text-on-surface-variant max-w-2xl">Prepare an encrypted, institutional-grade dataset for official
+            submission. All exports are logged and watermarked under the DIGILAND ABIA protocol.</p>
+        </div>
+        <!-- Column 1: Selection & Formats -->
+        <div class="lg:col-span-5 space-y-6">
+          <!-- Selection Summary Card -->
+          <section class="bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-outline-variant/20">
+            <h3
+              class="text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-4 flex items-center gap-2">
+              <span class="material-symbols-outlined text-lg" data-icon="fact_check">fact_check</span>
+              Selection Summary
+            </h3>
+            <div class="flex flex-col gap-4">
+              <div class="relative w-full h-48 rounded-lg overflow-hidden bg-surface-container-high">
+                <img class="w-full h-full object-cover"
+                  data-alt="top-down satellite view of a planned urban parcel grid with green vegetation and geometric road structures in soft daylight"
+                  data-location="Abia State"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIT-vH5amBZYH_96eRdo3oXrXSIf7ivfx5D08MF5D2AXk1fUwqvK7zR75o6X85LWpjrbfdhEVaipHyIbsWox-2GAmHiXJEJrxhE6KrbRInwpdJHh7jujXWnDqoygL5hsXRU9xEvHeP1Hl4lFO2_BYbDKyJDnN8Ppedbi8qcjrBK3cwCl4bVSC7Sljjk1wFe3ZTwN8sbx0sbSmWDA5ft84fkvGBVdVgWeICnHpDcRjFEXwLbbQJvv2RabfN6YZtmFLx649ezsGVu32-" />
+                <div class="absolute inset-0 border-2 border-primary/40 rounded-lg pointer-events-none"></div>
+                <div
+                  class="absolute top-3 left-3 bg-primary text-on-primary px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                  GIS PREVIEW
+                </div>
+              </div>
+              <div>
+                <p class="text-xs text-on-surface-variant font-medium">Target Parcel ID</p>
+                <p class="text-xl font-bold text-primary font-headline tracking-tight">AB-UMN-229-X</p>
+                <p class="text-sm text-on-surface mt-1 italic">Umuahia North Administrative Sector</p>
+              </div>
+            </div>
+          </section>
+          <!-- Export Formats -->
+          <section class="bg-surface-container-low rounded-xl p-6">
+            <h3 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-4">Export Formats</h3>
+            <div class="grid grid-cols-1 gap-3">
+              <label
+                class="group relative flex items-center justify-between p-4 bg-surface-container-lowest rounded-lg border-2 border-transparent hover:border-primary/20 transition-all cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/[0.03]">
+                <div class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-primary" data-icon="folder_zip">folder_zip</span>
+                  <div>
+                    <p class="font-bold text-on-surface leading-none">Shapefile (.shp)</p>
+                    <p class="text-[11px] text-on-surface-variant mt-1">Standard GIS Vector Data</p>
+                  </div>
+                </div>
+                <input checked="" class="text-primary focus:ring-primary h-5 w-5" name="format" type="radio"
+                  value="shp" />
+              </label>
+              <label
+                class="group relative flex items-center justify-between p-4 bg-surface-container-lowest rounded-lg border-2 border-transparent hover:border-primary/20 transition-all cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/[0.03]">
+                <div class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-primary" data-icon="code">code</span>
+                  <div>
+                    <p class="font-bold text-on-surface leading-none">GeoJSON</p>
+                    <p class="text-[11px] text-on-surface-variant mt-1">Web-ready Spatial Format</p>
+                  </div>
+                </div>
+                <input class="text-primary focus:ring-primary h-5 w-5" name="format" type="radio" value="geojson" />
+              </label>
+              <label
+                class="group relative flex items-center justify-between p-4 bg-surface-container-lowest rounded-lg border-2 border-transparent hover:border-primary/20 transition-all cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/[0.03]">
+                <div class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-primary" data-icon="architecture">architecture</span>
+                  <div>
+                    <p class="font-bold text-on-surface leading-none">AutoCAD (.dwg)</p>
+                    <p class="text-[11px] text-on-surface-variant mt-1">Precision Engineering File</p>
+                  </div>
+                </div>
+                <input class="text-primary focus:ring-primary h-5 w-5" name="format" type="radio" value="dwg" />
+              </label>
+              <label
+                class="group relative flex items-center justify-between p-4 bg-surface-container-lowest rounded-lg border-2 border-transparent hover:border-primary/20 transition-all cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/[0.03]">
+                <div class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-primary" data-icon="picture_as_pdf">picture_as_pdf</span>
+                  <div>
+                    <p class="font-bold text-on-surface leading-none">PDF Map Report</p>
+                    <p class="text-[11px] text-on-surface-variant mt-1">Printable Certified Visual</p>
+                  </div>
+                </div>
+                <input class="text-primary focus:ring-primary h-5 w-5" name="format" type="radio" value="pdf" />
+              </label>
+            </div>
+          </section>
+        </div>
+        <!-- Column 2: Metadata & Certification -->
+        <div class="lg:col-span-7 space-y-6">
+          <!-- Metadata Selection -->
+          <section class="bg-surface-container-lowest rounded-xl p-8 shadow-sm border border-outline-variant/20">
+            <h3 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-6">Metadata Configuration
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input checked="" class="mt-1 rounded border-outline text-primary focus:ring-primary" type="checkbox" />
+                <div>
+                  <p class="text-sm font-bold text-on-surface">Ownership History</p>
+                  <p class="text-xs text-on-surface-variant">Include full title chain (Last 50 years)</p>
+                </div>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input checked="" class="mt-1 rounded border-outline text-primary focus:ring-primary" type="checkbox" />
+                <div>
+                  <p class="text-sm font-bold text-on-surface">Easement Data</p>
+                  <p class="text-xs text-on-surface-variant">Utility corridors &amp; right-of-way zones</p>
+                </div>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input class="mt-1 rounded border-outline text-primary focus:ring-primary" type="checkbox" />
+                <div>
+                  <p class="text-sm font-bold text-on-surface">Topographical Layers</p>
+                  <p class="text-xs text-on-surface-variant">2m contour intervals &amp; elevation markers</p>
+                </div>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input checked="" class="mt-1 rounded border-outline text-primary focus:ring-primary opacity-50"
+                  disabled="" type="checkbox" />
+                <div>
+                  <p class="text-sm font-bold text-on-surface">Coordinate System</p>
+                  <p class="text-xs text-on-surface-variant italic">Locked: UTM Zone 32N (WGS84)</p>
+                </div>
+              </label>
+            </div>
+          </section>
+          <!-- Certification Section -->
+          <section class="bg-primary/5 rounded-xl p-8 border-l-4 border-primary">
+            <div class="flex items-start justify-between mb-6">
+              <div>
+                <h3 class="text-lg font-bold text-primary font-headline mb-1">Institutional Certification</h3>
+                <p class="text-sm text-on-surface-variant">Verification of spatial accuracy by authorized officer.</p>
+              </div>
+              <span class="material-symbols-outlined text-4xl text-primary/40" data-icon="verified">verified</span>
+            </div>
+            <div class="space-y-6">
+              <label
+                class="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm cursor-pointer border border-primary/10">
+                <input class="h-6 w-6 rounded-full border-primary text-primary focus:ring-primary" type="checkbox" />
+                <div class="flex-1">
+                  <p class="text-sm font-extrabold text-primary">Apply Digital Seal of Abia State Registry</p>
+                  <p class="text-xs text-on-surface-variant">Embeds a cryptographically signed watermark on all assets.
+                  </p>
+                </div>
+              </label>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="space-y-2">
+                  <label class="text-xs font-bold text-on-surface-variant uppercase">Authorized Surveyor</label>
+                  <input
+                    class="w-full bg-white border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 text-on-surface font-medium py-2 px-0"
+                    type="text" value="Surv. Kingsley Nwosu" />
+                </div>
+                <div class="space-y-2">
+                  <label class="text-xs font-bold text-on-surface-variant uppercase">Officer License ID</label>
+                  <input
+                    class="w-full bg-transparent border-0 border-b-2 border-outline-variant/30 text-on-surface-variant font-medium py-2 px-0 cursor-not-allowed"
+                    readonly="" type="text" value="SURV/AB/2023/8891" />
+                </div>
+              </div>
+              <div
+                class="p-6 bg-white border-2 border-dashed border-outline-variant rounded-lg flex flex-col items-center justify-center min-h-[120px]">
+                <span class="material-symbols-outlined text-3xl text-outline-variant mb-2" data-icon="draw">draw</span>
+                <p class="text-xs text-on-surface-variant font-medium">Draw signature here for digital verification</p>
+              </div>
+            </div>
+          </section>
+          <!-- Action Footer -->
+          <div class="flex flex-col sm:flex-row gap-4 pt-4">
+            <button
+              class="flex-1 bg-gradient-to-r from-primary to-primary-container text-on-primary py-4 px-6 rounded-xl font-bold flex items-center justify-center gap-3 shadow-lg active:scale-95 transition-all">
+              <span class="material-symbols-outlined" data-icon="lock">lock</span>
+              Download Encrypted Archive
+            </button>
+            <button
+              class="flex-1 bg-surface-container-highest text-on-surface py-4 px-6 rounded-xl font-bold flex items-center justify-center gap-3 hover:bg-surface-container-high active:scale-95 transition-all">
+              <span class="material-symbols-outlined" data-icon="link">link</span>
+              Generate Secure Link
+            </button>
+          </div>
+          <p class="text-center text-[10px] text-on-surface-variant font-medium uppercase tracking-tighter opacity-60">
+            Export Token: SEC-772-AB-992-K | All interactions are monitored by the state auditor
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- Map FAB (Suppressed on focused task as per rules, but included if needed for global context) -->
+  <!-- Removed to prioritize focused canvas -->
+  <div hx-get="partials/footer.html" hx-trigger="load" hx-swap="outerHTML"></div>
+</body>
+
+</html>

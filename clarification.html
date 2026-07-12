@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Institutional Vanguard | Request Clarification</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/output.css" />
+  <script src="js/htmx.min.js"></script>
+</head>
+
+<body class="bg-surface font-body text-on-surface">
+  <!-- TopNavBar -->
+  <div hx-get="partials/header.html" hx-trigger="load" hx-swap="outerHTML"></div>
+
+
+  <div class="flex min-h-[calc(100vh-64px)]">
+    <!-- SideNavBar -->
+    <div hx-get="partials/sidebar-registry-office.html" hx-trigger="load" hx-swap="outerHTML"></div>
+    <!-- Main Content Canvas -->
+    <main class="lg:ml-72 w-full p-8 flex flex-col gap-8 bg-surface">
+      <!-- Header Section -->
+      <section class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div class="space-y-1">
+          <div class="flex items-center gap-2 text-on-surface-variant text-sm font-medium">
+            <span class="material-symbols-outlined text-base">arrow_back</span>
+            <span>Case #APP-8842-2024</span>
+          </div>
+          <h1 class="text-3xl font-headline font-extrabold text-on-surface tracking-tight">Request Clarification</h1>
+          <p class="text-on-surface-variant max-w-2xl">Officer Review Mode: Identify discrepancies and notify the
+            applicant for correction. Annotations will be visible to the submitting party.</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <button
+            class="px-5 py-2.5 rounded-xl bg-surface-container-highest text-on-surface font-semibold text-sm hover:bg-surface-dim transition-colors">
+            Save Draft
+          </button>
+          <button
+            class="px-6 py-2.5 rounded-xl bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold text-sm shadow-md active:scale-95 transition-all">
+            Notify Applicant
+          </button>
+        </div>
+      </section>
+      <!-- Workspace Bento Grid -->
+      <div class="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
+        <!-- Left: Document Viewer (Asymmetric wider column) -->
+        <div class="xl:col-span-7 flex flex-col gap-4">
+          <div class="flex items-center justify-between px-2">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-secondary">visibility</span>
+              <span class="font-headline font-bold text-lg">Document: Transfer of Title Deed</span>
+            </div>
+            <div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-lg">
+              <button class="p-1.5 hover:bg-surface-container-lowest rounded-md transition-colors"><span
+                  class="material-symbols-outlined text-xl">zoom_in</span></button>
+              <button class="p-1.5 hover:bg-surface-container-lowest rounded-md transition-colors"><span
+                  class="material-symbols-outlined text-xl">zoom_out</span></button>
+              <button class="p-1.5 hover:bg-surface-container-lowest rounded-md transition-colors"><span
+                  class="material-symbols-outlined text-xl">rotate_right</span></button>
+            </div>
+          </div>
+          <!-- Document Canvas -->
+          <div
+            class="relative bg-surface-container-high rounded-full overflow-hidden min-h-[700px] flex items-center justify-center border border-outline-variant/20 shadow-inner group">
+            <div class="w-[500px] h-[650px] bg-white shadow-2xl relative p-12 flex flex-col gap-6">
+              <!-- Faux Document Content -->
+              <div class="border-b-2 border-primary/10 pb-4 text-center">
+                <h3 class="font-headline font-black text-primary text-xl uppercase tracking-widest">Official Land
+                  Registry</h3>
+                <p class="text-[10px] text-on-surface-variant">MINISTRY OF LANDS &amp; HOUSING | OFFICE OF THE RECORDER
+                </p>
+              </div>
+              <div class="space-y-4">
+                <div class="h-2 w-1/3 bg-surface-container-highest"></div>
+                <div class="h-4 w-full bg-surface-container-low"></div>
+                <div class="h-4 w-5/6 bg-surface-container-low"></div>
+                <div class="grid grid-cols-2 gap-4 pt-6">
+                  <div class="space-y-2">
+                    <div class="h-3 w-1/2 bg-surface-container-highest"></div>
+                    <div
+                      class="h-10 w-full border border-dashed border-outline-variant rounded bg-surface-container-lowest">
+                    </div>
+                  </div>
+                  <div class="space-y-2 relative">
+                    <div class="h-3 w-1/2 bg-surface-container-highest"></div>
+                    <div
+                      class="h-10 w-full border border-dashed border-error rounded bg-error-container/20 flex items-center justify-center">
+                      <span class="material-symbols-outlined text-error"
+                        style="font-variation-settings: 'FILL' 1;">warning</span>
+                    </div>
+                    <!-- Error Marker -->
+                    <div
+                      class="absolute -top-2 -right-2 w-6 h-6 bg-error text-white rounded-full flex items-center justify-center text-[10px] font-bold shadow-lg">
+                      1</div>
+                  </div>
+                </div>
+                <div class="pt-10 space-y-3">
+                  <div class="h-3 w-1/4 bg-surface-container-highest"></div>
+                  <div class="h-24 w-full bg-surface-container-low rounded-lg p-3 flex flex-col gap-2">
+                    <div class="h-2 w-full bg-surface-dim"></div>
+                    <div class="h-2 w-full bg-surface-dim"></div>
+                    <div class="h-2 w-3/4 bg-surface-dim"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-auto pt-8 border-t border-outline-variant/30 flex justify-between items-end">
+                <div class="space-y-1">
+                  <div class="h-3 w-20 bg-surface-container-highest"></div>
+                  <div class="h-8 w-32 border-b border-on-surface-variant"></div>
+                </div>
+                <div class="h-16 w-16 bg-surface-container-low flex items-center justify-center text-surface-dim">
+                  <span class="material-symbols-outlined text-4xl">shield_lock</span>
+                </div>
+              </div>
+              <!-- Interaction Overlay -->
+              <div class="absolute inset-0 cursor-crosshair hover:bg-primary/5 transition-colors"></div>
+            </div>
+            <!-- Float Tools -->
+            <div
+              class="absolute bottom-6 glass-panel rounded-full px-4 py-2 flex items-center gap-4 shadow-xl border border-white/50">
+              <button
+                class="flex items-center gap-2 px-3 py-1.5 bg-primary text-on-primary rounded-full text-xs font-bold">
+                <span class="material-symbols-outlined text-sm">edit_square</span>
+                Highlight Issue
+              </button>
+              <div class="h-4 w-px bg-outline-variant"></div>
+              <button class="p-1.5 hover:bg-surface-container-highest rounded-full transition-colors"><span
+                  class="material-symbols-outlined">layers</span></button>
+              <button class="p-1.5 hover:bg-surface-container-highest rounded-full transition-colors"><span
+                  class="material-symbols-outlined">attachment</span></button>
+            </div>
+          </div>
+        </div>
+        <!-- Right: Feedback Form (Nested panels) -->
+        <div class="xl:col-span-5 flex flex-col gap-6">
+          <!-- Issue Selection Panel -->
+          <div class="bg-surface-container-low rounded-full overflow-hidden">
+            <div class="p-6 bg-surface-container-lowest border-b border-surface-container-high">
+              <h2 class="font-headline font-bold text-lg text-on-surface">Clarification Details</h2>
+              <p class="text-sm text-on-surface-variant mt-1">Select from standardized issues or write a custom notice.
+              </p>
+            </div>
+            <div class="p-6 space-y-6">
+              <!-- Issue Presets -->
+              <div class="space-y-3">
+                <label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Common
+                  Discrepancies</label>
+                <div class="flex flex-wrap gap-2">
+                  <button
+                    class="px-4 py-2 rounded-lg bg-white border border-outline-variant/30 text-sm font-medium hover:border-primary hover:text-primary transition-all active:scale-95">Incomplete
+                    Signatures</button>
+                  <button
+                    class="px-4 py-2 rounded-lg bg-white border border-primary text-primary text-sm font-bold shadow-sm">Stamp
+                    Duty Missing</button>
+                  <button
+                    class="px-4 py-2 rounded-lg bg-white border border-outline-variant/30 text-sm font-medium hover:border-primary hover:text-primary transition-all active:scale-95">Coordinates
+                    Discrepancy</button>
+                  <button
+                    class="px-4 py-2 rounded-lg bg-white border border-outline-variant/30 text-sm font-medium hover:border-primary hover:text-primary transition-all active:scale-95">Identity
+                    Verification</button>
+                  <button
+                    class="px-4 py-2 rounded-lg bg-white border border-outline-variant/30 text-sm font-medium hover:border-primary hover:text-primary transition-all active:scale-95">Witness
+                    Missing</button>
+                </div>
+              </div>
+              <!-- Detailed Feedback -->
+              <div class="space-y-3">
+                <label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant"
+                  for="clarification_message">Officer's Feedback Message</label>
+                <div class="relative">
+                  <textarea
+                    class="w-full bg-surface-container-lowest border-none rounded-xl p-4 text-sm focus:ring-2 focus:ring-primary shadow-sm"
+                    id="clarification_message" placeholder="Describe the required correction in detail..."
+                    rows="6">The official Stamp Duty seal is missing from the designated section on page 1. Please ensure the tax has been paid at the authorized revenue office and the original receipt is attached or the physical stamp is affixed to this document before re-submitting.</textarea>
+                  <div class="absolute bottom-3 right-3 flex items-center gap-2">
+                    <button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors"><span
+                        class="material-symbols-outlined">attach_file</span></button>
+                    <button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors"><span
+                        class="material-symbols-outlined">mic</span></button>
+                  </div>
+                </div>
+              </div>
+              <!-- Action Priority -->
+              <div
+                class="flex items-center justify-between p-4 bg-error-container/20 rounded-xl border border-error-container">
+                <div class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-error">priority_high</span>
+                  <div>
+                    <p class="text-sm font-bold text-on-error-container">Set Urgency</p>
+                    <p class="text-xs text-on-error-container/70">Applicant will be notified of 48h deadline</p>
+                  </div>
+                </div>
+                <div class="flex items-center bg-white rounded-lg p-1">
+                  <button class="px-3 py-1 text-xs font-bold bg-error text-white rounded-md">High</button>
+                  <button class="px-3 py-1 text-xs font-medium text-on-surface-variant">Normal</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Previous History Card -->
+          <div class="bg-surface-container-low rounded-full p-6 space-y-4">
+            <div class="flex items-center justify-between">
+              <h3 class="font-headline font-bold text-sm">Application History</h3>
+              <button class="text-primary text-xs font-bold">View Full Log</button>
+            </div>
+            <div class="space-y-4">
+              <div class="flex gap-4">
+                <div class="relative">
+                  <div class="w-2 h-2 rounded-full bg-secondary mt-1.5"></div>
+                  <div class="absolute top-4 bottom-0 left-[3px] w-0.5 bg-outline-variant/30"></div>
+                </div>
+                <div>
+                  <p class="text-xs font-bold">Document Uploaded</p>
+                  <p class="text-[10px] text-on-surface-variant">Jan 12, 2024 • 09:45 AM</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="w-2 h-2 rounded-full bg-outline-variant mt-1.5"></div>
+                <div>
+                  <p class="text-xs font-bold">Initial Queue Placement</p>
+                  <p class="text-[10px] text-on-surface-variant">Jan 12, 2024 • 10:15 AM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <!-- Map Contextual FAB (Hidden on this specific task-focused screen as per instructions) -->
+  <!-- But demonstrating the style if it were present: <button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center active:scale-95 transition-all"><span class="material-symbols-outlined">map</span></button> -->
+  <div hx-get="partials/footer.html" hx-trigger="load" hx-swap="outerHTML"></div>
+</body>
+
+</html>

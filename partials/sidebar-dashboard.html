@@ -1,0 +1,63 @@
+<aside
+  class="h-screen w-72 fixed left-0 top-0 z-40 bg-[#f3f3f6] dark:bg-slate-950 flex flex-col pt-20 border-r border-slate-200 dark:border-slate-800">
+  <div class="px-6 mb-8">
+    <h2 class="font-headline font-bold text-[#004A7C]">DIGILAND ABIA</h2>
+    <p class="text-xs text-slate-500 dark:text-slate-400">Land Administration</p>
+  </div>
+  <nav class="flex-1 space-y-1">
+    <a class="sidebar-link cursor-pointer flex items-center gap-3 px-4 py-3 m-2 transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:translate-x-1 duration-200 rounded-lg font-body text-sm font-medium"
+      data-page="admin.html" href="admin.html">
+      <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+      <span>Overview</span>
+    </a>
+    <a class="sidebar-link cursor-pointer flex items-center gap-3 px-4 py-3 m-2 transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:translate-x-1 duration-200 rounded-lg font-body text-sm font-medium"
+      data-page="map.html" href="map.html">
+      <span class="material-symbols-outlined" data-icon="layers">layers</span>
+      <span>Map Layers</span>
+    </a>
+    <a class="sidebar-link cursor-pointer flex items-center gap-3 px-4 py-3 m-2 transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:translate-x-1 duration-200 rounded-lg font-body text-sm font-medium"
+      data-page="registration.html" href="registration.html">
+      <span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+      <span>Title Registry</span>
+    </a>
+    <a class="sidebar-link cursor-pointer flex items-center gap-3 px-4 py-3 m-2 transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:translate-x-1 duration-200 rounded-lg font-body text-sm font-medium"
+      data-page="conflict.html" href="conflict.html">
+      <span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+      <span>Workflow</span>
+    </a>
+    <!-- <a class="sidebar-link cursor-pointer flex items-center gap-3 px-4 py-3 m-2 transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:translate-x-1 duration-200 rounded-lg font-body text-sm font-medium"
+      data-page="index.html" href="index.html">
+      <span class="material-symbols-outlined" data-icon="public">public</span>
+      <span>Public Portal</span>
+    </a> -->
+  </nav>
+  <div class="p-4 mt-auto">
+    <button
+      class="w-full bg-primary-gradient text-on-primary py-3 rounded-lg font-semibold text-sm shadow-md transition-all active:scale-95">
+      New Registration
+    </button>
+  </div>
+  <div class="border-t border-[#e7e8ea] dark:border-slate-800 pt-4 pb-6">
+    <div
+      class="cursor-pointer flex items-center gap-3 px-4 py-2 m-2 transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 text-xs">
+      <span class="material-symbols-outlined scale-75" data-icon="verified_user">verified_user</span>
+      <span>System Status</span>
+    </div>
+    <div
+      class="cursor-pointer flex items-center gap-3 px-4 py-2 m-2 transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 text-xs">
+      <span class="material-symbols-outlined scale-75" data-icon="help_center">help_center</span>
+      <span>Help Support</span>
+    </div>
+  </div>
+</aside>
+<script>
+  (function () {
+    var current = (window.location.pathname.split('/').pop() || 'index.html');
+    document.querySelectorAll('.sidebar-link[data-page]').forEach(function (link) {
+      if (link.getAttribute('data-page') === current) {
+        link.classList.add('bg-white', 'dark:bg-slate-900', 'text-[#004A7C]', 'dark:text-blue-400', 'shadow-sm', 'font-bold');
+        link.classList.remove('text-slate-600', 'dark:text-slate-400', 'font-medium');
+      }
+    });
+  })();
+</script>

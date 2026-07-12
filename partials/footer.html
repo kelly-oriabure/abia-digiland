@@ -1,0 +1,16 @@
+<footer class="bg-[#f3f3f6] dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-6 px-8 text-xs text-slate-500 dark:text-slate-400">
+<div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+<span>&copy; <span id="footer-year"></span> DIGILAND ABIA &mdash; Abia State Government Land Administration</span>
+<div class="flex items-center gap-4">
+<a class="hover:text-[#004A7C] transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-[#004A7C] transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-[#004A7C] transition-colors" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+<script>
+(function () {
+  var yearEl = document.getElementById('footer-year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+})();
+</script>

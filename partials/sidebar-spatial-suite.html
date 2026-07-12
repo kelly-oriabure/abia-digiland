@@ -1,0 +1,35 @@
+<aside class="h-screen w-64 fixed left-0 top-0 pt-20 bg-[#f3f3f6]/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[12px_0_32px_rgba(25,28,30,0.06)] flex flex-col gap-2 p-4 z-40">
+<div class="mb-6 px-4">
+<h2 class="text-lg font-semibold text-slate-900 dark:text-slate-100 font-headline">Spatial Suite</h2>
+<p class="text-xs text-on-surface-variant font-label">Registry v2.4</p>
+</div>
+<a class="sidebar-link flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-3 hover:bg-[#e7e8ea] dark:hover:bg-slate-800 rounded-lg transition-all scale-95 duration-150" data-page="export.html" href="export.html">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+<span class="font-medium font-label">Layers</span>
+</a>
+<a class="sidebar-link flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-3 hover:bg-[#e7e8ea] dark:hover:bg-slate-800 rounded-lg transition-all scale-95 duration-150" data-page="compliance.html" href="compliance.html">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+<span class="font-medium font-label">Analysis</span>
+</a>
+<a class="sidebar-link flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-3 hover:bg-[#e7e8ea] dark:hover:bg-slate-800 rounded-lg transition-all scale-95 duration-150" data-page="history.html" href="history.html">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-medium font-label">History</span>
+</a>
+<div class="mt-auto p-4">
+<button class="w-full py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl font-semibold shadow-md flex items-center justify-center gap-2 active:opacity-90">
+<span class="material-symbols-outlined text-sm">download</span>
+                    Export Dataset
+                </button>
+</div>
+</aside>
+<script>
+(function () {
+  var current = (window.location.pathname.split('/').pop() || 'index.html');
+  document.querySelectorAll('.sidebar-link[data-page]').forEach(function (link) {
+    if (link.getAttribute('data-page') === current) {
+      link.classList.add('bg-white', 'dark:bg-slate-800', 'text-[#004A7C]', 'dark:text-blue-300', 'shadow-sm');
+      link.classList.remove('text-slate-600', 'dark:text-slate-400');
+    }
+  });
+})();
+</script>

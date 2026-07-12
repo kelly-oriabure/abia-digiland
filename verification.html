@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>GIS Verification: Spatial Conflict | Institutional Land Registry</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/output.css" />
+  <script src="js/htmx.min.js"></script>
+</head>
+
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+  <!-- TopNavBar -->
+  <div hx-get="partials/header.html" hx-trigger="load" hx-swap="outerHTML"></div>
+
+
+  <div class="flex h-[calc(100vh-60px)] overflow-hidden ml-72">
+    <!-- SideNavBar -->
+    <div hx-get="partials/sidebar-dashboard.html" hx-trigger="load" hx-swap="outerHTML"></div>
+    <!-- Main Content Canvas -->
+    <main class="flex-1 overflow-hidden flex flex-col bg-surface relative">
+      <!-- Breadcrumbs & Header -->
+      <header class="px-8 pt-6 pb-4 z-10">
+        <nav class="flex items-center gap-2 text-xs font-label text-on-surface-variant mb-2">
+          <span>Registry</span>
+          <span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+          <span>Case #LR-2024-5512</span>
+          <span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+          <span class="font-bold text-primary">GIS Verification</span>
+        </nav>
+        <div class="flex justify-between items-end">
+          <div>
+            <h1 class="text-3xl font-extrabold font-headline text-on-surface tracking-tight">GIS Verification: Spatial
+              Conflict</h1>
+            <p class="text-on-surface-variant mt-1 max-w-2xl">Visual analysis of overlapping cadastral boundaries for
+              property application LR-2024-5512.</p>
+          </div>
+          <div class="flex gap-3">
+            <button
+              class="px-4 py-2 bg-surface-container-highest text-on-surface rounded-lg text-sm font-semibold flex items-center gap-2 hover:bg-surface-dim transition-colors">
+              <span class="material-symbols-outlined text-[20px]" data-icon="print">print</span>
+              Print Report
+            </button>
+            <button
+              class="px-4 py-2 bg-primary text-on-primary rounded-lg text-sm font-semibold flex items-center gap-2 hover:bg-primary-container transition-colors">
+              <span class="material-symbols-outlined text-[20px]" data-icon="share">share</span>
+              Share View
+            </button>
+          </div>
+        </div>
+      </header>
+      <!-- Map View Split Screen Container -->
+      <div class="flex-1 flex px-8 pb-8 gap-4 overflow-hidden">
+        <!-- Left Map View (Proposed) -->
+        <div class="flex-1 rounded-2xl overflow-hidden bg-surface-container relative group">
+          <div class="absolute inset-0 bg-slate-200">
+            <img alt="Proposed Parcel Map" class="w-full h-full object-cover"
+              data-alt="Detailed satellite view of an urban residential block with a prominent blue polygon outline highlighting a specific land parcel"
+              data-location="Austin, Texas"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuArVYYIuBVYHg792zQKe4yE68CP80jHEmqTeXzvMaaBCLA7EuODqKW3RJzC9CyeWeuo6mrG7XTWaKwELvaNR97atQxFy9Y_1lZoAS5fbf8DRXbcjI4iOvjLhfeCKIRtTdznDlwh4AXzxv6SvDivH5eTzvTV2BeYf9JqX--Jx7l2Z0lZMJ2SfOCGqL_pgqBhwBq9k3oXT1kx1ibrB5VjSc_8AVG0yYaGNd1iZdHZbBE0Ft_eYlXAc9rCnRQ4-qMJUQ5yRZeguZjakbHE" />
+          </div>
+          <!-- Label Overlay -->
+          <div class="absolute top-4 left-4 glass-panel px-4 py-2 rounded-lg border border-white/20 shadow-sm z-10">
+            <div class="flex items-center gap-2">
+              <div class="w-3 h-3 rounded-full bg-blue-600"></div>
+              <span class="text-xs font-bold text-primary">Proposed Parcel</span>
+            </div>
+            <p class="text-[10px] text-on-surface-variant mt-1 font-label">Application: #LR-2024-5512</p>
+          </div>
+          <!-- Map Controls -->
+          <div class="absolute bottom-4 left-4 flex flex-col gap-2 z-10">
+            <div class="glass-panel p-1 rounded-xl flex flex-col gap-1 border border-white/20 shadow-lg">
+              <button
+                class="w-8 h-8 flex items-center justify-center hover:bg-surface-container-low rounded-lg text-on-surface transition-colors">
+                <span class="material-symbols-outlined" data-icon="add">add</span>
+              </button>
+              <button
+                class="w-8 h-8 flex items-center justify-center hover:bg-surface-container-low rounded-lg text-on-surface transition-colors">
+                <span class="material-symbols-outlined" data-icon="remove">remove</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Right Map View (Conflict) -->
+        <div class="flex-1 rounded-2xl overflow-hidden bg-surface-container relative">
+          <div class="absolute inset-0 bg-slate-200">
+            <img alt="Existing Parcel Map" class="w-full h-full object-cover"
+              data-alt="Satellite imagery of an urban plot with a sharp red polygon outline indicating a conflicting existing legal land boundary"
+              data-location="Austin, Texas"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_Svvdsj87aYnnUxxDLYj8MdKAX-F8lzDaA_XGTBc54elxRyUAcl7hOV_tuxnBJCywfO6D5NKNeqkIPUfdZ6-WiN5_PJzgZ1LEzXAjjrXoFR_px0ZFomOQIsgIx9yYfM64jB7oSPg35MCLW9ha_Aj_w-1qk4mAEXTlFLWz8kryaPYRrFdwak2CXJWnOf5nJUETwl0SllfTO0CCMwTx_6mi0hrk4DpGzviN0PYvWk8vv1Tp3U2BmmZWeL6jvedvDQ8sY_1t7SfD9CHR" />
+          </div>
+          <!-- Label Overlay -->
+          <div class="absolute top-4 left-4 glass-panel px-4 py-2 rounded-lg border border-white/20 shadow-sm z-10">
+            <div class="flex items-center gap-2">
+              <div class="w-3 h-3 rounded-full bg-error"></div>
+              <span class="text-xs font-bold text-error">Conflicting Parcel</span>
+            </div>
+            <p class="text-[10px] text-on-surface-variant mt-1 font-label">Title: AB-UM-229-X</p>
+          </div>
+          <!-- Legend Overlay -->
+          <div
+            class="absolute bottom-4 right-4 glass-panel p-4 rounded-xl border border-white/20 shadow-lg z-10 max-w-[200px]">
+            <h4 class="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mb-2">Map Legend</h4>
+            <div class="space-y-2">
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-sm border border-blue-600 bg-blue-600/20"></div>
+                <span class="text-[11px] font-medium">Proposed Boundary</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-sm border border-error bg-error/20"></div>
+                <span class="text-[11px] font-medium">Existing Boundary</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-sm border border-dashed border-primary"></div>
+                <span class="text-[11px] font-medium">Cadastral Grid</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Conflict Analysis Panel -->
+        <div class="w-80 flex flex-col gap-4">
+          <div class="bg-surface-container-low rounded-2xl p-6 flex-1 shadow-sm border border-outline-variant/10">
+            <h3 class="text-lg font-bold font-headline text-on-surface mb-4 flex items-center gap-2">
+              <span class="material-symbols-outlined text-error" data-icon="warning"
+                style="font-variation-settings: 'FILL' 1;">warning</span>
+              Conflict Analysis
+            </h3>
+            <div class="space-y-6">
+              <section>
+                <label
+                  class="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant block mb-1">Spatial
+                  Metrics</label>
+                <div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/20">
+                  <div class="flex justify-between items-end">
+                    <span class="text-xs text-on-surface-variant">Overlap Area</span>
+                    <span class="text-xl font-bold text-error">124.5 SQM</span>
+                  </div>
+                  <div class="w-full bg-surface-container-highest h-1.5 rounded-full mt-3 overflow-hidden">
+                    <div class="bg-error h-full" style="width: 42%;"></div>
+                  </div>
+                  <p class="text-[10px] text-on-surface-variant mt-2 italic">Approximately 14.2% of proposed total area.
+                  </p>
+                </div>
+              </section>
+              <section>
+                <label
+                  class="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant block mb-1">Conflicting
+                  Entity</label>
+                <div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/20 space-y-3">
+                  <div>
+                    <span class="text-[10px] text-on-surface-variant block">Title Number</span>
+                    <span class="text-sm font-bold text-primary font-headline tracking-tight">AB-UM-229-X</span>
+                  </div>
+                  <div>
+                    <span class="text-[10px] text-on-surface-variant block">Current Registered Owner</span>
+                    <span class="text-sm font-semibold">Evergreen Development LLC</span>
+                  </div>
+                  <div>
+                    <span class="text-[10px] text-on-surface-variant block">Last Verification Date</span>
+                    <span class="text-sm font-semibold">October 14, 2023</span>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <label class="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant block mb-1">GIS
+                  Notes</label>
+                <p class="text-xs text-on-surface-variant leading-relaxed">
+                  Automated detection suggests high confidence in spatial overlap. Coordinate drift of <span
+                    class="font-bold text-on-surface">0.12m</span> detected on northwest beacon. Manual resolution
+                  required before registry entry.
+                </p>
+              </section>
+            </div>
+          </div>
+          <!-- Action Buttons Group -->
+          <div class="flex flex-col gap-2">
+            <button
+              class="w-full py-4 bg-primary text-on-primary rounded-xl font-bold text-sm shadow-sm hover:translate-y-[-1px] transition-all flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-[18px]" data-icon="rule">rule</span>
+              Request Survey Review
+            </button>
+            <button
+              class="w-full py-4 bg-surface-container-highest text-error rounded-xl font-bold text-sm hover:bg-error-container hover:text-on-error-container transition-all flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-[18px]" data-icon="emergency">emergency</span>
+              Escalate to Surveyor General
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div hx-get="partials/footer.html" hx-trigger="load" hx-swap="outerHTML"></div>
+</body>
+
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Abia Land Portal | DIGILAND ABIA</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/output.css" />
+  <script src="js/htmx.min.js"></script>
+</head>
+
+<body class="bg-surface font-body text-on-surface flex flex-col min-h-screen">
+  <!-- TopNavBar -->
+  <div hx-get="partials/header.html" hx-trigger="load" hx-swap="outerHTML"></div>
+
+
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative bg-hero-gradient pt-20 pb-32 px-6 overflow-hidden">
+<div class="max-w-7xl mx-auto relative z-10">
+<div class="max-w-3xl">
+<h1 class="text-5xl md:text-6xl font-headline font-extrabold text-on-primary leading-tight mb-6">
+                        Verify Land Ownership <br/><span class="text-primary-fixed">with Confidence</span>
+</h1>
+<p class="text-xl text-primary-fixed/80 font-body mb-10 leading-relaxed">
+                        Search the official Abia State Land Registry to confirm parcel status, ownership history, and zoning regulations.
+                    </p>
+<div class="relative group max-w-2xl">
+<div class="absolute -inset-1 bg-white/10 rounded-xl blur transition duration-250 group-hover:duration-200 opacity-0 group-hover:opacity-100"></div>
+<div class="relative flex items-center bg-surface-container-lowest rounded-xl shadow-xl overflow-hidden p-2">
+<span class="material-symbols-outlined px-4 text-outline" data-icon="search">search</span>
+<input class="w-full py-4 border-none focus:ring-0 text-on-surface placeholder:text-outline/60 text-lg" placeholder="Search by Parcel ID, Coordinate, or Owner Name" type="text"/>
+<button class="bg-primary px-8 py-4 text-on-primary font-bold rounded-lg hover:bg-primary-container transition-colors">
+                                Search Registry
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Decorative GIS Background Element -->
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+<img class="w-full h-full object-cover" data-alt="abstract top down map view with glowing grid lines and geometric digital patterns representing urban planning data" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD_u8HbDYW_TtyzAbxzN4oee86zo897xhiAfMIMOLwS0if6YCYQCHtKcTWsmprBc-SAaAdOz35dPw1zvGdj2OAb_tJJF2V6XDvuppsEZ21E-a54I17vLLzZgxrG3NnUpXo3qeDIHEHgJ5Mr3ZwxAkfjWmU6NVlhIDSmPgvYdJxmqNnFP2t0-hkv7EzVN6G0dcVyusj2eoY5-VlXjPJ6nhWDfmHXwmukwhmt5VViGI3XWiI3cFc15J1TZwqJQPLpwc1rECn6B-cKd8S"/>
+</div>
+</section>
+<!-- Statistics Bar -->
+<section class="bg-surface-container-low border-b border-outline-variant/20">
+<div class="max-w-7xl mx-auto px-6 py-8">
+<div class="flex flex-wrap justify-between items-center gap-8">
+<div class="flex flex-col">
+<span class="text-3xl font-headline font-extrabold text-primary">1.2M+</span>
+<span class="text-sm font-label uppercase tracking-widest text-on-surface-variant">Registered Parcels</span>
+</div>
+<div class="w-px h-12 bg-outline-variant/30 hidden md:block"></div>
+<div class="flex flex-col">
+<span class="text-3xl font-headline font-extrabold text-primary">5k+</span>
+<span class="text-sm font-label uppercase tracking-widest text-on-surface-variant">Titles Verified This Month</span>
+</div>
+<div class="w-px h-12 bg-outline-variant/30 hidden md:block"></div>
+<div class="flex flex-col">
+<span class="text-3xl font-headline font-extrabold text-primary">98%</span>
+<span class="text-sm font-label uppercase tracking-widest text-on-surface-variant">Search Accuracy</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content Area: Bento Layout -->
+<section class="max-w-7xl mx-auto px-6 py-20">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Featured Services Grid -->
+<div class="lg:col-span-8">
+<div class="mb-10">
+<h2 class="text-3xl font-headline font-bold text-on-surface mb-2">Institutional Services</h2>
+<p class="text-on-surface-variant">Direct access to Abia State's secure digital registry archives.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Card 1 -->
+<div class="group p-8 bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all border border-transparent hover:border-primary/10">
+<div class="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-on-surface mb-3">Verify Title</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Validate the authenticity of Certificate of Occupancy (C of O) and other land documents instantly.</p>
+<a class="text-primary font-semibold flex items-center gap-2 text-sm" href="#">
+                                Start Verification <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Card 2 -->
+<div class="group p-8 bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all border border-transparent hover:border-primary/10">
+<div class="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-on-surface mb-3">Zoning Check</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Review official land use permissions and development restrictions for any parcel in the state.</p>
+<a class="text-primary font-semibold flex items-center gap-2 text-sm" href="#">
+                                Check Permissions <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Card 3 -->
+<div class="group p-8 bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all border border-transparent hover:border-primary/10">
+<div class="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-on-surface mb-3">Dispute Check</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Identify active legal flags, caveats, or conflicting claims registered against a specific property.</p>
+<button class="w-full mb-4 py-3 bg-primary/10 text-primary font-bold rounded-lg hover:bg-primary/20 transition-colors flex items-center justify-center gap-2 text-sm">
+<span class="material-symbols-outlined text-sm">gavel</span>
+                                Submit a Formal Dispute
+                            </button><a class="text-primary font-semibold flex items-center gap-2 text-sm" href="#">
+                                View Registry <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Card 4 -->
+<div class="group p-8 bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all border border-transparent hover:border-primary/10">
+<div class="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-on-surface mb-3">Spatial Map</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Access high-resolution interactive parcel maps with survey coordinate overlays and area measurements.</p>
+<a class="text-primary font-semibold flex items-center gap-2 text-sm" href="#">
+                                Launch GIS <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Interactive Map Preview Section -->
+<div class="lg:col-span-4">
+<div class="sticky top-24">
+<div class="bg-surface-container-low rounded-2xl overflow-hidden shadow-sm border border-outline-variant/10">
+<div class="p-6 border-b border-outline-variant/20 flex justify-between items-center">
+<h3 class="font-headline font-bold text-on-surface">Interactive View</h3>
+<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs font-bold rounded-full">LIVE REGISTRY</span>
+</div>
+<div class="relative h-[400px]">
+<img class="w-full h-full object-cover" data-alt="clean top-down architectural map satellite view of a planned urban neighborhood with clear property boundaries and green spaces" data-location="Umuahia North" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR1kPsa1O-GvigbiWafR9nIMmw2LJ857hWds-77wGquljAw-pkr8E_LY1u7GtNG55AjWlZNqQUZiW1-sTAUxMA2oN9Be7m0NyiJwpS0hZesJLvTL9hSLcH6SBhjqAdsPLSXI_iwMaUwzTWP2S_N3EQqSOcqGSjJbyUnuCJ07D_AEu7lWjhSGyMCicrUfnryq_D71BEdCTWjwQKUr2ic21IQAQPPMDjeBQ9ANeVsz6Aoj1PgZsCSEypRgbEFRpO6u24Swa1GSqngbJ9"/>
+<!-- Search Pinpoint Overlay -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="relative flex items-center justify-center">
+<div class="absolute w-12 h-12 bg-primary/20 rounded-full animate-ping"></div>
+<div class="relative w-8 h-8 bg-primary rounded-full flex items-center justify-center shadow-lg border-2 border-white">
+<span class="material-symbols-outlined text-white text-sm" data-icon="location_on" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+<!-- Floating UI on Map -->
+<div class="absolute bottom-4 left-4 right-4 bg-surface/90 backdrop-blur-md p-4 rounded-xl border border-outline-variant/20 shadow-lg">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container-high rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="location_city">location_city</span>
+</div>
+<div>
+<p class="text-xs font-bold text-primary tracking-wider uppercase">Active Viewport</p>
+<p class="text-sm font-semibold text-on-surface">Umuahia North, Abia State</p>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6">
+<p class="text-xs text-on-surface-variant leading-relaxed mb-4">You are viewing the public spatial data for Umuahia Central. Switch to advanced view for specific survey details.</p>
+<button class="w-full py-3 bg-surface-container-highest text-on-surface font-semibold rounded-lg hover:bg-outline-variant/20 transition-colors">
+                                    Expand Full Map
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust & Security Section -->
+<section class="bg-surface-container-highest/30 py-20 px-6">
+<div class="max-w-5xl mx-auto text-center">
+<span class="inline-block px-4 py-1.5 bg-primary/5 text-primary text-xs font-bold tracking-widest uppercase rounded-full mb-6">Immutable Security</span>
+<h2 class="text-4xl font-headline font-bold text-on-surface mb-8">The Gold Standard in Land Governance</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" data-icon="verified">verified</span>
+<h4 class="font-bold text-on-surface mb-2">Authenticated Data</h4>
+<p class="text-sm text-on-surface-variant">Every record is digitally signed by the State Land Office.</p>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" data-icon="history">history</span>
+<h4 class="font-bold text-on-surface mb-2">Audit Trails</h4>
+<p class="text-sm text-on-surface-variant">Complete chain of custody for every property since registration.</p>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" data-icon="security">security</span>
+<h4 class="font-bold text-on-surface mb-2">Privacy Protection</h4>
+<p class="text-sm text-on-surface-variant">Enterprise-grade encryption for all sensitive ownership data.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto border-t border-slate-200 dark:border-slate-800 bg-[#f3f3f6] dark:bg-slate-950">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 py-10 w-full max-w-8xl mx-auto">
+<div class="mb-6 md:mb-0">
+<span class="font-['Public_Sans'] font-bold text-slate-900 dark:text-slate-100 block mb-2">DIGILAND ABIA</span>
+<p class="font-['Inter'] text-sm text-slate-500 dark:text-slate-400">© 2024 Abia State Geographic Information Service (ABIAGIS). All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-['Inter'] text-sm text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 transition-opacity duration-200 underline decoration-slate-300 dark:decoration-slate-700 underline-offset-4" href="#">Transparency Policy</a>
+<a class="font-['Inter'] text-sm text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 transition-opacity duration-200 underline decoration-slate-300 dark:decoration-slate-700 underline-offset-4" href="#">Terms of Service</a>
+<a class="font-['Inter'] text-sm text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 transition-opacity duration-200 underline decoration-slate-300 dark:decoration-slate-700 underline-offset-4" href="#">Privacy Portal</a>
+<a class="font-['Inter'] text-sm text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 transition-opacity duration-200 underline decoration-slate-300 dark:decoration-slate-700 underline-offset-4" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+<div hx-get="partials/footer.html" hx-trigger="load" hx-swap="outerHTML"></div>
+</body></html>

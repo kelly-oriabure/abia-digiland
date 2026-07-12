@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>DIGILAND ABIA | Administrator Dashboard</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/output.css" />
+  <script src="js/htmx.min.js"></script>
+</head>
+
+<body class="bg-surface font-body text-on-surface">
+  <!-- TopNavBar -->
+  <div hx-get="partials/header.html" hx-trigger="load" hx-swap="outerHTML"></div>
+
+
+<!-- SideNavBar -->
+<div hx-get="partials/sidebar-dashboard.html" hx-trigger="load" hx-swap="outerHTML"></div>
+<!-- Main Content -->
+<main class="pl-72 pt-16 min-h-screen">
+<div class="p-8 max-w-7xl mx-auto">
+<!-- Header Section -->
+<div class="mb-10 flex justify-between items-end">
+<div>
+<h1 class="font-headline text-3xl font-bold tracking-tight text-on-surface">Administrative Dashboard</h1>
+<p class="text-on-surface-variant mt-1">Real-time land registry and GIS infrastructure monitoring.</p>
+</div>
+<div class="flex gap-3">
+<button class="bg-surface-container-highest px-4 py-2 rounded-lg text-sm font-medium hover:bg-surface-dim transition-colors">Generate Report</button>
+<button class="bg-primary px-4 py-2 rounded-lg text-on-primary text-sm font-medium shadow-sm active:scale-95 transition-all">Export Data</button>
+</div>
+</div>
+<!-- Bento Grid KPI Section -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm flex flex-col justify-between border-l-4 border-primary">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg">map</span>
+<span class="text-xs font-bold text-secondary flex items-center">+12% <span class="material-symbols-outlined scale-50">trending_up</span></span>
+</div>
+<div class="mt-4">
+<p class="text-xs font-medium text-on-surface-variant uppercase tracking-wider">Total Registered Parcels</p>
+<h3 class="text-2xl font-black mt-1">142,893</h3>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm flex flex-col justify-between border-l-4 border-secondary">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-secondary bg-secondary/10 p-2 rounded-lg">pending_actions</span>
+<span class="text-xs font-bold text-error flex items-center">-2% <span class="material-symbols-outlined scale-50">trending_down</span></span>
+</div>
+<div class="mt-4">
+<p class="text-xs font-medium text-on-surface-variant uppercase tracking-wider">Pending Titles</p>
+<h3 class="text-2xl font-black mt-1">1,402</h3>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm flex flex-col justify-between border-l-4 border-tertiary-container">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-tertiary-container bg-tertiary-container/10 p-2 rounded-lg">move_up</span>
+<span class="text-xs font-bold text-secondary flex items-center">+5.4% <span class="material-symbols-outlined scale-50">trending_up</span></span>
+</div>
+<div class="mt-4">
+<p class="text-xs font-medium text-on-surface-variant uppercase tracking-wider">Month's Transfers</p>
+<h3 class="text-2xl font-black mt-1">842</h3>
+</div>
+</div>
+<div class="bg-primary-gradient p-6 rounded-xl shadow-lg flex flex-col justify-between text-white">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-white/80 bg-white/20 p-2 rounded-lg">payments</span>
+<span class="text-xs font-bold text-white/90">FY 2024</span>
+</div>
+<div class="mt-4">
+<p class="text-xs font-medium text-white/70 uppercase tracking-wider">Revenue Generated</p>
+<h3 class="text-2xl font-black mt-1">₦24.8M</h3>
+</div>
+</div>
+</div>
+<!-- Asymmetric Grid: Map + Table -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Recent Activity Table (2/3 width) -->
+<div class="lg:col-span-2 bg-surface-container-low rounded-2xl p-6 shadow-sm overflow-hidden">
+<div class="flex justify-between items-center mb-6">
+<h4 class="font-headline font-bold text-xl">Recent Registry Activity</h4>
+<button class="text-sm font-semibold text-primary hover:underline">View All Registry</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-surface-container-highest">
+<th class="py-4 px-2 text-xs font-bold text-on-surface-variant uppercase tracking-wider">Parcel ID</th>
+<th class="py-4 px-2 text-xs font-bold text-on-surface-variant uppercase tracking-wider">Location</th>
+<th class="py-4 px-2 text-xs font-bold text-on-surface-variant uppercase tracking-wider">Applicant</th>
+<th class="py-4 px-2 text-xs font-bold text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="py-4 px-2 text-xs font-bold text-on-surface-variant uppercase tracking-wider text-right">Date</th>
+</tr>
+</thead>
+<tbody>
+<tr class="hover:bg-surface-container-lowest transition-colors group cursor-pointer">
+<td class="py-4 px-2 font-mono text-sm font-semibold text-primary">AB-UM-4429</td>
+<td class="py-4 px-2 text-sm">Umuahia North, GRA</td>
+<td class="py-4 px-2 text-sm font-medium">Chidi Okezie</td>
+<td class="py-4 px-2">
+<span class="px-2 py-1 text-[10px] font-bold uppercase rounded bg-secondary-container text-on-secondary-container">Approved</span>
+</td>
+<td class="py-4 px-2 text-sm text-on-surface-variant text-right">Oct 12, 2023</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors group cursor-pointer">
+<td class="py-4 px-2 font-mono text-sm font-semibold text-primary">AB-AB-9210</td>
+<td class="py-4 px-2 text-sm">Aba South, Ariaria</td>
+<td class="py-4 px-2 text-sm font-medium">Margaret Obi</td>
+<td class="py-4 px-2">
+<span class="px-2 py-1 text-[10px] font-bold uppercase rounded bg-tertiary-container/10 text-tertiary-container">Pending</span>
+</td>
+<td class="py-4 px-2 text-sm text-on-surface-variant text-right">Oct 11, 2023</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors group cursor-pointer">
+<td class="py-4 px-2 font-mono text-sm font-semibold text-primary">AB-BN-1102</td>
+<td class="py-4 px-2 text-sm">Bende, Igbere</td>
+<td class="py-4 px-2 text-sm font-medium">Samuel Kalu</td>
+<td class="py-4 px-2">
+<span class="px-2 py-1 text-[10px] font-bold uppercase rounded bg-error-container text-on-error-container">Review</span>
+</td>
+<td class="py-4 px-2 text-sm text-on-surface-variant text-right">Oct 10, 2023</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors group cursor-pointer">
+<td class="py-4 px-2 font-mono text-sm font-semibold text-primary">AB-OH-5501</td>
+<td class="py-4 px-2 text-sm">Ohafia, Elu</td>
+<td class="py-4 px-2 text-sm font-medium">Ngozi Eme</td>
+<td class="py-4 px-2">
+<span class="px-2 py-1 text-[10px] font-bold uppercase rounded bg-secondary-container text-on-secondary-container">Approved</span>
+</td>
+<td class="py-4 px-2 text-sm text-on-surface-variant text-right">Oct 09, 2023</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors group cursor-pointer">
+<td class="py-4 px-2 font-mono text-sm font-semibold text-primary">AB-UM-4430</td>
+<td class="py-4 px-2 text-sm">Umuahia South, Apumiri</td>
+<td class="py-4 px-2 text-sm font-medium">Ibrahim Bello</td>
+<td class="py-4 px-2">
+<span class="px-2 py-1 text-[10px] font-bold uppercase rounded bg-tertiary-container/10 text-tertiary-container">Pending</span>
+</td>
+<td class="py-4 px-2 text-sm text-on-surface-variant text-right">Oct 09, 2023</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- GIS Preview (1/3 width) -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm overflow-hidden flex flex-col">
+<div class="p-6">
+<h4 class="font-headline font-bold text-xl">Quick GIS Preview</h4>
+<p class="text-xs text-on-surface-variant mt-1">Recent boundary demarcation - Umuahia North</p>
+</div>
+<div class="relative flex-1 min-h-[300px] bg-surface-dim">
+<!-- Simulated Map with data-location -->
+<div class="absolute inset-0 grayscale contrast-[0.9]" data-alt="satellite top-down view of an urban residential district with clear property lines and road layouts" data-location="Umuahia, Abia State" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuALfbG72fSj8FF8PMxFXyAPivQBg9NxFlHF5oiZaecKZ0K86dqFqVq4aExAYW_ZuiadK8n-bEVVfxFc4eoikoZjNENvfKRv7r16XJGyoJ1cEQ08APLOmUzaHlop-38D6VwQCcgPH4WYROK4vr8loMpjsV-KHndw1ZFWd6a02KeMNX4tl99p6a9m1zFRqw6KuwA7LUJn6huU3yGVTvHc_eLaUJ-owTFeX2yy4c1DkgopuL-aFMDzHG376pxGTqDnY2_5eh1gH7IGvmlf'); background-size: cover; background-position: center;">
+</div>
+<!-- Glassmorphic Map Controls -->
+<div class="absolute bottom-4 right-4 flex flex-col gap-2">
+<button class="w-10 h-10 bg-white/80 backdrop-blur-md rounded-lg shadow-sm flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="w-10 h-10 bg-white/80 backdrop-blur-md rounded-lg shadow-sm flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">remove</span>
+</button>
+</div>
+<div class="absolute top-4 left-4 bg-primary/90 backdrop-blur-md text-white px-3 py-1.5 rounded-full text-[10px] font-bold tracking-widest uppercase shadow-lg">
+                            Live GIS Feed
+                        </div>
+<!-- Overlaying Vector Effect (CSS Only) -->
+<div class="absolute inset-0 pointer-events-none opacity-20 border-[20px] border-primary/10"></div>
+</div>
+<div class="p-6 bg-surface-container-low">
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">Active Surveyor</span>
+<span class="text-xs font-semibold text-primary">Engr. T. Nwosu</span>
+</div>
+<div class="flex items-center gap-4 text-xs">
+<div class="flex items-center gap-1">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span>Demarcated</span>
+</div>
+<div class="flex items-center gap-1">
+<div class="w-2 h-2 rounded-full bg-error"></div>
+<span>Contested</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Workflow Highlights -->
+<div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="p-6 bg-white border border-slate-100 rounded-xl flex gap-4 items-start">
+<span class="material-symbols-outlined text-primary bg-primary-fixed p-3 rounded-full">security</span>
+<div>
+<h5 class="font-bold text-sm">Secure Registry</h5>
+<p class="text-xs text-on-surface-variant mt-1">End-to-end encrypted ledger for all title deeds and transfers.</p>
+</div>
+</div>
+<div class="p-6 bg-white border border-slate-100 rounded-xl flex gap-4 items-start">
+<span class="material-symbols-outlined text-secondary bg-secondary-fixed p-3 rounded-full">analytics</span>
+<div>
+<h5 class="font-bold text-sm">Spatial Analysis</h5>
+<p class="text-xs text-on-surface-variant mt-1">Automated overlap detection and land-use verification.</p>
+</div>
+</div>
+<div class="p-6 bg-white border border-slate-100 rounded-xl flex gap-4 items-start">
+<span class="material-symbols-outlined text-tertiary-container bg-tertiary-fixed p-3 rounded-full">history_edu</span>
+<div>
+<h5 class="font-bold text-sm">Audit Trail</h5>
+<p class="text-xs text-on-surface-variant mt-1">Complete immutable history of every administrative action.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB Suppression: On Dashboard, FAB might be used for "Quick Register" -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-90 transition-all z-50">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+<div hx-get="partials/footer.html" hx-trigger="load" hx-swap="outerHTML"></div>
+</body></html>

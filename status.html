@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Review Queue - Institutional Land Registry</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/output.css" />
+  <script src="js/htmx.min.js"></script>
+</head>
+
+<body class="bg-surface text-on-surface">
+  <!-- TopNavBar -->
+  <div hx-get="partials/header.html" hx-trigger="load" hx-swap="outerHTML"></div>
+
+
+  <div class="flex min-h-screen ml-72">
+    <!-- SideNavBar -->
+    <div hx-get="partials/sidebar-dashboard.html" hx-trigger="load" hx-swap="outerHTML"></div>
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col min-w-0">
+      <!-- Page Body -->
+      <div class="p-6 md:p-10 space-y-8 max-w-7xl mx-auto w-full">
+        <!-- Header & Stats Bento -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div class="lg:col-span-2 space-y-2">
+            <nav class="flex items-center gap-2 text-xs font-bold text-on-surface-variant/60 uppercase tracking-widest">
+              <span>Registry</span>
+              <span class="material-symbols-outlined text-[10px]">chevron_right</span>
+              <span>Verification Queue</span>
+            </nav>
+            <h1 class="text-4xl font-extrabold text-on-surface tracking-tight">Review Queue</h1>
+            <p class="text-on-surface-variant max-w-2xl leading-relaxed">
+              Authoritative validation stream for pending land title applications. Systems are cross-referencing
+              multi-spectral GIS data with historical cadastral records.
+            </p>
+          </div>
+          <div
+            class="bg-gradient-to-br from-primary to-primary-container p-6 rounded-2xl text-on-primary flex flex-col justify-between shadow-xl shadow-primary/10">
+            <div class="flex justify-between items-start">
+              <span class="material-symbols-outlined text-3xl opacity-80"
+                style="font-variation-settings: 'FILL' 1;">warning</span>
+              <span class="bg-white/10 px-2 py-1 rounded text-[10px] font-bold tracking-tighter uppercase">High
+                Priority</span>
+            </div>
+            <div>
+              <div class="text-4xl font-bold mb-1">3</div>
+              <div class="text-sm font-medium opacity-90">Active GIS Disputes</div>
+            </div>
+          </div>
+        </div>
+        <!-- Table Content Area -->
+        <div class="bg-surface-container-low rounded-3xl overflow-hidden">
+          <div
+            class="px-6 py-4 flex items-center justify-between bg-surface-container-low/50 border-b border-outline-variant/10">
+            <div class="flex items-center gap-4">
+              <button
+                class="px-4 py-2 bg-surface-container-lowest rounded-xl text-sm font-bold shadow-sm border border-outline-variant/10">All
+                Applications</button>
+              <button
+                class="px-4 py-2 text-on-surface-variant hover:bg-surface-container-highest/50 rounded-xl text-sm font-medium transition-colors">Pending
+                Only</button>
+              <button
+                class="px-4 py-2 text-on-surface-variant hover:bg-surface-container-highest/50 rounded-xl text-sm font-medium transition-colors">Conflicts</button>
+            </div>
+            <button class="flex items-center gap-2 text-sm text-primary font-bold">
+              <span class="material-symbols-outlined text-sm">filter_list</span>
+              Advanced Filters
+            </button>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="text-on-surface-variant/70 text-[11px] font-bold uppercase tracking-widest">
+                  <th class="px-8 py-5">Case Reference</th>
+                  <th class="px-6 py-5">Applicant Detail</th>
+                  <th class="px-6 py-5">Spatial Context</th>
+                  <th class="px-6 py-5">Registry Status</th>
+                  <th class="px-8 py-5 text-right">Action</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-outline-variant/5">
+                <!-- Conflicted Row -->
+                <tr class="bg-surface-container-lowest/40 hover:bg-surface-container-lowest transition-colors group">
+                  <td class="px-8 py-6">
+                    <div class="font-headline font-bold text-primary">LR-2024-5512</div>
+                    <div class="text-[10px] text-on-surface-variant font-medium mt-1">Submitted: 12 Oct 2023</div>
+                  </td>
+                  <td class="px-6 py-6">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-primary text-xs border border-outline-variant/20">
+                        EO</div>
+                      <div>
+                        <div class="font-bold text-on-surface">Emeka Obi</div>
+                        <div class="text-xs text-on-surface-variant">Lagos Central District</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-6">
+                    <div
+                      class="w-32 h-16 rounded-xl overflow-hidden border border-outline-variant/20 relative group-hover:shadow-md transition-shadow">
+                      <img class="w-full h-full object-cover"
+                        data-alt="top-down satellite imagery of an urban residential block with distinct property boundaries highlighted in semi-transparent red and green"
+                        data-location="Lagos"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0XcEBdZ-C8LoJR_c0mNBt8J5KyxhChYLF4LZWf4mAIK1lZB2yZynjLlj14jhyj5KU1MT2XfwuKywgdawLfOL-aJ6SsQIE6iE69LES82KJfvMETzvrGbkJmHcBnO1eNehpvVuW0lrBYb_yxDeGn_P0Sz5Fv7AqWSQEnkV7u0rAClsmBLbI8wH9XC8tidf6gK7wQZUwEVpg-r7sMS65XcZo1p9Hh9GtbJntiYaRfPee9GSY-_YyyFXJppMozUmZwHUSXjL7WDg1mKt1" />
+                      <div class="absolute inset-0 bg-error/10 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-error text-sm"
+                          style="font-variation-settings: 'FILL' 1;">location_on</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-6">
+                    <span
+                      class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-error-container text-on-error-container text-[11px] font-bold uppercase tracking-tighter shadow-sm">
+                      <span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span>
+                      GIS Conflict
+                    </span>
+                  </td>
+                  <td class="px-8 py-6 text-right">
+                    <button
+                      class="px-4 py-2 bg-primary text-on-primary rounded-lg text-xs font-bold hover:shadow-lg hover:shadow-primary/20 transition-all">
+                      View Analysis
+                    </button>
+                  </td>
+                </tr>
+                <!-- Standard Row 1 -->
+                <tr class="hover:bg-surface-container-lowest/60 transition-colors group">
+                  <td class="px-8 py-6">
+                    <div class="font-headline font-bold text-on-surface-variant">LR-2024-5490</div>
+                    <div class="text-[10px] text-on-surface-variant font-medium mt-1">Submitted: 10 Oct 2023</div>
+                  </td>
+                  <td class="px-6 py-6">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-on-surface-variant text-xs border border-outline-variant/20">
+                        AK</div>
+                      <div>
+                        <div class="font-bold text-on-surface">Amara Kalu</div>
+                        <div class="text-xs text-on-surface-variant">Ikeja North Sector</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-6">
+                    <div
+                      class="w-32 h-16 rounded-xl overflow-hidden border border-outline-variant/20 grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all">
+                      <img class="w-full h-full object-cover"
+                        data-alt="birds eye view of a clean suburban layout with clear grid systems and neatly manicured lawns and driveways"
+                        data-location="Ikeja"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7s8ROXD28K3df7fmunQALyKk8wdzmmplOrg_gSg1MsZR7rIkeGNgSh0R8WkHs9HGJ91SZTdbCUVTJusBAkibLrxO7GMET7ezzLsAT8-07hrH-pPl1ZsCve2mjhf4COn5QWmKjGMdRy0axRnVNXkPnJ8LGuy-CYp76QLpYpnsMxIlaZnzK8o3-kTOczTP6BZY1LkRlCIjpEYbBTyGn-jad5Hk4n5AXTUEEuNk9rXphFx3vNAXUOz-F4-n3QDpzW6_ZVqYoCBG9HGSm" />
+                    </div>
+                  </td>
+                  <td class="px-6 py-6">
+                    <span
+                      class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-container text-on-tertiary-container text-[11px] font-bold uppercase tracking-tighter">
+                      Clearance Ready
+                    </span>
+                  </td>
+                  <td class="px-8 py-6 text-right">
+                    <button
+                      class="px-4 py-2 text-primary hover:bg-primary/5 rounded-lg text-xs font-bold transition-all border border-primary/20">
+                      Audit Title
+                    </button>
+                  </td>
+                </tr>
+                <!-- Standard Row 2 -->
+                <tr class="hover:bg-surface-container-lowest/60 transition-colors group">
+                  <td class="px-8 py-6">
+                    <div class="font-headline font-bold text-on-surface-variant">LR-2024-5318</div>
+                    <div class="text-[10px] text-on-surface-variant font-medium mt-1">Submitted: 08 Oct 2023</div>
+                  </td>
+                  <td class="px-6 py-6">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-on-surface-variant text-xs border border-outline-variant/20">
+                        JM</div>
+                      <div>
+                        <div class="font-bold text-on-surface">John Mensah</div>
+                        <div class="text-xs text-on-surface-variant">Victoria Island Hub</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-6">
+                    <div
+                      class="w-32 h-16 rounded-xl overflow-hidden border border-outline-variant/20 grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all">
+                      <img class="w-full h-full object-cover"
+                        data-alt="high resolution cadastral map overlay on satellite photography showing dense urban infrastructure and waterfront boundaries"
+                        data-location="Lagos"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1_w6G84xy6EDFYqTRLn0XNYZx47xvJ74UqbB-OqFCOj1K5vQzPwF2WWbC690bpZ0uZttwxSqLAOuq55DE_ceMdH9lXaoBCf02-Rx50IIIs89z8td_vMKpKZmSEhWHAAoRlzKXthudpTl045JajYPtv1Ec7u5Ou0Kk07XFPAVr7hkkU7BLpz2XwBPefZ4GK1hYlSqIYfDmbsaWdaoXD-j9nkf82XSzduACLPtDtuoRcXaGyByirzrrc4Yvnu0ccDJHU6Y5EDP2eKvw" />
+                    </div>
+                  </td>
+                  <td class="px-6 py-6">
+                    <span
+                      class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-highest text-on-surface-variant text-[11px] font-bold uppercase tracking-tighter">
+                      Validation Pending
+                    </span>
+                  </td>
+                  <td class="px-8 py-6 text-right">
+                    <button
+                      class="px-4 py-2 text-primary hover:bg-primary/5 rounded-lg text-xs font-bold transition-all border border-primary/20">
+                      Audit Title
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div
+            class="px-8 py-5 bg-surface-container-low/30 border-t border-outline-variant/10 flex items-center justify-between">
+            <div class="text-xs text-on-surface-variant font-medium">
+              Displaying 3 of 124 pending applications
+            </div>
+            <div class="flex items-center gap-2">
+              <button class="p-2 rounded-lg hover:bg-surface-container-highest transition-colors disabled:opacity-30"
+                disabled="">
+                <span class="material-symbols-outlined text-sm">chevron_left</span>
+              </button>
+              <span
+                class="text-xs font-bold bg-primary text-on-primary w-6 h-6 flex items-center justify-center rounded">1</span>
+              <span
+                class="text-xs font-bold w-6 h-6 flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container-highest cursor-pointer transition-colors">2</span>
+              <span
+                class="text-xs font-bold w-6 h-6 flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container-highest cursor-pointer transition-colors">3</span>
+              <button class="p-2 rounded-lg hover:bg-surface-container-highest transition-colors">
+                <span class="material-symbols-outlined text-sm">chevron_right</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Footer Narrative -->
+        <div class="flex flex-col md:flex-row gap-6 items-start justify-between py-10 opacity-70">
+          <div class="max-w-md">
+            <h4 class="text-sm font-bold text-primary mb-2">Automated Dispute Resolution</h4>
+            <p class="text-xs leading-relaxed">
+              The system is currently flagged for manual intervention on 3 records where overlap exceeds the 0.5m
+              tolerance threshold. Integrity checks are performed every 15 minutes against the centralized blockchain
+              ledger.
+            </p>
+          </div>
+          <div class="flex gap-4">
+            <div class="flex flex-col items-end">
+              <span class="text-[10px] uppercase font-bold text-on-surface-variant">System Status</span>
+              <span class="flex items-center gap-1.5 text-xs font-bold text-secondary">
+                <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                GIS Engines Nominal
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div hx-get="partials/footer.html" hx-trigger="load" hx-swap="outerHTML"></div>
+</body>
+
+</html>

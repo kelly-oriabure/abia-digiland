@@ -1,0 +1,17 @@
+{
+  "name": "digiland-abia",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:css": "npx tailwindcss -i css/input.css -o css/output.css --minify",
+    "watch:css": "tailwindcss -i css/input.css -o css/output.css --watch",
+    "serve": "npx serve -p 8080 .",
+    "build:pages": "python3 build_pages.py",
+    "build": "npm run build:css && npm run build:pages"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.5.2",
+    "postcss": "^8.5.16",
+    "tailwindcss": "^3.4.1"
+  }
+}

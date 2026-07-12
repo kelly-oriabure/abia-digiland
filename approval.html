@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Case #TR-40291 | Final Approval &amp; Issuance</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/output.css" />
+  <script src="js/htmx.min.js"></script>
+</head>
+
+<body class="bg-surface font-body text-on-surface antialiased">
+  <!-- TopNavBar -->
+  <div hx-get="partials/header.html" hx-trigger="load" hx-swap="outerHTML"></div>
+
+
+  <div class="flex min-h-screen pt-16 ml-72">
+    <!-- SideNavBar -->
+    <div hx-get="partials/sidebar-registry-workflow.html" hx-trigger="load" hx-swap="outerHTML"></div>
+    <!-- Main Content Area -->
+    <main class="flex-1 p-8 overflow-y-auto">
+      <!-- Header Section -->
+      <header class="mb-10 flex justify-between items-end">
+        <div>
+          <div class="flex items-center gap-2 text-primary font-bold mb-1">
+            <span class="material-symbols-outlined text-lg" data-icon="arrow_back">arrow_back</span>
+            <span class="text-xs tracking-widest uppercase">Registry / Transfer Approvals</span>
+          </div>
+          <h1 class="text-4xl font-black font-headline text-on-surface tracking-tight">Final Approval &amp; Issuance
+          </h1>
+          <p class="text-on-surface-variant font-medium mt-1">Reviewing Request for Case ID <span
+              class="text-primary font-bold">#TR-40291</span></p>
+        </div>
+        <div class="flex gap-3">
+          <button
+            class="flex items-center gap-2 px-5 py-2.5 bg-surface-container-highest text-on-surface font-semibold rounded-lg hover:bg-surface-dim transition-colors active:scale-95">
+            <span class="material-symbols-outlined" data-icon="help_center">help_center</span>
+            Request Clarification
+          </button>
+          <button
+            class="flex items-center gap-2 px-6 py-2.5 primary-gradient text-white font-bold rounded-lg shadow-lg shadow-primary/20 hover:shadow-primary/30 active:scale-95 transition-all">
+            <span class="material-symbols-outlined" data-icon="check_circle"
+              style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            Approve &amp; Issue Certificate
+          </button>
+        </div>
+      </header>
+      <div class="grid grid-cols-12 gap-8">
+        <!-- Left Column: Verification Checklist (Asymmetric layout) -->
+        <div class="col-span-12 lg:col-span-3 space-y-6">
+          <section class="bg-surface-container-low p-6 rounded-2xl border-l-4 border-secondary">
+            <h3 class="text-xs font-black uppercase tracking-[0.2em] text-secondary mb-6">Verification Checklist</h3>
+            <ul class="space-y-5">
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-secondary-container flex items-center justify-center">
+                  <span class="material-symbols-outlined text-secondary text-sm font-bold"
+                    data-icon="check">check</span>
+                </div>
+                <span class="text-sm font-semibold text-on-surface">Identity Verified</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-secondary-container flex items-center justify-center">
+                  <span class="material-symbols-outlined text-secondary text-sm font-bold"
+                    data-icon="check">check</span>
+                </div>
+                <span class="text-sm font-semibold text-on-surface">GIS Cleared</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-secondary-container flex items-center justify-center">
+                  <span class="material-symbols-outlined text-secondary text-sm font-bold"
+                    data-icon="check">check</span>
+                </div>
+                <span class="text-sm font-semibold text-on-surface">Payment Confirmed</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-secondary-container flex items-center justify-center">
+                  <span class="material-symbols-outlined text-secondary text-sm font-bold"
+                    data-icon="check">check</span>
+                </div>
+                <span class="text-sm font-semibold text-on-surface">Legal Vetted</span>
+              </li>
+            </ul>
+          </section>
+          <section class="bg-surface-container-high p-6 rounded-2xl">
+            <h3 class="text-xs font-black uppercase tracking-[0.2em] text-on-surface-variant mb-4">Case Timeline</h3>
+            <div class="space-y-4">
+              <div class="flex gap-4 items-start">
+                <div class="w-2 h-2 rounded-full bg-primary mt-1.5"></div>
+                <div>
+                  <p class="text-xs font-bold text-on-surface">Submission Received</p>
+                  <p class="text-[10px] text-on-surface-variant">Oct 12, 2023 • 09:42 AM</p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-start">
+                <div class="w-2 h-2 rounded-full bg-primary mt-1.5"></div>
+                <div>
+                  <p class="text-xs font-bold text-on-surface">GIS Mapping Approval</p>
+                  <p class="text-[10px] text-on-surface-variant">Oct 14, 2023 • 14:20 PM</p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-start opacity-50">
+                <div class="w-2 h-2 rounded-full border-2 border-primary mt-1.5"></div>
+                <div>
+                  <p class="text-xs font-bold text-on-surface">Issuance Pending</p>
+                  <p class="text-[10px] text-on-surface-variant">Current Stage</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- Right Column: Split Screen Comparison -->
+        <div
+          class="col-span-12 lg:col-span-9 grid grid-cols-1 md:grid-cols-2 gap-px bg-outline-variant/20 rounded-2xl overflow-hidden shadow-sm border border-outline-variant/10">
+          <!-- Original Title (Left) -->
+          <div class="bg-white p-8">
+            <div class="flex items-center justify-between mb-8">
+              <h2 class="text-lg font-black font-headline text-on-surface uppercase tracking-tight">Original Title
+                Record</h2>
+              <span
+                class="px-3 py-1 bg-surface-container-high rounded text-[10px] font-bold text-on-surface-variant uppercase">Current
+                Basis</span>
+            </div>
+            <div class="aspect-[4/3] w-full rounded-xl overflow-hidden mb-6 bg-surface-container relative group">
+              <img alt="Historical Land Deed" class="w-full h-full object-cover"
+                data-alt="A vintage, slightly yellowed land deed document with official wax seals and cursive handwriting, lit by soft atmospheric library lighting"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlYFYDP-ZHLLpRgS_KF8MSmTqW9Atr-cdGcBF9nnx3Pm9ISa66Fd2a_YrojIpioJ98Byl2LihGDOR6Q-jx44LiQLv0omTLMeBg2xtOIbEb0KuHeDJe4ntI-9G1qK5eOIrUKosobvEzZn82PoiFtK0dTq9RVjjLmGz2PGHMc49ZHpS1hgwp57WsnVBP0HqUxZBadk7LtblTyc3vd7JZ7Lga6PXu7JWxNkWy7Y4TC6gLRaHZETf7ER3-U0nsgMtFbczuSuztFnk2piK5" />
+              <div
+                class="absolute inset-0 bg-primary/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity cursor-zoom-in">
+                <span class="material-symbols-outlined text-white text-3xl" data-icon="zoom_in">zoom_in</span>
+              </div>
+            </div>
+            <div class="space-y-6">
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <p class="text-[10px] font-black uppercase text-on-surface-variant tracking-wider">Title Number</p>
+                  <p class="text-sm font-bold text-primary">AB-CofO-2015-8821</p>
+                </div>
+                <div>
+                  <p class="text-[10px] font-black uppercase text-on-surface-variant tracking-wider">Registered Owner
+                  </p>
+                  <p class="text-sm font-bold text-on-surface">Chief Emeka Kalu</p>
+                </div>
+              </div>
+              <div>
+                <p class="text-[10px] font-black uppercase text-on-surface-variant tracking-wider">Property Description
+                </p>
+                <p class="text-sm text-on-surface leading-relaxed mt-1">
+                  Plot 42-B, Industrial Layout Phase II, Umuahia North. Measuring approximately 1,250sqm.
+                </p>
+              </div>
+              <div class="bg-surface-container-low p-4 rounded-lg">
+                <p class="text-[10px] font-black uppercase text-on-surface-variant tracking-wider mb-2">Encumbrances</p>
+                <div class="flex items-center gap-2 text-error text-xs font-bold">
+                  <span class="material-symbols-outlined text-sm" data-icon="warning">warning</span>
+                  None Detected
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Proposed Transfer (Right) -->
+          <div class="bg-surface-container-lowest p-8 border-l border-outline-variant/20">
+            <div class="flex items-center justify-between mb-8">
+              <h2 class="text-lg font-black font-headline text-primary uppercase tracking-tight">Proposed Transfer</h2>
+              <span class="px-3 py-1 bg-primary-container text-white rounded text-[10px] font-bold uppercase">New
+                Draft</span>
+            </div>
+            <div class="aspect-[4/3] w-full rounded-xl overflow-hidden mb-6 bg-surface-container relative">
+              <div class="absolute inset-0 z-10 p-4">
+                <div class="bg-white/90 backdrop-blur p-3 rounded-lg shadow-lg border border-white/50 w-fit">
+                  <p class="text-[10px] font-bold text-secondary">GIS Verification Match: 99.8%</p>
+                </div>
+              </div>
+              <img alt="Satellite view of urban plot" class="w-full h-full object-cover"
+                data-alt="High-resolution satellite imagery of a suburban land plot in Umuahia, clearly marked with precise blue boundary lines and digital coordinates"
+                data-location="Umuahia, Nigeria"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQstUfhBSn9O29DJZMNNkB2_Bz982Yd5OQ-MdGW9ytR7rdecJ0pCU6g7PZ0PxGjel9NdQ8GjZrcoviXIt3ubE035hiAbqX1GOlLmLd6R--vAIHiaBT5wlDbdKQZn1AtfascbSYIwyDaCUQrJv1inOd1cJKzra7cm7YVoUwu567bxzYeOkGapX89reMa4L3jBlbFbJwcDd8E8s7QmCUBpT7VBqWM2UR5YMPCBq_0LULFuudNVgitZp0l4gk_PoXsOaO6iB0E0Vtzagy" />
+            </div>
+            <div class="space-y-6">
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <p class="text-[10px] font-black uppercase text-on-surface-variant tracking-wider">New Title Reference
+                  </p>
+                  <p class="text-sm font-bold text-secondary">AB-TR-2023-40291-X</p>
+                </div>
+                <div>
+                  <p class="text-[10px] font-black uppercase text-on-surface-variant tracking-wider">Proposed Transferee
+                  </p>
+                  <p class="text-sm font-bold text-on-surface">Horizon Estates Ltd.</p>
+                </div>
+              </div>
+              <div>
+                <p class="text-[10px] font-black uppercase text-on-surface-variant tracking-wider">Transfer
+                  Consideration</p>
+                <p class="text-sm font-bold text-primary mt-1">₦ 45,000,000.00</p>
+              </div>
+              <div class="bg-secondary-container/20 p-4 rounded-lg border border-secondary/10">
+                <p class="text-[10px] font-black uppercase text-secondary tracking-wider mb-2">Internal Certification
+                </p>
+                <div class="flex items-center gap-2 text-secondary text-xs font-bold">
+                  <span class="material-symbols-outlined text-sm" data-icon="verified_user"
+                    style="font-variation-settings: 'FILL' 1;">verified_user</span>
+                  Ready for Commissioner Seal
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Detailed Insets Bento Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-12">
+        <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="material-symbols-outlined text-primary" data-icon="description">description</span>
+            <h4 class="font-headline font-bold text-on-surface">Document Integrity</h4>
+          </div>
+          <p class="text-xs text-on-surface-variant leading-relaxed mb-4">Blockchain hash verification successful. All
+            original scanned documents match the immutable registry record.</p>
+          <div class="flex items-center justify-between text-[10px] font-bold text-secondary">
+            <span>SHA-256: 4f92...a3e1</span>
+            <span>VALIDATED</span>
+          </div>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="material-symbols-outlined text-primary" data-icon="payments">payments</span>
+            <h4 class="font-headline font-bold text-on-surface">Tax &amp; Levies</h4>
+          </div>
+          <p class="text-xs text-on-surface-variant leading-relaxed mb-4">Capital Gains Tax and Stamp Duty have been
+            confirmed by the State Revenue Service.</p>
+          <div class="flex items-center justify-between text-[10px] font-bold text-primary">
+            <span>RECEIPT: AB-990122</span>
+            <span>CLEARED</span>
+          </div>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="material-symbols-outlined text-primary" data-icon="gavel">gavel</span>
+            <h4 class="font-headline font-bold text-on-surface">Legal Compliance</h4>
+          </div>
+          <p class="text-xs text-on-surface-variant leading-relaxed mb-4">The transfer complies with the Land Use Act of
+            1978 and State Edict 14 of 2011.</p>
+          <div class="flex items-center justify-between text-[10px] font-bold text-secondary">
+            <span>VETTED BY: JUSTICE DEPT</span>
+            <span>COMPLIANT</span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <!-- Mobile Bottom Navigation (Hidden on desktop) -->
+  <nav
+    class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 h-16 flex items-center justify-around z-50">
+    <button class="flex flex-col items-center gap-1 text-slate-400">
+      <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+      <span class="text-[10px] font-bold">Home</span>
+    </button>
+    <button class="flex flex-col items-center gap-1 text-primary">
+      <span class="material-symbols-outlined" data-icon="fact_check"
+        style="font-variation-settings: 'FILL' 1;">fact_check</span>
+      <span class="text-[10px] font-bold">Registry</span>
+    </button>
+    <button class="flex flex-col items-center gap-1 text-slate-400">
+      <span class="material-symbols-outlined" data-icon="map">map</span>
+      <span class="text-[10px] font-bold">Maps</span>
+    </button>
+    <button class="flex flex-col items-center gap-1 text-slate-400">
+      <span class="material-symbols-outlined" data-icon="person">person</span>
+      <span class="text-[10px] font-bold">Profile</span>
+    </button>
+  </nav>
+  <div hx-get="partials/footer.html" hx-trigger="load" hx-swap="outerHTML"></div>
+</body>
+
+</html>

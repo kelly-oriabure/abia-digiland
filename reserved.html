@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>DIGILAND ABIA | Land Administration</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/output.css" />
+  <script src="js/htmx.min.js"></script>
+</head>
+
+<body class="bg-surface font-body text-on-surface overflow-hidden h-screen flex flex-col">
+  <!-- TopNavBar -->
+  <div hx-get="partials/header.html" hx-trigger="load" hx-swap="outerHTML"></div>
+
+
+<div class="flex flex-1 pt-16 h-full overflow-hidden">
+<!-- SideNavBar -->
+<div hx-get="partials/sidebar-reserved-areas.html" hx-trigger="load" hx-swap="outerHTML"></div>
+<!-- Main Content Area (GIS Map) -->
+<main class="ml-64 w-full h-full relative overflow-hidden bg-surface-dim">
+<!-- Simulated Map Background -->
+<div class="absolute inset-0 z-0">
+<img alt="high resolution topographical map of Umuahia Abia State showing urban parcels and green zones" class="w-full h-full object-cover" data-location="Abia State, Nigeria" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKmoiCX971TmWmSejxNz-198RswSALvswa_VNZYBpixtQbJMv6SwiJmkLV25XWKehUBysBJFWNkTabsaNlN1hyQkVqchfzgt-hONJK6CwqXzk2Z43m_Kh4beSlYJxkviugemNNdN4kYn8TDaBrWKeJPDtO4pc1WmjGYjammdaSeyRf9J5qh04JiNx8haFh1vNJG1917s_LCse9Svhr46x5NkBnS7fJAvIgHZnR042aKJ_rhI4cIYo1q8GPu7IEO_3J6NfaqMRdT8fm"/>
+<!-- Overlay Hatch for Reserved Lands -->
+<div class="absolute inset-0 map-hatch opacity-40"></div>
+<!-- SVG Overlay for Interactive Boundaries -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" viewbox="0 0 1000 1000">
+<path class="pointer-events-auto cursor-pointer" d="M200 200 L400 200 L450 400 L250 450 Z" fill="rgba(0, 74, 124, 0.15)" stroke="#004A7C" stroke-dasharray="4 2" stroke-width="2"></path>
+<circle cx="450" cy="400" fill="#004A7C" r="4"></circle>
+<text class="text-[10px] font-bold font-headline" fill="#003358" x="210" y="230">GRA SECTION 4-A</text>
+</svg>
+</div>
+<!-- Floating Toolbars -->
+<div class="absolute top-6 left-6 z-10 flex flex-col gap-4">
+<!-- Parcel Inspection Card -->
+<div class="glass-panel w-72 rounded-2xl shadow-2xl shadow-blue-900/10 p-5 border border-white/40">
+<div class="flex justify-between items-start mb-4">
+<span class="bg-primary-container/20 text-primary text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Reserved Asset</span>
+<button class="text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+</div>
+<h3 class="text-lg font-bold font-headline mb-1 text-primary">GRA-772-UMU</h3>
+<p class="text-xs text-on-surface-variant mb-4 font-label">Ibeku West Administration Block</p>
+<div class="space-y-3">
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+<span class="text-[11px] font-medium text-on-surface-variant uppercase tracking-tight">Reserve ID</span>
+<span class="text-xs font-bold font-headline">AB-772-GRA</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+<span class="text-[11px] font-medium text-on-surface-variant uppercase tracking-tight">Type</span>
+<span class="text-xs font-bold font-headline">Institutional</span>
+</div>
+<div class="flex justify-between items-center py-2">
+<span class="text-[11px] font-medium text-on-surface-variant uppercase tracking-tight">Status</span>
+<span class="px-2 py-0.5 bg-tertiary-container text-tertiary-fixed-dim rounded text-[10px] font-bold">ACTIVE</span>
+</div>
+</div>
+<div class="mt-6 flex gap-2">
+<button class="flex-1 bg-primary text-on-primary py-2 rounded-lg text-xs font-semibold">View Title</button>
+<button class="p-2 bg-surface-container-highest rounded-lg">
+<span class="material-symbols-outlined text-sm">share</span>
+</button>
+</div>
+</div>
+<!-- Spatial Tools Container -->
+<div class="glass-panel w-72 rounded-2xl shadow-2xl shadow-blue-900/10 p-5 border border-white/40">
+<h4 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4 font-headline">Layer Management</h4>
+<div class="space-y-4">
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="text-sm font-medium text-on-surface font-label group-hover:text-primary transition-colors">Government Reserved Areas</span>
+<div class="relative inline-flex items-center">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</div>
+</label>
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="text-sm font-medium text-on-surface font-label group-hover:text-primary transition-colors">Institutional Green Belts</span>
+<div class="relative inline-flex items-center">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</div>
+</label>
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="text-sm font-medium text-on-surface font-label group-hover:text-primary transition-colors">Topographical Overlay</span>
+<div class="relative inline-flex items-center">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Bottom Floating Legend -->
+<div class="absolute bottom-6 right-6 z-10">
+<div class="glass-panel p-4 rounded-2xl shadow-2xl border border-white/40 flex items-center gap-6">
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 rounded-sm map-hatch border border-primary/40"></div>
+<span class="text-xs font-semibold text-on-surface-variant font-label uppercase tracking-tight">Government Reserve</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 rounded-sm bg-secondary/20 border border-secondary"></div>
+<span class="text-xs font-semibold text-on-surface-variant font-label uppercase tracking-tight">Active Parcel</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 rounded-sm border-2 border-dashed border-error"></div>
+<span class="text-xs font-semibold text-on-surface-variant font-label uppercase tracking-tight">Proposed Boundary</span>
+</div>
+</div>
+</div>
+<!-- Map Controls -->
+<div class="absolute right-6 top-6 z-10 flex flex-col gap-2">
+<button class="w-10 h-10 glass-panel rounded-xl shadow-lg border border-white/40 flex items-center justify-center hover:bg-white transition-colors">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+<button class="w-10 h-10 glass-panel rounded-xl shadow-lg border border-white/40 flex items-center justify-center hover:bg-white transition-colors">
+<span class="material-symbols-outlined" data-icon="remove">remove</span>
+</button>
+<div class="h-px bg-on-surface-variant/10 my-1"></div>
+<button class="w-10 h-10 glass-panel rounded-xl shadow-lg border border-white/40 flex items-center justify-center hover:bg-white transition-colors">
+<span class="material-symbols-outlined" data-icon="my_location">my_location</span>
+</button>
+<button class="w-10 h-10 glass-panel rounded-xl shadow-lg border border-white/40 flex items-center justify-center hover:bg-white transition-colors">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+</button>
+</div>
+</main>
+</div>
+<div hx-get="partials/footer.html" hx-trigger="load" hx-swap="outerHTML"></div>
+</body></html>

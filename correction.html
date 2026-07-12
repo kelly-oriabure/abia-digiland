@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Action Required | Institutional Vanguard</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/output.css" />
+  <script src="js/htmx.min.js"></script>
+</head>
+
+<body class="font-body">
+  <!-- TopNavBar -->
+  <div hx-get="partials/header.html" hx-trigger="load" hx-swap="outerHTML"></div>
+
+
+  <main class="flex min-h-[calc(100vh-64px)] ml-72">
+    <!-- SideNavBar -->
+    <div hx-get="partials/sidebar-registry-office.html" hx-trigger="load" hx-swap="outerHTML"></div>
+    <!-- Content Canvas -->
+    <section class="flex-1 p-10 bg-surface">
+      <!-- Progress Tracker -->
+      <div class="max-w-5xl mx-auto mb-12">
+        <div class="flex justify-between items-center relative">
+          <div class="absolute h-0.5 bg-surface-container-high w-full top-1/2 -translate-y-1/2 z-0"></div>
+          <div class="absolute h-0.5 bg-secondary w-1/2 top-1/2 -translate-y-1/2 z-0 transition-all duration-500"></div>
+          <div class="relative z-10 flex flex-col items-center gap-2">
+            <div class="w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center">
+              <span class="material-symbols-outlined text-sm">check</span>
+            </div>
+            <span class="text-xs font-bold font-label text-on-surface">Submission</span>
+          </div>
+          <div class="relative z-10 flex flex-col items-center gap-2">
+            <div class="w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center">
+              <span class="material-symbols-outlined text-sm">check</span>
+            </div>
+            <span class="text-xs font-bold font-label text-on-surface">Review</span>
+          </div>
+          <div class="relative z-10 flex flex-col items-center gap-2">
+            <div
+              class="w-10 h-10 rounded-full primary-gradient text-white flex items-center justify-center ring-4 ring-error-container">
+              <span class="material-symbols-outlined text-md">edit_document</span>
+            </div>
+            <span class="text-xs font-bold font-label text-primary">Correction</span>
+          </div>
+          <div class="relative z-10 flex flex-col items-center gap-2">
+            <div
+              class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center">
+              <span class="material-symbols-outlined text-sm">verified_user</span>
+            </div>
+            <span class="text-xs font-bold font-label text-on-surface-variant">Validation</span>
+          </div>
+          <div class="relative z-10 flex flex-col items-center gap-2">
+            <div
+              class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center">
+              <span class="material-symbols-outlined text-sm">flag</span>
+            </div>
+            <span class="text-xs font-bold font-label text-on-surface-variant">Finalized</span>
+          </div>
+        </div>
+      </div>
+      <!-- Page Header -->
+      <div class="max-w-5xl mx-auto mb-8 flex flex-col gap-2">
+        <div class="flex items-center gap-3">
+          <span
+            class="bg-error-container text-on-error-container px-2 py-1 rounded text-[10px] font-black tracking-widest uppercase">Action
+            Required</span>
+          <h1 class="text-4xl font-headline font-extrabold text-on-surface tracking-tight">Application #LR-2024-8842
+          </h1>
+        </div>
+        <p class="text-on-surface-variant body-md max-w-2xl">The Registry Officer has identified a discrepancy in your
+          submitted documentation. Please review the feedback below and upload the corrected version to proceed.</p>
+      </div>
+      <!-- Main Interactive Area: Asymmetric Layout -->
+      <div class="max-w-5xl mx-auto grid grid-cols-12 gap-8">
+        <!-- Feedback & Document Column -->
+        <div class="col-span-12 lg:col-span-8 flex flex-col gap-6">
+          <div class="bg-surface-container-low rounded-xl p-6 flex flex-col gap-6">
+            <div class="flex items-start justify-between">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm">
+                  <span class="material-symbols-outlined text-primary text-3xl">picture_as_pdf</span>
+                </div>
+                <div>
+                  <h3 class="font-bold font-headline text-on-surface">Deed of Sale_V1.pdf</h3>
+                  <p class="text-xs text-on-surface-variant font-label">Submitted: Oct 12, 2023 • 2.4 MB</p>
+                </div>
+              </div>
+              <button class="text-secondary text-sm font-bold hover:underline flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm">visibility</span>
+                View Original
+              </button>
+            </div>
+            <!-- Officer's Feedback Note -->
+            <div
+              class="bg-surface-container-lowest p-6 rounded-xl border-l-4 border-error relative overflow-hidden shadow-sm">
+              <div class="absolute top-0 right-0 p-3 opacity-10">
+                <span class="material-symbols-outlined text-6xl">chat_error</span>
+              </div>
+              <div class="flex items-center gap-2 mb-3">
+                <span class="material-symbols-outlined text-error text-md">error_outline</span>
+                <span class="font-bold text-sm uppercase tracking-wider text-error">Registry Officer Feedback</span>
+              </div>
+              <p class="text-on-surface italic leading-relaxed body-md">
+                "The notary seal on page 4 of the 'Deed of Sale' is partially obscured. Please provide a high-resolution
+                scan ensuring all judicial stamps and signatures are clearly legible. The current document is
+                insufficient for legal verification."
+              </p>
+              <div class="mt-4 flex items-center gap-2">
+                <div class="w-6 h-6 rounded-full bg-primary-container flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[12px] text-white">person</span>
+                </div>
+                <span class="text-xs font-bold text-primary">Officer Harold Finch</span>
+                <span class="text-[10px] text-on-surface-variant">• 2 hours ago</span>
+              </div>
+            </div>
+            <!-- Upload revised area -->
+            <div
+              class="border-2 border-dashed border-outline-variant rounded-xl p-12 flex flex-col items-center justify-center gap-4 bg-surface-container-low/50 hover:bg-surface-container-high/40 transition-colors cursor-pointer group">
+              <div
+                class="w-16 h-16 rounded-full bg-primary-fixed-dim/30 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined text-4xl">cloud_upload</span>
+              </div>
+              <div class="text-center">
+                <p class="font-bold font-headline text-on-surface">Drag and drop revised document</p>
+                <p class="text-xs text-on-surface-variant font-label mt-1">PDF, TIFF, or JPG (Max 50MB)</p>
+              </div>
+              <button
+                class="mt-2 px-6 py-2.5 primary-gradient text-on-primary rounded-xl font-bold font-headline shadow-md active:scale-95 duration-150">
+                Upload Revised Document
+              </button>
+            </div>
+          </div>
+          <!-- Additional Details -->
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-surface-container-low p-5 rounded-xl">
+              <h4 class="text-xs font-black uppercase text-on-surface-variant tracking-widest mb-3">Parcel Reference
+              </h4>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded bg-white flex items-center justify-center shadow-sm">
+                  <span class="material-symbols-outlined text-secondary">map</span>
+                </div>
+                <div>
+                  <p class="text-sm font-bold text-on-surface">Block 14 / Lot 22-A</p>
+                  <p class="text-xs text-on-surface-variant">North Highlands District</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-surface-container-low p-5 rounded-xl">
+              <h4 class="text-xs font-black uppercase text-on-surface-variant tracking-widest mb-3">Submission Timeline
+              </h4>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded bg-white flex items-center justify-center shadow-sm">
+                  <span class="material-symbols-outlined text-secondary">schedule</span>
+                </div>
+                <div>
+                  <p class="text-sm font-bold text-on-surface">7 Days Remaining</p>
+                  <p class="text-xs text-on-surface-variant">Correction Window Deadline</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Communication & Context Column -->
+        <div class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+          <!-- Message Officer Card -->
+          <div class="bg-surface-container-lowest rounded-xl shadow-[0_12px_32px_rgba(25,28,30,0.06)] overflow-hidden">
+            <div class="p-6 bg-surface-container-high border-b border-transparent">
+              <h3 class="font-bold font-headline text-on-surface">Direct Inquiry</h3>
+              <p class="text-xs text-on-surface-variant font-label">Need further clarification?</p>
+            </div>
+            <div class="p-6 flex flex-col gap-4">
+              <div class="flex gap-3">
+                <div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center">
+                  <span class="material-symbols-outlined text-on-secondary-container text-sm">support_agent</span>
+                </div>
+                <div class="flex-1">
+                  <p class="text-sm font-label leading-relaxed text-on-surface">Our technical team is available to
+                    discuss specific scanning requirements.</p>
+                </div>
+              </div>
+              <button
+                class="w-full py-3 bg-surface-container-highest text-on-surface font-bold font-headline rounded-xl hover:bg-surface-dim transition-colors active:translate-x-1 duration-200 flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-md">forum</span>
+                Message Officer
+              </button>
+            </div>
+          </div>
+          <!-- Map Preview (Contextual Tool) -->
+          <div class="bg-surface-container-low rounded-xl overflow-hidden relative group">
+            <div class="h-48 w-full bg-surface-dim relative overflow-hidden">
+              <img alt="GIS Map Preview"
+                class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 transition-all duration-700"
+                data-alt="top-down satellite view of a suburban residential neighborhood with clean property boundary lines overlayed in technical blue"
+                data-location="San Francisco"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQPti-7RzDF0w9fM5D2NBlRWDRcb8qlwdzp3pga-aGe2weErXj2IggfPkIuMcfehLHRvWoJJnC_g2s1Bd4JpwA0mpQMxRZi_bAJc5qeMyQRBY_h8TIVL9udVp-bhR9mwdtufH0xqNh0KEHEe_u_xQhU6Agz_kIk2fYLmmWZHsrAlNQ8MZxksfsSwGZFJdAx73XlDZsgvIG14RVSZ-OXMUbP5xFQpe-GXGukcknIr7bj_LqFfZQlltJqcW_yROx0wl_1tUAwR7sa2Kt" />
+              <!-- Floating Map Controls (Glassmorphism) -->
+              <div class="absolute bottom-3 right-3 glass-effect p-1.5 rounded-full flex flex-col gap-1 shadow-md">
+                <button class="w-8 h-8 flex items-center justify-center hover:bg-white rounded-full"><span
+                    class="material-symbols-outlined text-sm">add</span></button>
+                <button class="w-8 h-8 flex items-center justify-center hover:bg-white rounded-full"><span
+                    class="material-symbols-outlined text-sm">remove</span></button>
+              </div>
+              <div class="absolute top-3 left-3 glass-effect px-3 py-1 rounded-full flex items-center gap-2 shadow-sm">
+                <div class="w-2 h-2 rounded-full bg-error"></div>
+                <span class="text-[10px] font-bold text-on-surface uppercase tracking-tighter">Issue Location</span>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex justify-between items-center">
+                <span class="text-xs font-bold text-on-surface-variant font-label uppercase tracking-widest">GIS
+                  Reference</span>
+                <span class="text-[10px] text-on-surface-variant font-label">#9920-X-44</span>
+              </div>
+            </div>
+          </div>
+          <!-- Information Guide -->
+          <div class="p-6 bg-tertiary-container/10 rounded-xl border-t-2 border-tertiary">
+            <h4 class="text-sm font-bold text-tertiary font-headline flex items-center gap-2 mb-2">
+              <span class="material-symbols-outlined text-md">info</span>
+              Scan Requirements
+            </h4>
+            <ul class="text-xs text-on-tertiary-fixed-variant space-y-2 font-label list-disc pl-4">
+              <li>Minimum resolution of 300 DPI</li>
+              <li>Full color or grayscale (No B&amp;W Bitonal)</li>
+              <li>Ensure all edges of the paper are visible</li>
+              <li>Signatures must be contrast-enhanced</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Bottom Navigation (Mobile View) -->
+  <nav
+    class="md:hidden fixed bottom-0 left-0 w-full bg-white h-16 flex items-center justify-around z-50 shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
+    <button class="flex flex-col items-center gap-1 text-[#004A7C]">
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">description</span>
+      <span class="text-[10px] font-bold">Submission</span>
+    </button>
+    <button class="flex flex-col items-center gap-1 text-slate-400">
+      <span class="material-symbols-outlined">rate_review</span>
+      <span class="text-[10px] font-bold">Review</span>
+    </button>
+    <button class="flex flex-col items-center gap-1 text-slate-400">
+      <span class="material-symbols-outlined">verified</span>
+      <span class="text-[10px] font-bold">Approvals</span>
+    </button>
+    <button class="flex flex-col items-center gap-1 text-slate-400">
+      <span class="material-symbols-outlined">inventory_2</span>
+      <span class="text-[10px] font-bold">Archive</span>
+    </button>
+  </nav>
+  <div hx-get="partials/footer.html" hx-trigger="load" hx-swap="outerHTML"></div>
+</body>
+
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>DIGILAND ABIA</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/output.css" />
+  <script src="js/htmx.min.js"></script>
+</head>
+
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+  <!-- TopNavBar -->
+  <div hx-get="partials/header.html" hx-trigger="load" hx-swap="outerHTML"></div>
+
+
+  <div class="flex min-h-[calc(100-64px)] ml-72">
+    <!-- SideNavBar -->
+    <div hx-get="partials/sidebar-dashboard.html" hx-trigger="load" hx-swap="outerHTML"></div>
+    <!-- Main Content Canvas -->
+    <main class="flex-1 p-6 md:p-10 lg:p-12 overflow-y-auto bg-surface">
+      <!-- Header Section -->
+      <div class="mb-10 max-w-5xl">
+        <nav class="flex items-center gap-2 text-sm text-on-surface-variant mb-4">
+          <span>Registry</span>
+          <span class="material-symbols-outlined text-xs">chevron_right</span>
+          <span>Applications</span>
+          <span class="material-symbols-outlined text-xs">chevron_right</span>
+          <span class="text-on-surface">APP-8829-X</span>
+        </nav>
+        <h1 class="text-4xl font-headline font-extrabold text-on-surface tracking-tight mb-2">Application Status: GIS
+          Conflict Detected</h1>
+        <p class="text-lg text-on-surface-variant max-w-2xl">The spatial verification engine has identified a critical
+          boundary overlap that requires professional rectification before the deed can be memorialized.</p>
+      </div>
+      <!-- Bento Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-7xl">
+        <!-- Alert Banner (Left Large) -->
+        <div class="lg:col-span-8 space-y-8">
+          <section class="bg-error-container/40 p-8 rounded-2xl flex items-start gap-6 border-l-4 border-error">
+            <div class="bg-error text-on-error p-3 rounded-full shrink-0">
+              <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">warning</span>
+            </div>
+            <div>
+              <h2 class="text-xl font-bold text-on-error-container mb-2">Spatial Overlap Flagged</h2>
+              <p class="text-on-error-container/80 leading-relaxed">
+                Your application has been flagged for a spatial overlap with an existing land record. The proposed
+                boundaries intersect with Parcel ID: <strong>STR-9921-A</strong> by approximately 14.2 square meters on
+                the north-eastern quadrant.
+              </p>
+              <div class="mt-6 flex flex-wrap gap-4">
+                <button
+                  class="px-6 py-2.5 bg-primary text-on-primary rounded-lg font-semibold flex items-center gap-2 hover:bg-primary-container transition-colors shadow-sm">
+                  <span class="material-symbols-outlined text-sm">download</span>
+                  Download Conflict Report
+                </button>
+                <button
+                  class="px-6 py-2.5 bg-surface-container-lowest text-on-surface rounded-lg font-semibold flex items-center gap-2 border border-outline-variant/20 hover:bg-surface-container-low transition-colors shadow-sm">
+                  <span class="material-symbols-outlined text-sm">engineering</span>
+                  Contact Registered Surveyor
+                </button>
+              </div>
+            </div>
+          </section>
+          <!-- Map Inset -->
+          <section class="bg-surface-container-low rounded-2xl overflow-hidden p-1 shadow-sm">
+            <div class="relative h-[400px] w-full bg-surface-dim rounded-xl overflow-hidden group">
+              <img alt="GIS Conflict Visualization" class="w-full h-full object-cover"
+                data-alt="satellite view of a suburban land plot with bright red highlighted overlap area and digital grid overlays"
+                data-location="Chicago"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdv_2op8MPp6GF4b3v7FJtQuy-XIEDCBg4rDomJA9-EKrWB53dINkJKS4wwVLX5hzlzR-DywxNlO3nr8OMRjqdsm5pugNUZt3wM7tKLlPCcMACd1I_VtrM6SYUV_g3A6MOrhxwNu4d_ZFy07_uxgXajgkqPVAINSpeUl3a6HZBupsBrKWV33JyWbas2365FFre_3fSfE9JPFxGJpxZEaKOYSrjegAQJWgdu65ddB3imJdc-q4Vb6-zVlUCqJKIatHd7M-QlbT69Cqr" />
+              <!-- Map Overlay Labels -->
+              <div
+                class="absolute top-4 left-4 glass-panel px-4 py-2 rounded-lg text-xs font-bold text-primary flex items-center gap-2">
+                <span class="w-2 h-2 bg-error rounded-full animate-pulse"></span>
+                INTERSECTION ZONE: 14.2m²
+              </div>
+              <!-- Map Tools (Glassmorphism) -->
+              <div class="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-2 glass-panel p-2 rounded-xl">
+                <button class="p-2 hover:bg-surface-container-highest rounded-lg transition-colors"><span
+                    class="material-symbols-outlined">add</span></button>
+                <button class="p-2 hover:bg-surface-container-highest rounded-lg transition-colors"><span
+                    class="material-symbols-outlined">remove</span></button>
+                <div class="h-px bg-outline-variant/20 mx-1"></div>
+                <button class="p-2 hover:bg-surface-container-highest rounded-lg transition-colors"><span
+                    class="material-symbols-outlined">layers</span></button>
+              </div>
+            </div>
+            <div class="p-4 flex justify-between items-center text-xs font-medium text-on-surface-variant">
+              <span class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">location_on</span>
+                Coordinates: 41.8781° N, 87.6298° W</span>
+              <span class="flex items-center gap-2">Map Engine: Vector-GIS v4.2</span>
+            </div>
+          </section>
+        </div>
+        <!-- Right Sidebar (Timeline & Details) -->
+        <div class="lg:col-span-4 space-y-8">
+          <!-- Timeline Component -->
+          <section class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm">
+            <h3 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-8">Application Timeline
+            </h3>
+            <div class="space-y-0 relative">
+              <!-- Timeline Line -->
+              <div class="absolute left-[11px] top-2 bottom-2 w-0.5 bg-surface-container-high"></div>
+              <!-- Step 1 -->
+              <div class="relative flex gap-4 pb-10">
+                <div class="relative z-10 w-6 h-6 rounded-full bg-secondary flex items-center justify-center">
+                  <span class="material-symbols-outlined text-white text-xs">check</span>
+                </div>
+                <div>
+                  <p class="text-sm font-bold text-on-surface">Document Submission</p>
+                  <p class="text-xs text-on-surface-variant">Completed Oct 12, 2023</p>
+                </div>
+              </div>
+              <!-- Step 2 -->
+              <div class="relative flex gap-4 pb-10">
+                <div class="relative z-10 w-6 h-6 rounded-full bg-secondary flex items-center justify-center">
+                  <span class="material-symbols-outlined text-white text-xs">check</span>
+                </div>
+                <div>
+                  <p class="text-sm font-bold text-on-surface">Initial Tax Assessment</p>
+                  <p class="text-xs text-on-surface-variant">Completed Oct 14, 2023</p>
+                </div>
+              </div>
+              <!-- Step 3 (Active Conflict) -->
+              <div class="relative flex gap-4 pb-10">
+                <div
+                  class="relative z-10 w-6 h-6 rounded-full bg-error flex items-center justify-center ring-4 ring-error-container">
+                  <span class="material-symbols-outlined text-white text-xs">close</span>
+                </div>
+                <div>
+                  <p class="text-sm font-bold text-error">GIS Verification</p>
+                  <p class="text-xs font-bold text-error mt-1 uppercase tracking-tighter">Action Required</p>
+                  <p class="text-xs text-on-surface-variant mt-2 max-w-[200px]">Spatial conflict identified with
+                    existing title deeds. Overlap resolution required.</p>
+                </div>
+              </div>
+              <!-- Step 4 -->
+              <div class="relative flex gap-4">
+                <div
+                  class="relative z-10 w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center">
+                  <span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+                </div>
+                <div>
+                  <p class="text-sm font-bold text-on-surface-variant opacity-50">Final Registry Approval</p>
+                  <p class="text-xs text-on-surface-variant opacity-50">Pending Verification</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Summary Info -->
+          <section class="bg-surface-container-low p-6 rounded-2xl space-y-4">
+            <h3 class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Case Details</h3>
+            <div class="space-y-3">
+              <div class="flex justify-between items-end border-b border-outline-variant/10 pb-2">
+                <span class="text-xs text-on-surface-variant">Registry ID</span>
+                <span class="text-sm font-semibold">BK-11029/2023</span>
+              </div>
+              <div class="flex justify-between items-end border-b border-outline-variant/10 pb-2">
+                <span class="text-xs text-on-surface-variant">Parcel Type</span>
+                <span class="text-sm font-semibold">Residential High-Density</span>
+              </div>
+              <div class="flex justify-between items-end border-b border-outline-variant/10 pb-2">
+                <span class="text-xs text-on-surface-variant">Assigned Officer</span>
+                <span class="text-sm font-semibold">Sarah Jenkins</span>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+  <!-- Mobile Navigation Suppressed as per Task-Focused Page Rule -->
+  <div hx-get="partials/footer.html" hx-trigger="load" hx-swap="outerHTML"></div>
+</body>
+
+</html>

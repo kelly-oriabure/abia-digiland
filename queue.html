@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Administrative Review Queue | DIGILAND ABIA</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/output.css" />
+  <script src="js/htmx.min.js"></script>
+</head>
+
+<body class="bg-surface text-on-surface">
+  <!-- TopNavBar -->
+  <div hx-get="partials/header.html" hx-trigger="load" hx-swap="outerHTML"></div>
+
+
+  <div class="flex pt-16 min-h-screen ml-72">
+    <!-- SideNavBar -->
+    <div hx-get="partials/sidebar-registry-workflow.html" hx-trigger="load" hx-swap="outerHTML"></div>
+    <!-- Main Content -->
+    <main class="flex-1 p-8 bg-surface">
+      <!-- Page Header -->
+      <div class="mb-10">
+        <h1 class="text-3xl font-extrabold tracking-tight text-on-surface mb-2">Review Queue</h1>
+        <p class="text-on-surface-variant text-sm flex items-center gap-2">
+          <span class="material-symbols-outlined text-sm" data-icon="info">info</span>
+          Monitoring 12 active land transfer applications requiring administrative verification.
+        </p>
+      </div>
+      <div class="grid grid-cols-12 gap-8">
+        <!-- Filters Sidebar -->
+        <div class="col-span-12 lg:col-span-3 space-y-6">
+          <div class="bg-surface-container-low p-6 rounded-xl space-y-6">
+            <div>
+              <h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4">Region</h3>
+              <div class="space-y-2">
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input checked="" class="rounded border-outline-variant text-primary focus:ring-primary h-4 w-4"
+                    type="checkbox" />
+                  <span class="text-sm text-on-surface group-hover:text-primary transition-colors">Umuahia North</span>
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input class="rounded border-outline-variant text-primary focus:ring-primary h-4 w-4"
+                    type="checkbox" />
+                  <span class="text-sm text-on-surface group-hover:text-primary transition-colors">Aba South</span>
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input class="rounded border-outline-variant text-primary focus:ring-primary h-4 w-4"
+                    type="checkbox" />
+                  <span class="text-sm text-on-surface group-hover:text-primary transition-colors">Ohafia</span>
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input class="rounded border-outline-variant text-primary focus:ring-primary h-4 w-4"
+                    type="checkbox" />
+                  <span class="text-sm text-on-surface group-hover:text-primary transition-colors">Bende</span>
+                </label>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4">Workflow Stage</h3>
+              <div class="space-y-3">
+                <button
+                  class="w-full flex justify-between items-center px-3 py-2 bg-surface-container-lowest rounded-lg border border-transparent hover:border-outline-variant transition-all text-sm">
+                  <span>All Stages</span>
+                  <span class="bg-surface-container-high px-2 py-0.5 rounded text-[10px] font-bold">12</span>
+                </button>
+                <button
+                  class="w-full flex justify-between items-center px-3 py-2 bg-white rounded-lg border border-outline-variant transition-all text-sm font-semibold text-primary">
+                  <span>Initial Assessment</span>
+                  <span class="bg-primary-container text-white px-2 py-0.5 rounded text-[10px] font-bold">5</span>
+                </button>
+                <button
+                  class="w-full flex justify-between items-center px-3 py-2 bg-surface-container-lowest rounded-lg border border-transparent hover:border-outline-variant transition-all text-sm">
+                  <span>GIS Mapping</span>
+                  <span class="bg-surface-container-high px-2 py-0.5 rounded text-[10px] font-bold">4</span>
+                </button>
+                <button
+                  class="w-full flex justify-between items-center px-3 py-2 bg-surface-container-lowest rounded-lg border border-transparent hover:border-outline-variant transition-all text-sm">
+                  <span>Legal Validation</span>
+                  <span class="bg-surface-container-high px-2 py-0.5 rounded text-[10px] font-bold">3</span>
+                </button>
+              </div>
+            </div>
+            <div class="pt-4 border-t border-outline-variant/20">
+              <button class="w-full text-center text-sm font-bold text-primary hover:underline">Clear All
+                Filters</button>
+            </div>
+          </div>
+          <!-- Mini Map Insight -->
+          <div class="bg-surface-container-low rounded-xl overflow-hidden">
+            <div class="h-32 w-full relative group">
+              <img alt="Region Map Preview" class="w-full h-full object-cover"
+                data-alt="Stylized topographic map of Abia state with geometric parcel overlays and soft blue and green highlights"
+                data-location="Umuahia"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAStbaKFP_p6ZV8VTuVdbCqUfNWDJpR5N9su8apTaYOZqGANq7zLqJw1285rMFtosyxX7gcGU0c9vZIxrq7r-aV8wRb5fn8yDm_ICl_iL3aHKnFtjM_eE-9a85UpJqnTWOZ1tJ7bA_t5vMh2iI2z4isRmLGeWZmEjWzUZHCinH1SiBwOhdqse_E_an8wPvDltb7-8YjkSB1dQnQ1252jmQJT8UqvE9SGhCocNNMud7UMDjD_KVeGVs1vly2eD67_hohpXCNTv8GfjiV" />
+              <div
+                class="absolute inset-0 bg-primary/20 backdrop-blur-[2px] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="bg-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg">Expand GIS View</span>
+              </div>
+            </div>
+            <div class="p-4">
+              <h4 class="text-xs font-bold text-on-surface">Regional Activity</h4>
+              <p class="text-[10px] text-on-surface-variant">Umuahia North showing high volume.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Table Content -->
+        <div class="col-span-12 lg:col-span-9">
+          <div class="bg-white rounded-2xl shadow-sm border border-outline-variant/10 overflow-hidden">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-surface-container-low border-b border-outline-variant/20">
+                  <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-on-surface-variant">Applicant
+                    Name</th>
+                  <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-on-surface-variant">Parcel ID
+                  </th>
+                  <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-on-surface-variant">Status</th>
+                  <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-on-surface-variant">Pipeline</th>
+                  <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-on-surface-variant text-right">
+                    Action</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-surface-container">
+                <!-- Row 1 -->
+                <tr class="hover:bg-surface-container-low transition-colors group">
+                  <td class="px-6 py-5">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold">
+                        CO</div>
+                      <div>
+                        <div class="text-sm font-bold text-on-surface">Chukwudi Okoro</div>
+                        <div class="text-xs text-on-surface-variant">Individual Title</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-5">
+                    <div class="text-sm font-mono text-on-surface-variant">AB/UMN/2023/104</div>
+                  </td>
+                  <td class="px-6 py-5">
+                    <span
+                      class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-secondary-container text-on-secondary-container">
+                      <span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+                      Reviewing
+                    </span>
+                  </td>
+                  <td class="px-6 py-5">
+                    <div class="text-sm font-medium text-on-surface">2 days</div>
+                    <div class="w-20 h-1 bg-surface-container-high rounded-full mt-1 overflow-hidden">
+                      <div class="bg-secondary h-full" style="width: 20%"></div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-5 text-right">
+                    <button
+                      class="px-4 py-2 bg-surface-container-highest hover:bg-primary hover:text-white transition-all rounded-lg text-sm font-bold active:scale-95">Open
+                      Case</button>
+                  </td>
+                </tr>
+                <!-- Row 2 -->
+                <tr class="hover:bg-surface-container-low transition-colors group">
+                  <td class="px-6 py-5">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-bold">
+                        AK</div>
+                      <div>
+                        <div class="text-sm font-bold text-on-surface">Amaka Kalu</div>
+                        <div class="text-xs text-on-surface-variant">Commercial Lease</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-5">
+                    <div class="text-sm font-mono text-on-surface-variant">AB/ABS/2023/882</div>
+                  </td>
+                  <td class="px-6 py-5">
+                    <span
+                      class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-surface-container-highest text-on-surface-variant">
+                      <span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                      Pending
+                    </span>
+                  </td>
+                  <td class="px-6 py-5">
+                    <div class="text-sm font-medium text-on-surface">5 days</div>
+                    <div class="w-20 h-1 bg-surface-container-high rounded-full mt-1 overflow-hidden">
+                      <div class="bg-primary h-full" style="width: 50%"></div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-5 text-right">
+                    <button
+                      class="px-4 py-2 bg-surface-container-highest hover:bg-primary hover:text-white transition-all rounded-lg text-sm font-bold active:scale-95">Open
+                      Case</button>
+                  </td>
+                </tr>
+                <!-- Row 3 -->
+                <tr class="hover:bg-surface-container-low transition-colors group">
+                  <td class="px-6 py-5">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-10 h-10 rounded-full bg-error-container flex items-center justify-center text-on-error-container font-bold">
+                        RE</div>
+                      <div>
+                        <div class="text-sm font-bold text-on-surface">Royal Estates Ltd</div>
+                        <div class="text-xs text-on-surface-variant">Subdivision Plan</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-5">
+                    <div class="text-sm font-mono text-on-surface-variant">AB/OHF/2023/041</div>
+                  </td>
+                  <td class="px-6 py-5">
+                    <span
+                      class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-error-container text-on-error-container">
+                      <span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                      Action Required
+                    </span>
+                  </td>
+                  <td class="px-6 py-5">
+                    <div class="text-sm font-medium text-error">12 days</div>
+                    <div class="w-20 h-1 bg-surface-container-high rounded-full mt-1 overflow-hidden">
+                      <div class="bg-error h-full" style="width: 90%"></div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-5 text-right">
+                    <button
+                      class="px-4 py-2 bg-surface-container-highest hover:bg-primary hover:text-white transition-all rounded-lg text-sm font-bold active:scale-95">Open
+                      Case</button>
+                  </td>
+                </tr>
+                <!-- Row 4 -->
+                <tr class="hover:bg-surface-container-low transition-colors group">
+                  <td class="px-6 py-5">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed font-bold">
+                        IN</div>
+                      <div>
+                        <div class="text-sm font-bold text-on-surface">Ifeanyi Nnamdi</div>
+                        <div class="text-xs text-on-surface-variant">Agricultural Allotment</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-5">
+                    <div class="text-sm font-mono text-on-surface-variant">AB/BND/2023/212</div>
+                  </td>
+                  <td class="px-6 py-5">
+                    <span
+                      class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-secondary-container text-on-secondary-container">
+                      <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                      Reviewing
+                    </span>
+                  </td>
+                  <td class="px-6 py-5">
+                    <div class="text-sm font-medium text-on-surface">1 day</div>
+                    <div class="w-20 h-1 bg-surface-container-high rounded-full mt-1 overflow-hidden">
+                      <div class="bg-secondary h-full" style="width: 10%"></div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-5 text-right">
+                    <button
+                      class="px-4 py-2 bg-surface-container-highest hover:bg-primary hover:text-white transition-all rounded-lg text-sm font-bold active:scale-95">Open
+                      Case</button>
+                  </td>
+                </tr>
+                <!-- Row 5 -->
+                <tr class="hover:bg-surface-container-low transition-colors group">
+                  <td class="px-6 py-5">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface font-bold">
+                        MM</div>
+                      <div>
+                        <div class="text-sm font-bold text-on-surface">Miriam Madu</div>
+                        <div class="text-xs text-on-surface-variant">Inheritance Transfer</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-5">
+                    <div class="text-sm font-mono text-on-surface-variant">AB/UMN/2023/551</div>
+                  </td>
+                  <td class="px-6 py-5">
+                    <span
+                      class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-surface-container-highest text-on-surface-variant">
+                      <span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                      Pending
+                    </span>
+                  </td>
+                  <td class="px-6 py-5">
+                    <div class="text-sm font-medium text-on-surface">3 days</div>
+                    <div class="w-20 h-1 bg-surface-container-high rounded-full mt-1 overflow-hidden">
+                      <div class="bg-primary h-full" style="width: 30%"></div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-5 text-right">
+                    <button
+                      class="px-4 py-2 bg-surface-container-highest hover:bg-primary hover:text-white transition-all rounded-lg text-sm font-bold active:scale-95">Open
+                      Case</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- Pagination -->
+            <div class="px-6 py-4 bg-surface-container-low flex justify-between items-center">
+              <span class="text-xs text-on-surface-variant font-medium">Showing 1 to 5 of 12 entries</span>
+              <div class="flex gap-2">
+                <button
+                  class="p-2 bg-white rounded-lg border border-outline-variant/30 text-on-surface-variant hover:text-primary transition-colors disabled:opacity-50"
+                  disabled="">
+                  <span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span>
+                </button>
+                <button class="px-3 py-1 bg-primary text-white rounded-lg text-xs font-bold">1</button>
+                <button class="px-3 py-1 hover:bg-white rounded-lg text-xs font-bold transition-colors">2</button>
+                <button class="px-3 py-1 hover:bg-white rounded-lg text-xs font-bold transition-colors">3</button>
+                <button
+                  class="p-2 bg-white rounded-lg border border-outline-variant/30 text-on-surface-variant hover:text-primary transition-colors">
+                  <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Statistics Cards -->
+          <div class="grid grid-cols-3 gap-6 mt-8">
+            <div class="bg-white p-6 rounded-2xl border border-outline-variant/10">
+              <div class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Avg. Review Time
+              </div>
+              <div class="text-3xl font-black text-primary">3.2 <span
+                  class="text-sm font-normal text-on-surface-variant">Days</span></div>
+              <div class="mt-2 text-[10px] text-secondary font-bold flex items-center gap-1">
+                <span class="material-symbols-outlined text-[12px]" data-icon="trending_down">trending_down</span>
+                12% faster than last month
+              </div>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-outline-variant/10">
+              <div class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">High Urgency</div>
+              <div class="text-3xl font-black text-error">4 <span
+                  class="text-sm font-normal text-on-surface-variant">Cases</span></div>
+              <div class="mt-2 text-[10px] text-error font-bold flex items-center gap-1">
+                <span class="material-symbols-outlined text-[12px]" data-icon="warning">warning</span>
+                Exceeding SLA timeline
+              </div>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-outline-variant/10">
+              <div class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Queue Health</div>
+              <div class="text-3xl font-black text-secondary">92%</div>
+              <div class="mt-2 text-[10px] text-secondary font-bold flex items-center gap-1">
+                <span class="material-symbols-outlined text-[12px]" data-icon="verified_user">verified_user</span>
+                Optimal throughput
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <!-- Mobile Bottom NavBar (Suppressed as per rules for desktop focus, but available for pivot) -->
+  <div
+    class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-outline-variant/20 flex justify-around py-4">
+    <button class="flex flex-col items-center gap-1 text-primary">
+      <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+      <span class="text-[10px] font-bold">Home</span>
+    </button>
+    <button class="flex flex-col items-center gap-1 text-on-surface-variant">
+      <span class="material-symbols-outlined" data-icon="fact_check">fact_check</span>
+      <span class="text-[10px] font-bold">Queue</span>
+    </button>
+    <button class="flex flex-col items-center gap-1 text-on-surface-variant">
+      <span class="material-symbols-outlined" data-icon="map">map</span>
+      <span class="text-[10px] font-bold">GIS</span>
+    </button>
+    <button class="flex flex-col items-center gap-1 text-on-surface-variant">
+      <span class="material-symbols-outlined" data-icon="person">person</span>
+      <span class="text-[10px] font-bold">Profile</span>
+    </button>
+  </div>
+  <div hx-get="partials/footer.html" hx-trigger="load" hx-swap="outerHTML"></div>
+</body>
+
+</html>
