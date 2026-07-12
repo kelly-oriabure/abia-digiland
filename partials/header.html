@@ -1,10 +1,15 @@
 <nav
   class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 shadow-sm dark:shadow-none h-16 grid grid-cols-3 items-center px-6">
-  <div class="flex items-center">
-    <span class="text-xl font-black tracking-tighter text-[#004A7C] dark:text-blue-500 font-headline">DIGILAND
-      ABIA</span>
+  <div class="flex items-center gap-3">
+    <button id="mobile-menu-btn" type="button"
+      class="md:hidden p-2 -ml-2 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 active:scale-[0.98]"
+      aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="material-symbols-outlined text-on-surface-variant">menu</span>
+    </button>
+    <a href="/" class="text-xl font-black tracking-tighter text-[#004A7C] dark:text-blue-500 font-headline">DIGILAND
+      ABIA</a>
   </div>
-  <div class="flex gap-6 items-center justify-center">
+  <div class="hidden md:flex gap-6 items-center justify-center">
     <a class="nav-link font-headline font-semibold text-sm tracking-tight text-slate-500 dark:text-slate-400 hover:text-[#004A7C] transition-colors"
       data-page="admin.html" href="admin.html">Dashboard</a>
     <!-- <a class="nav-link font-headline font-semibold text-sm tracking-tight text-slate-500 dark:text-slate-400 hover:text-[#004A7C] transition-colors"
@@ -21,7 +26,7 @@
       data-page="index.html" href="index.html">Transparency</a> -->
   </div>
   <div class="flex items-center gap-4 justify-end">
-    <div class="relative block">
+    <div class="relative hidden sm:block">
       <span
         class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
       <input
@@ -33,7 +38,7 @@
       <span class="material-symbols-outlined text-on-surface-variant">notifications</span>
     </button>
     <button
-      class="p-2 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 active:scale-[0.98]">
+      class="hidden sm:block p-2 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 active:scale-[0.98]">
       <span class="material-symbols-outlined text-on-surface-variant">settings</span>
     </button>
     <div class="h-8 w-8 rounded-full overflow-hidden bg-slate-200 ml-2">
@@ -42,13 +47,114 @@
     </div>
   </div>
 </nav>
+
+<div id="mobile-menu" class="fixed inset-0 z-[60] hidden" aria-hidden="true">
+  <div id="mobile-menu-backdrop"
+    class="absolute inset-0 bg-black/50 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
+  <div id="mobile-menu-panel"
+    class="absolute top-0 left-0 h-full w-72 max-w-[85vw] bg-white dark:bg-slate-900 shadow-2xl border-r border-slate-200 dark:border-slate-800 transform -translate-x-full transition-transform duration-300 ease-out flex flex-col">
+    <div class="flex items-center justify-between h-16 px-6 border-b border-slate-200 dark:border-slate-800">
+      <span class="text-xl font-black tracking-tighter text-[#004A7C] dark:text-blue-500 font-headline">DIGILAND
+        ABIA</span>
+      <button id="mobile-menu-close" type="button"
+        class="p-2 -mr-2 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 active:scale-[0.98]"
+        aria-label="Close menu">
+        <span class="material-symbols-outlined text-on-surface-variant">close</span>
+      </button>
+    </div>
+    <div class="flex flex-col p-4 gap-1 overflow-y-auto">
+      <a class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl font-headline font-semibold text-sm tracking-tight text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-[#004A7C] dark:hover:text-blue-400 transition-colors"
+        data-page="admin.html" href="admin.html">
+        <span class="material-symbols-outlined">dashboard</span>
+        Dashboard
+      </a>
+      <a class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl font-headline font-semibold text-sm tracking-tight text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-[#004A7C] dark:hover:text-blue-400 transition-colors"
+        data-page="queue.html" href="queue.html">
+        <span class="material-symbols-outlined">folder_open</span>
+        Registry
+      </a>
+      <a class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl font-headline font-semibold text-sm tracking-tight text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-[#004A7C] dark:hover:text-blue-400 transition-colors"
+        data-page="registration.html" href="registration.html">
+        <span class="material-symbols-outlined">app_registration</span>
+        Registration
+      </a>
+      <a class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl font-headline font-semibold text-sm tracking-tight text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-[#004A7C] dark:hover:text-blue-400 transition-colors"
+        data-page="submission.html" href="submission.html">
+        <span class="material-symbols-outlined">send</span>
+        Submission
+      </a>
+      <a class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl font-headline font-semibold text-sm tracking-tight text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-[#004A7C] dark:hover:text-blue-400 transition-colors"
+        data-page="approval.html" href="approval.html">
+        <span class="material-symbols-outlined">check_circle</span>
+        Approval
+      </a>
+    </div>
+    <div class="mt-auto p-4 border-t border-slate-200 dark:border-slate-800">
+      <div class="flex items-center gap-3 px-4 py-3">
+        <div class="h-10 w-10 rounded-full overflow-hidden bg-slate-200 shrink-0">
+          <img alt="Administrator Profile" class="w-full h-full object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6sBosHlFsda5dt81UnguUVngQhqT8YKzTUoRr7J4AIwej1hZ_fO1TBTLHgDkdkhrpbWQzyTDnzN9Uw19MLsttNX92RsQ3bEo0h2F_kQWp0fvBGhQbydCk9EBJ2vIxH5KAYVX9oJJ30zvRYRfBdNfPlM0Q8cKjlS2UN40WbqKa7dsT5XdvmDDBieM-T7oWq27-gIYI37MBdDhqUEUS7uvTww1liN7kcM7JdtzFV9jHUUD8ajkpB9q4kSQ9q8ED5TXvM1G8tIUCNY7k" />
+        </div>
+        <div class="min-w-0">
+          <p class="text-sm font-semibold text-slate-900 dark:text-slate-100 truncate">Administrator</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 truncate">admin@abiadigiland.gov.ng</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
   (function () {
     var current = (window.location.pathname.split('/').pop() || 'index.html');
-    document.querySelectorAll('.nav-link[data-page]').forEach(function (link) {
+    document.querySelectorAll('.nav-link[data-page], .mobile-nav-link[data-page]').forEach(function (link) {
       if (link.getAttribute('data-page') === current) {
-        link.classList.add('text-[#004A7C]', 'dark:text-blue-400', 'border-b-2', 'border-[#004A7C]', 'pb-1');
-        link.classList.remove('text-slate-500', 'dark:text-slate-400');
+        link.classList.add('text-[#004A7C]', 'dark:text-blue-400');
+        if (link.classList.contains('nav-link')) {
+          link.classList.add('border-b-2', 'border-[#004A7C]', 'pb-1');
+        }
+        if (link.classList.contains('mobile-nav-link')) {
+          link.classList.add('bg-slate-50', 'dark:bg-slate-800/50');
+        }
+        link.classList.remove('text-slate-500', 'dark:text-slate-400', 'text-slate-600', 'dark:text-slate-300');
+      }
+    });
+
+    var menu = document.getElementById('mobile-menu');
+    var panel = document.getElementById('mobile-menu-panel');
+    var backdrop = document.getElementById('mobile-menu-backdrop');
+    var openBtn = document.getElementById('mobile-menu-btn');
+    var closeBtn = document.getElementById('mobile-menu-close');
+
+    function openMenu() {
+      menu.classList.remove('hidden');
+      menu.setAttribute('aria-hidden', 'false');
+      openBtn.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('overflow-hidden');
+      requestAnimationFrame(function () {
+        backdrop.classList.remove('opacity-0');
+        panel.classList.remove('-translate-x-full');
+      });
+    }
+
+    function closeMenu() {
+      backdrop.classList.add('opacity-0');
+      panel.classList.add('-translate-x-full');
+      setTimeout(function () {
+        menu.classList.add('hidden');
+        menu.setAttribute('aria-hidden', 'true');
+        openBtn.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('overflow-hidden');
+      }, 300);
+    }
+
+    if (openBtn) openBtn.addEventListener('click', openMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+    if (backdrop) backdrop.addEventListener('click', closeMenu);
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !menu.classList.contains('hidden')) {
+        closeMenu();
       }
     });
   })();
