@@ -21,167 +21,190 @@
   <div hx-get="partials/header.html" hx-trigger="load" hx-swap="outerHTML"></div>
 
 
-<div class="flex min-h-[calc(100vh-64px)] overflow-hidden">
-<!-- SideNavBar Implementation -->
-<div hx-get="partials/sidebar-spatial-suite.html" hx-trigger="load" hx-swap="outerHTML"></div>
-<!-- Main Content Canvas -->
-<main class="flex-1 ml-64 relative bg-surface-container-low">
-<!-- GIS Map Interface -->
-<div class="absolute inset-0 z-0 map-inset overflow-hidden">
-<!-- Mock Map Background -->
-<div class="w-full h-full bg-[#d1d5db] relative">
-<img alt="Umuahia Base Map" class="w-full h-full object-cover opacity-80 mix-blend-multiply" data-alt="Detailed satellite imagery of an urban residential district with clearly defined property boundaries and green spaces" data-location="Umuahia" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxAWhrW08t9mJ1UnF86q-k-D9R-0wFs9smme91Ff1jCRoZH8wxzzjmYHTuIggfmF-npN_BtXhco7v2Yc2tEzzZBl7P7Z9TmT0EyGlEMOTU41-Ua24ExwTCBSOHDzb_IgOrLAafAv-H1P-nMCBy2sHd88518mM6NlNWqDU4bVORHKg1L538MylHI8sKxXWSWdtd3UBLfo-zhgwERSQpH7QVuDxJztUtKMYaCG-vPSK6lb7BpYQ6wl_SHswAQqqTtukZOR7HZ1kaaIg7"/>
-<!-- SVG Overlay for Parcel Highlighting and Buffer -->
-<svg class="absolute inset-0 w-full h-full pointer-events-none" viewbox="0 0 1000 800">
-<!-- 50m Buffer Zone -->
-<path d="M 450,350 L 550,350 L 550,450 L 450,450 Z" fill="none" stroke="#006970" stroke-opacity="0.15" stroke-width="80"></path>
-<!-- Target Parcel -->
-<path d="M 450,350 L 550,350 L 550,450 L 450,450 Z" fill="rgba(0, 51, 88, 0.2)" stroke="#003358" stroke-width="3"></path>
-<!-- Dimension Lines -->
-<line stroke="#ba1a1a" stroke-dasharray="4" stroke-width="2" x1="450" x2="450" y1="350" y2="300"></line>
-<text class="font-label text-[10px] font-bold" fill="#ba1a1a" x="430" y="325">2.1m (FLAG)</text>
-</svg>
-</div>
-</div>
-<!-- Floating Map Tools -->
-<div class="absolute top-6 left-6 z-10 flex flex-col gap-2">
-<div class="glass-panel p-2 rounded-xl shadow-lg border border-white/20 flex flex-col gap-2">
-<button class="p-3 bg-white hover:bg-surface-container-high rounded-lg text-primary transition-all" title="Area Calculation">
-<span class="material-symbols-outlined">square_foot</span>
-</button>
-<button class="p-3 bg-white hover:bg-surface-container-high rounded-lg text-primary transition-all" title="Distance Measurement">
-<span class="material-symbols-outlined">straighten</span>
-</button>
-<button class="p-3 bg-white hover:bg-surface-container-high rounded-lg text-primary transition-all" title="Coordinate Pin">
-<span class="material-symbols-outlined">location_on</span>
-</button>
-<div class="h-px bg-outline-variant/30 mx-2"></div>
-<button class="p-3 bg-white hover:bg-surface-container-high rounded-lg text-primary transition-all" title="Zoom In">
-<span class="material-symbols-outlined">add</span>
-</button>
-<button class="p-3 bg-white hover:bg-surface-container-high rounded-lg text-primary transition-all" title="Zoom Out">
-<span class="material-symbols-outlined">remove</span>
-</button>
-</div>
-</div>
-<!-- Analysis Panel (Right) -->
-<div class="absolute top-6 right-6 bottom-6 w-[400px] z-20">
-<div class="glass-panel h-full rounded-2xl shadow-2xl border border-white/30 overflow-hidden flex flex-col">
-<!-- Panel Header -->
-<div class="p-6 bg-white/40 border-b border-outline-variant/10">
-<div class="flex justify-between items-start mb-2">
-<span class="px-2 py-1 bg-primary/10 text-primary text-[10px] font-bold tracking-widest uppercase rounded">Parcel ID: AB-UM-0922</span>
-<span class="material-symbols-outlined text-outline cursor-pointer">close</span>
-</div>
-<h1 class="text-2xl font-headline font-bold text-on-surface">Spatial Compliance</h1>
-<p class="text-sm text-on-surface-variant mt-1">Umuahia Central District, Section 4B</p>
-</div>
-<!-- Scrollable Content -->
-<div class="flex-1 overflow-y-auto p-6 space-y-8">
-<!-- Compliance Score Bento Card -->
-<div class="bg-white rounded-2xl p-5 shadow-sm border border-outline-variant/10">
-<div class="flex justify-between items-center mb-4">
-<h3 class="font-headline font-semibold text-sm">Land Use Check</h3>
-<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold">88% Compliance</span>
-</div>
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-full border-4 border-secondary flex items-center justify-center">
-<span class="text-lg font-bold text-secondary">A-</span>
-</div>
-<div>
-<p class="text-xs text-on-surface-variant font-medium">Zoning Category</p>
-<p class="text-sm font-bold text-on-surface">High-Density Residential</p>
-<p class="text-[10px] text-secondary mt-1 flex items-center gap-1">
-<span class="material-symbols-outlined text-[12px]">check_circle</span>
-                                        Permitted Use Confirmed
-                                    </p>
-</div>
-</div>
-</div>
-<!-- Setback Metrics -->
-<section>
-<h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4">Setback Requirements</h3>
-<div class="space-y-3">
-<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl border-l-4 border-secondary">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-secondary">aspect_ratio</span>
-<span class="text-sm font-medium">Front Setback</span>
-</div>
-<div class="text-right">
-<p class="text-sm font-bold">6.0m</p>
-<p class="text-[10px] text-secondary font-semibold">Compliant</p>
-</div>
-</div>
-<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl border-l-4 border-error">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-error">warning</span>
-<span class="text-sm font-medium">Side Setback (West)</span>
-</div>
-<div class="text-right">
-<p class="text-sm font-bold text-error">2.1m</p>
-<p class="text-[10px] text-error font-semibold">Flagged: 3.0m req.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Buffer Analysis -->
-<section>
-<h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4">Buffer Analysis (50m)</h3>
-<div class="grid grid-cols-2 gap-3">
-<div class="p-3 bg-white/60 rounded-xl border border-outline-variant/20">
-<p class="text-[10px] font-bold text-on-surface-variant mb-1">Public Utilities</p>
-<p class="text-sm font-bold">12m to Grid</p>
-<div class="w-full bg-surface-container-high h-1 rounded-full mt-2">
-<div class="bg-primary h-1 rounded-full w-[80%]"></div>
-</div>
-</div>
-<div class="p-3 bg-white/60 rounded-xl border border-outline-variant/20">
-<p class="text-[10px] font-bold text-on-surface-variant mb-1">Green Belts</p>
-<p class="text-sm font-bold">42m to Reserve</p>
-<div class="w-full bg-surface-container-high h-1 rounded-full mt-2">
-<div class="bg-secondary h-1 rounded-full w-[40%]"></div>
-</div>
-</div>
-</div>
-</section>
-<!-- Legend/Context -->
-<div class="p-4 bg-tertiary-fixed/20 rounded-xl">
-<div class="flex gap-3">
-<span class="material-symbols-outlined text-tertiary">info</span>
-<p class="text-xs leading-relaxed text-on-tertiary-fixed-variant">
-                                    Parcel intersects with planned drainage expansion corridor. Suggest 5m offset adjustment.
-                                </p>
-</div>
-</div>
-</div>
-<!-- Panel Actions -->
-<div class="p-6 bg-white/40 border-t border-outline-variant/10 flex gap-3">
-<button class="flex-1 py-3 px-4 bg-surface-container-highest text-on-surface font-semibold rounded-xl text-sm transition-all hover:bg-surface-container-high">
-                            Generate Spatial Report
-                        </button>
-<button class="flex-1 py-3 px-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-semibold rounded-xl text-sm shadow-lg shadow-primary/20 active:scale-95 transition-all">
-                            Run Full Audit
-                        </button>
-</div>
-</div>
-</div>
-<!-- Bottom Data Indicator Overlay -->
-<div class="absolute bottom-6 left-6 z-10 glass-panel px-4 py-3 rounded-full shadow-lg border border-white/20 flex items-center gap-6">
-<div class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-secondary"></span>
-<span class="text-xs font-semibold text-on-surface">Lat: 5.5267° N</span>
-</div>
-<div class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-secondary"></span>
-<span class="text-xs font-semibold text-on-surface">Long: 7.4898° E</span>
-</div>
-<div class="h-4 w-px bg-outline-variant/50"></div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-sm text-on-surface-variant">layers</span>
-<span class="text-xs font-semibold text-on-surface">Cadastral_2024_V1</span>
-</div>
-</div>
-</main>
-</div>
-<div hx-get="partials/footer.html" hx-trigger="load" hx-swap="outerHTML"></div>
-</body></html>
+  <div class="flex min-h-[calc(100vh-64px)] overflow-hidden">
+    <!-- SideNavBar Implementation -->
+    <div hx-get="partials/sidebar-spatial-suite.html" hx-trigger="load" hx-swap="outerHTML"></div>
+    <!-- Main Content Canvas -->
+    <main class="flex-1 md:ml-64 relative bg-surface-container-low">
+      <!-- GIS Map Interface -->
+      <div class="absolute inset-0 z-0 map-inset overflow-hidden">
+        <!-- Mock Map Background -->
+        <div class="w-full h-full bg-[#d1d5db] relative">
+          <img alt="Umuahia Base Map" class="w-full h-full object-cover opacity-80 mix-blend-multiply"
+            data-alt="Detailed satellite imagery of an urban residential district with clearly defined property boundaries and green spaces"
+            data-location="Umuahia"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxAWhrW08t9mJ1UnF86q-k-D9R-0wFs9smme91Ff1jCRoZH8wxzzjmYHTuIggfmF-npN_BtXhco7v2Yc2tEzzZBl7P7Z9TmT0EyGlEMOTU41-Ua24ExwTCBSOHDzb_IgOrLAafAv-H1P-nMCBy2sHd88518mM6NlNWqDU4bVORHKg1L538MylHI8sKxXWSWdtd3UBLfo-zhgwERSQpH7QVuDxJztUtKMYaCG-vPSK6lb7BpYQ6wl_SHswAQqqTtukZOR7HZ1kaaIg7" />
+          <!-- SVG Overlay for Parcel Highlighting and Buffer -->
+          <svg class="absolute inset-0 w-full h-full pointer-events-none" viewbox="0 0 1000 800">
+            <!-- 50m Buffer Zone -->
+            <path d="M 450,350 L 550,350 L 550,450 L 450,450 Z" fill="none" stroke="#006970" stroke-opacity="0.15"
+              stroke-width="80"></path>
+            <!-- Target Parcel -->
+            <path d="M 450,350 L 550,350 L 550,450 L 450,450 Z" fill="rgba(0, 51, 88, 0.2)" stroke="#003358"
+              stroke-width="3"></path>
+            <!-- Dimension Lines -->
+            <line stroke="#ba1a1a" stroke-dasharray="4" stroke-width="2" x1="450" x2="450" y1="350" y2="300"></line>
+            <text class="font-label text-[10px] font-bold" fill="#ba1a1a" x="430" y="325">2.1m (FLAG)</text>
+          </svg>
+        </div>
+      </div>
+      <!-- Floating Map Tools -->
+      <div class="absolute top-6 left-6 z-10 flex flex-col gap-2">
+        <div class="glass-panel p-2 rounded-xl shadow-lg border border-white/20 flex flex-col gap-2">
+          <button class="p-3 bg-white hover:bg-surface-container-high rounded-lg text-primary transition-all"
+            title="Area Calculation">
+            <span class="material-symbols-outlined">square_foot</span>
+          </button>
+          <button class="p-3 bg-white hover:bg-surface-container-high rounded-lg text-primary transition-all"
+            title="Distance Measurement">
+            <span class="material-symbols-outlined">straighten</span>
+          </button>
+          <button class="p-3 bg-white hover:bg-surface-container-high rounded-lg text-primary transition-all"
+            title="Coordinate Pin">
+            <span class="material-symbols-outlined">location_on</span>
+          </button>
+          <div class="h-px bg-outline-variant/30 mx-2"></div>
+          <button class="p-3 bg-white hover:bg-surface-container-high rounded-lg text-primary transition-all"
+            title="Zoom In">
+            <span class="material-symbols-outlined">add</span>
+          </button>
+          <button class="p-3 bg-white hover:bg-surface-container-high rounded-lg text-primary transition-all"
+            title="Zoom Out">
+            <span class="material-symbols-outlined">remove</span>
+          </button>
+        </div>
+      </div>
+      <!-- Analysis Panel (Right) -->
+      <div class="absolute top-6 right-6 bottom-6 w-[400px] z-20">
+        <div class="glass-panel h-full rounded-2xl shadow-2xl border border-white/30 overflow-hidden flex flex-col">
+          <!-- Panel Header -->
+          <div class="p-6 bg-white/40 border-b border-outline-variant/10">
+            <div class="flex justify-between items-start mb-2">
+              <span
+                class="px-2 py-1 bg-primary/10 text-primary text-[10px] font-bold tracking-widest uppercase rounded">Parcel
+                ID: AB-UM-0922</span>
+              <span class="material-symbols-outlined text-outline cursor-pointer">close</span>
+            </div>
+            <h1 class="text-2xl font-headline font-bold text-on-surface">Spatial Compliance</h1>
+            <p class="text-sm text-on-surface-variant mt-1">Umuahia Central District, Section 4B</p>
+          </div>
+          <!-- Scrollable Content -->
+          <div class="flex-1 overflow-y-auto p-6 space-y-8">
+            <!-- Compliance Score Bento Card -->
+            <div class="bg-white rounded-2xl p-5 shadow-sm border border-outline-variant/10">
+              <div class="flex justify-between items-center mb-4">
+                <h3 class="font-headline font-semibold text-sm">Land Use Check</h3>
+                <span
+                  class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold">88%
+                  Compliance</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-16 h-16 rounded-full border-4 border-secondary flex items-center justify-center">
+                  <span class="text-lg font-bold text-secondary">A-</span>
+                </div>
+                <div>
+                  <p class="text-xs text-on-surface-variant font-medium">Zoning Category</p>
+                  <p class="text-sm font-bold text-on-surface">High-Density Residential</p>
+                  <p class="text-[10px] text-secondary mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[12px]">check_circle</span>
+                    Permitted Use Confirmed
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Setback Metrics -->
+            <section>
+              <h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4">Setback Requirements
+              </h3>
+              <div class="space-y-3">
+                <div
+                  class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl border-l-4 border-secondary">
+                  <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-secondary">aspect_ratio</span>
+                    <span class="text-sm font-medium">Front Setback</span>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-sm font-bold">6.0m</p>
+                    <p class="text-[10px] text-secondary font-semibold">Compliant</p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl border-l-4 border-error">
+                  <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-error">warning</span>
+                    <span class="text-sm font-medium">Side Setback (West)</span>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-sm font-bold text-error">2.1m</p>
+                    <p class="text-[10px] text-error font-semibold">Flagged: 3.0m req.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- Buffer Analysis -->
+            <section>
+              <h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4">Buffer Analysis (50m)
+              </h3>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="p-3 bg-white/60 rounded-xl border border-outline-variant/20">
+                  <p class="text-[10px] font-bold text-on-surface-variant mb-1">Public Utilities</p>
+                  <p class="text-sm font-bold">12m to Grid</p>
+                  <div class="w-full bg-surface-container-high h-1 rounded-full mt-2">
+                    <div class="bg-primary h-1 rounded-full w-[80%]"></div>
+                  </div>
+                </div>
+                <div class="p-3 bg-white/60 rounded-xl border border-outline-variant/20">
+                  <p class="text-[10px] font-bold text-on-surface-variant mb-1">Green Belts</p>
+                  <p class="text-sm font-bold">42m to Reserve</p>
+                  <div class="w-full bg-surface-container-high h-1 rounded-full mt-2">
+                    <div class="bg-secondary h-1 rounded-full w-[40%]"></div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- Legend/Context -->
+            <div class="p-4 bg-tertiary-fixed/20 rounded-xl">
+              <div class="flex gap-3">
+                <span class="material-symbols-outlined text-tertiary">info</span>
+                <p class="text-xs leading-relaxed text-on-tertiary-fixed-variant">
+                  Parcel intersects with planned drainage expansion corridor. Suggest 5m offset adjustment.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Panel Actions -->
+          <div class="p-6 bg-white/40 border-t border-outline-variant/10 flex gap-3">
+            <button
+              class="flex-1 py-3 px-4 bg-surface-container-highest text-on-surface font-semibold rounded-xl text-sm transition-all hover:bg-surface-container-high">
+              Generate Spatial Report
+            </button>
+            <button
+              class="flex-1 py-3 px-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-semibold rounded-xl text-sm shadow-lg shadow-primary/20 active:scale-95 transition-all">
+              Run Full Audit
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Bottom Data Indicator Overlay -->
+      <div
+        class="absolute bottom-6 left-6 z-10 glass-panel px-4 py-3 rounded-full shadow-lg border border-white/20 flex items-center gap-6">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-secondary"></span>
+          <span class="text-xs font-semibold text-on-surface">Lat: 5.5267° N</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-secondary"></span>
+          <span class="text-xs font-semibold text-on-surface">Long: 7.4898° E</span>
+        </div>
+        <div class="h-4 w-px bg-outline-variant/50"></div>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-sm text-on-surface-variant">layers</span>
+          <span class="text-xs font-semibold text-on-surface">Cadastral_2024_V1</span>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div hx-get="partials/footer.html" hx-trigger="load" hx-swap="outerHTML"></div>
+</body>
+
+</html>

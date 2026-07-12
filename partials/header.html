@@ -6,24 +6,30 @@
       aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
       <span class="material-symbols-outlined text-on-surface-variant">menu</span>
     </button>
-    <a href="/" class="text-xl font-black tracking-tighter text-[#004A7C] dark:text-blue-500 font-headline">DIGILAND
+    <a href="/"
+      class="hidden md:block text-xl font-black tracking-tighter text-[#004A7C] dark:text-blue-500 font-headline">DIGILAND
       ABIA</a>
   </div>
-  <div class="hidden md:flex gap-6 items-center justify-center">
-    <a class="nav-link font-headline font-semibold text-sm tracking-tight text-slate-500 dark:text-slate-400 hover:text-[#004A7C] transition-colors"
-      data-page="admin.html" href="admin.html">Dashboard</a>
-    <!-- <a class="nav-link font-headline font-semibold text-sm tracking-tight text-slate-500 dark:text-slate-400 hover:text-[#004A7C] transition-colors"
+  <div class="flex items-center justify-center">
+    <a href="/"
+      class="md:hidden text-base font-black tracking-tighter text-[#004A7C] dark:text-blue-500 font-headline">DIGILAND
+      ABIA</a>
+    <div class="hidden md:flex gap-6 items-center justify-center">
+      <a class="nav-link font-headline font-semibold text-sm tracking-tight text-slate-500 dark:text-slate-400 hover:text-[#004A7C] transition-colors"
+        data-page="admin.html" href="admin.html">Dashboard</a>
+      <!-- <a class="nav-link font-headline font-semibold text-sm tracking-tight text-slate-500 dark:text-slate-400 hover:text-[#004A7C] transition-colors"
       data-page="map.html" href="map.html">Map</a> -->
-    <a class="nav-link font-headline font-semibold text-sm tracking-tight text-slate-500 dark:text-slate-400 hover:text-[#004A7C] transition-colors"
-      data-page="queue.html" href="queue.html">Registry</a>
-    <a class="nav-link font-headline font-semibold text-sm tracking-tight text-slate-500 dark:text-slate-400 hover:text-[#004A7C] transition-colors"
-      data-page="registration.html" href="registration.html">Registration</a>
-    <a class="nav-link font-headline font-semibold text-sm tracking-tight text-slate-500 dark:text-slate-400 hover:text-[#004A7C] transition-colors"
-      data-page="submission.html" href="submission.html">Submission</a>
-    <a class="nav-link font-headline font-semibold text-sm tracking-tight text-slate-500 dark:text-slate-400 hover:text-[#004A7C] transition-colors"
-      data-page="approval.html" href="approval.html">Approval</a>
-    <!-- <a class="nav-link font-headline font-semibold text-sm tracking-tight text-slate-500 dark:text-slate-400 hover:text-[#004A7C] transition-colors"
+      <a class="nav-link font-headline font-semibold text-sm tracking-tight text-slate-500 dark:text-slate-400 hover:text-[#004A7C] transition-colors"
+        data-page="queue.html" href="queue.html">Registry</a>
+      <a class="nav-link font-headline font-semibold text-sm tracking-tight text-slate-500 dark:text-slate-400 hover:text-[#004A7C] transition-colors"
+        data-page="registration.html" href="registration.html">Registration</a>
+      <a class="nav-link font-headline font-semibold text-sm tracking-tight text-slate-500 dark:text-slate-400 hover:text-[#004A7C] transition-colors"
+        data-page="submission.html" href="submission.html">Submission</a>
+      <a class="nav-link font-headline font-semibold text-sm tracking-tight text-slate-500 dark:text-slate-400 hover:text-[#004A7C] transition-colors"
+        data-page="approval.html" href="approval.html">Approval</a>
+      <!-- <a class="nav-link font-headline font-semibold text-sm tracking-tight text-slate-500 dark:text-slate-400 hover:text-[#004A7C] transition-colors"
       data-page="index.html" href="index.html">Transparency</a> -->
+    </div>
   </div>
   <div class="flex items-center gap-4 justify-end">
     <div class="relative hidden sm:block">
@@ -34,10 +40,6 @@
         placeholder="Search parcels..." type="text" />
     </div>
     <button
-      class="p-2 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 active:scale-[0.98]">
-      <span class="material-symbols-outlined text-on-surface-variant">notifications</span>
-    </button>
-    <button
       class="hidden sm:block p-2 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 active:scale-[0.98]">
       <span class="material-symbols-outlined text-on-surface-variant">settings</span>
     </button>
@@ -47,6 +49,9 @@
     </div>
   </div>
 </nav>
+
+<div id="sidebar-backdrop"
+  class="fixed inset-0 z-30 bg-black/50 backdrop-blur-sm opacity-0 hidden transition-opacity duration-300"></div>
 
 <div id="mobile-menu" class="fixed inset-0 z-[60] hidden" aria-hidden="true">
   <div id="mobile-menu-backdrop"
@@ -123,37 +128,66 @@
     var menu = document.getElementById('mobile-menu');
     var panel = document.getElementById('mobile-menu-panel');
     var backdrop = document.getElementById('mobile-menu-backdrop');
+    var sidebarBackdrop = document.getElementById('sidebar-backdrop');
     var openBtn = document.getElementById('mobile-menu-btn');
     var closeBtn = document.getElementById('mobile-menu-close');
+    var menuIsOpen = false;
+
+    function getAppSidebar() {
+      return document.querySelector('.app-sidebar');
+    }
 
     function openMenu() {
-      menu.classList.remove('hidden');
-      menu.setAttribute('aria-hidden', 'false');
+      var sidebar = getAppSidebar();
       openBtn.setAttribute('aria-expanded', 'true');
       document.body.classList.add('overflow-hidden');
-      requestAnimationFrame(function () {
-        backdrop.classList.remove('opacity-0');
-        panel.classList.remove('-translate-x-full');
-      });
+      menuIsOpen = true;
+
+      if (sidebar) {
+        sidebarBackdrop.classList.remove('hidden');
+        requestAnimationFrame(function () {
+          sidebarBackdrop.classList.remove('opacity-0');
+          sidebar.classList.remove('-translate-x-full');
+        });
+      } else {
+        menu.classList.remove('hidden');
+        menu.setAttribute('aria-hidden', 'false');
+        requestAnimationFrame(function () {
+          backdrop.classList.remove('opacity-0');
+          panel.classList.remove('-translate-x-full');
+        });
+      }
     }
 
     function closeMenu() {
-      backdrop.classList.add('opacity-0');
-      panel.classList.add('-translate-x-full');
-      setTimeout(function () {
-        menu.classList.add('hidden');
-        menu.setAttribute('aria-hidden', 'true');
-        openBtn.setAttribute('aria-expanded', 'false');
-        document.body.classList.remove('overflow-hidden');
-      }, 300);
+      var sidebar = getAppSidebar();
+      openBtn.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('overflow-hidden');
+      menuIsOpen = false;
+
+      if (sidebar) {
+        sidebarBackdrop.classList.add('opacity-0');
+        sidebar.classList.add('-translate-x-full');
+        setTimeout(function () {
+          sidebarBackdrop.classList.add('hidden');
+        }, 300);
+      } else {
+        backdrop.classList.add('opacity-0');
+        panel.classList.add('-translate-x-full');
+        setTimeout(function () {
+          menu.classList.add('hidden');
+          menu.setAttribute('aria-hidden', 'true');
+        }, 300);
+      }
     }
 
     if (openBtn) openBtn.addEventListener('click', openMenu);
     if (closeBtn) closeBtn.addEventListener('click', closeMenu);
     if (backdrop) backdrop.addEventListener('click', closeMenu);
+    if (sidebarBackdrop) sidebarBackdrop.addEventListener('click', closeMenu);
 
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && !menu.classList.contains('hidden')) {
+      if (e.key === 'Escape' && menuIsOpen) {
         closeMenu();
       }
     });

@@ -3,6 +3,7 @@ module.exports = {
   darkMode: 'class',
   content: [
     './*.html',
+    './partials/**/*.html',
     'digiland/**/*.html',
   ],
   theme: {

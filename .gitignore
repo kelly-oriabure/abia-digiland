@@ -20,6 +20,3 @@ build/
 # IDE
 .vscode/
 .idea/
-
-# Tailwind generated CSS can be regenerated
-css/output.css

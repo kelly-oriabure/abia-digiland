@@ -21,274 +21,308 @@
   <div hx-get="partials/header.html" hx-trigger="load" hx-swap="outerHTML"></div>
 
 
-<!-- SideNavBar -->
-<div hx-get="partials/sidebar-dispute-review.html" hx-trigger="load" hx-swap="outerHTML"></div>
-<!-- Main Content Area -->
-<main class="ml-64 pt-20 p-8 min-h-screen bg-surface">
-<header class="mb-10">
-<h1 class="text-3xl font-extrabold headline-font text-on-surface tracking-tight mb-2">Dispute Review Dashboard</h1>
-<p class="text-on-surface-variant font-medium">Monitoring and managing land title escalations for Abia State Registry.</p>
-</header>
-<!-- Dashboard Summary Cards -->
-<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-<div class="bg-surface-container-lowest p-6 rounded-xl border-l-4 border-primary shadow-[0_12px_32px_rgba(25,28,30,0.06)]">
-<p class="text-sm font-semibold text-on-surface-variant mb-1">Active Disputes</p>
-<div class="flex items-baseline gap-2">
-<span class="text-3xl font-bold headline-font text-primary">124</span>
-<span class="text-xs text-secondary font-medium">+12% vs last month</span>
-</div>
-</div>
-<div class="bg-surface-container-lowest p-6 rounded-xl border-l-4 border-secondary shadow-[0_12px_32px_rgba(25,28,30,0.06)]">
-<p class="text-sm font-semibold text-on-surface-variant mb-1">Pending Mediation</p>
-<div class="flex items-baseline gap-2">
-<span class="text-3xl font-bold headline-font text-secondary">38</span>
-<span class="text-xs text-on-surface-variant font-medium">Avg 4.2 days wait</span>
-</div>
-</div>
-<div class="bg-surface-container-lowest p-6 rounded-xl border-l-4 border-error shadow-[0_12px_32px_rgba(25,28,30,0.06)]">
-<p class="text-sm font-semibold text-on-surface-variant mb-1">SLA Overdue</p>
-<div class="flex items-baseline gap-2">
-<span class="text-3xl font-bold headline-font text-error">12</span>
-<span class="text-xs text-error font-medium">Requires immediate action</span>
-</div>
-</div>
-<div class="bg-surface-container-lowest p-6 rounded-xl border-l-4 border-tertiary-container shadow-[0_12px_32px_rgba(25,28,30,0.06)]">
-<p class="text-sm font-semibold text-on-surface-variant mb-1">Resolved this Month</p>
-<div class="flex items-baseline gap-2">
-<span class="text-3xl font-bold headline-font text-tertiary-container">215</span>
-<span class="text-xs text-tertiary font-medium">89% satisfaction rate</span>
-</div>
-</div>
-</section>
-<!-- Quick Filters -->
-<section class="mb-6 flex flex-wrap items-center justify-between gap-4">
-<div class="flex items-center gap-3">
-<div class="bg-surface-container-high px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-surface-container-highest transition-colors">
-<span class="material-symbols-outlined text-sm">filter_list</span>
-<span class="text-sm font-semibold">Dispute Type</span>
-</div>
-<div class="bg-surface-container-high px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-surface-container-highest transition-colors">
-<span class="material-symbols-outlined text-sm">priority_high</span>
-<span class="text-sm font-semibold">Priority</span>
-</div>
-<div class="bg-surface-container-high px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-surface-container-highest transition-colors">
-<span class="material-symbols-outlined text-sm">location_on</span>
-<span class="text-sm font-semibold">Region</span>
-</div>
-</div>
-<div class="text-sm font-medium text-on-surface-variant">
-                Showing 12 of 124 disputes
-            </div>
-</section>
-<!-- Dispute Queue Table -->
-<div class="bg-surface-container-low rounded-2xl overflow-hidden shadow-sm">
-<table class="w-full text-left border-collapse">
-<thead>
-<tr class="bg-surface-container-high/50 text-on-surface-variant border-b border-outline-variant/20">
-<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest headline-font">Reference ID</th>
-<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest headline-font">Parcel ID</th>
-<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest headline-font">Type</th>
-<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest headline-font">Submitter</th>
-<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest headline-font">Date</th>
-<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest headline-font">Priority</th>
-<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest headline-font">SLA Status</th>
-<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest headline-font">Actions</th>
-</tr>
-</thead>
-<tbody class="divide-y divide-outline-variant/10">
-<tr class="hover:bg-surface-container-lowest transition-colors group">
-<td class="px-6 py-4 font-mono text-sm text-primary font-bold">#DS-2024-0892</td>
-<td class="px-6 py-4 text-sm font-medium">AB/UMH/772-B</td>
-<td class="px-6 py-4">
-<span class="text-sm font-medium">Boundary Overlap</span>
-</td>
-<td class="px-6 py-4 text-sm">Chief Nnamdi O.</td>
-<td class="px-6 py-4 text-sm text-on-surface-variant">Oct 12, 2023</td>
-<td class="px-6 py-4">
-<span class="px-3 py-1 bg-error-container text-on-error-container text-[10px] font-bold rounded-full uppercase">Emergency</span>
-</td>
-<td class="px-6 py-4">
-<span class="text-xs font-bold text-error">Overdue</span>
-</td>
-<td class="px-6 py-4">
-<div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-<button class="p-2 bg-surface-container-highest rounded-lg text-primary hover:bg-primary hover:text-white transition-all">
-<span class="material-symbols-outlined text-sm">visibility</span>
-</button>
-<button class="p-2 bg-surface-container-highest rounded-lg text-secondary hover:bg-secondary hover:text-white transition-all">
-<span class="material-symbols-outlined text-sm">group_add</span>
-</button>
-</div>
-</td>
-</tr>
-<tr class="hover:bg-surface-container-lowest transition-colors group">
-<td class="px-6 py-4 font-mono text-sm text-primary font-bold">#DS-2024-0901</td>
-<td class="px-6 py-4 text-sm font-medium">AB/ABA/019-Z</td>
-<td class="px-6 py-4">
-<span class="text-sm font-medium">Fraudulent Title</span>
-</td>
-<td class="px-6 py-4 text-sm">Amara Property Group</td>
-<td class="px-6 py-4 text-sm text-on-surface-variant">Oct 14, 2023</td>
-<td class="px-6 py-4">
-<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-bold rounded-full uppercase">High</span>
-</td>
-<td class="px-6 py-4">
-<span class="text-xs font-bold text-on-surface-variant">2 days remaining</span>
-</td>
-<td class="px-6 py-4">
-<div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-<button class="p-2 bg-surface-container-highest rounded-lg text-primary hover:bg-primary hover:text-white transition-all">
-<span class="material-symbols-outlined text-sm">visibility</span>
-</button>
-<button class="p-2 bg-surface-container-highest rounded-lg text-secondary hover:bg-secondary hover:text-white transition-all">
-<span class="material-symbols-outlined text-sm">group_add</span>
-</button>
-</div>
-</td>
-</tr>
-<tr class="hover:bg-surface-container-lowest transition-colors group">
-<td class="px-6 py-4 font-mono text-sm text-primary font-bold">#DS-2024-0915</td>
-<td class="px-6 py-4 text-sm font-medium">AB/OHZ/441-A</td>
-<td class="px-6 py-4">
-<span class="text-sm font-medium">Inheritance Claim</span>
-</td>
-<td class="px-6 py-4 text-sm">Estate of G. Okeke</td>
-<td class="px-6 py-4 text-sm text-on-surface-variant">Oct 15, 2023</td>
-<td class="px-6 py-4">
-<span class="px-3 py-1 bg-surface-container-highest text-on-surface-variant text-[10px] font-bold rounded-full uppercase">Normal</span>
-</td>
-<td class="px-6 py-4">
-<span class="text-xs font-bold text-on-surface-variant">5 days remaining</span>
-</td>
-<td class="px-6 py-4">
-<div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-<button class="p-2 bg-surface-container-highest rounded-lg text-primary hover:bg-primary hover:text-white transition-all">
-<span class="material-symbols-outlined text-sm">visibility</span>
-</button>
-<button class="p-2 bg-surface-container-highest rounded-lg text-secondary hover:bg-secondary hover:text-white transition-all">
-<span class="material-symbols-outlined text-sm">group_add</span>
-</button>
-</div>
-</td>
-</tr>
-<tr class="hover:bg-surface-container-lowest transition-colors group">
-<td class="px-6 py-4 font-mono text-sm text-primary font-bold">#DS-2024-0922</td>
-<td class="px-6 py-4 text-sm font-medium">AB/UMH/112-C</td>
-<td class="px-6 py-4">
-<span class="text-sm font-medium">Boundary Overlap</span>
-</td>
-<td class="px-6 py-4 text-sm">Ibeku Dev. Assoc.</td>
-<td class="px-6 py-4 text-sm text-on-surface-variant">Oct 16, 2023</td>
-<td class="px-6 py-4">
-<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-bold rounded-full uppercase">High</span>
-</td>
-<td class="px-6 py-4">
-<span class="text-xs font-bold text-on-surface-variant">6 days remaining</span>
-</td>
-<td class="px-6 py-4">
-<div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-<button class="p-2 bg-surface-container-highest rounded-lg text-primary hover:bg-primary hover:text-white transition-all">
-<span class="material-symbols-outlined text-sm">visibility</span>
-</button>
-<button class="p-2 bg-surface-container-highest rounded-lg text-secondary hover:bg-secondary hover:text-white transition-all">
-<span class="material-symbols-outlined text-sm">group_add</span>
-</button>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-<footer class="p-4 bg-surface-container-low/50 flex items-center justify-between border-t border-outline-variant/10">
-<button class="text-sm font-semibold text-primary flex items-center gap-1 hover:underline">
-<span class="material-symbols-outlined text-lg">chevron_left</span> Previous
+  <!-- SideNavBar -->
+  <div hx-get="partials/sidebar-dispute-review.html" hx-trigger="load" hx-swap="outerHTML"></div>
+  <!-- Main Content Area -->
+  <main class="md:ml-64 pt-20 p-8 min-h-screen bg-surface">
+    <header class="mb-10">
+      <h1 class="text-3xl font-extrabold headline-font text-on-surface tracking-tight mb-2">Dispute Review Dashboard
+      </h1>
+      <p class="text-on-surface-variant font-medium">Monitoring and managing land title escalations for Abia State
+        Registry.</p>
+    </header>
+    <!-- Dashboard Summary Cards -->
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+      <div
+        class="bg-surface-container-lowest p-6 rounded-xl border-l-4 border-primary shadow-[0_12px_32px_rgba(25,28,30,0.06)]">
+        <p class="text-sm font-semibold text-on-surface-variant mb-1">Active Disputes</p>
+        <div class="flex items-baseline gap-2">
+          <span class="text-3xl font-bold headline-font text-primary">124</span>
+          <span class="text-xs text-secondary font-medium">+12% vs last month</span>
+        </div>
+      </div>
+      <div
+        class="bg-surface-container-lowest p-6 rounded-xl border-l-4 border-secondary shadow-[0_12px_32px_rgba(25,28,30,0.06)]">
+        <p class="text-sm font-semibold text-on-surface-variant mb-1">Pending Mediation</p>
+        <div class="flex items-baseline gap-2">
+          <span class="text-3xl font-bold headline-font text-secondary">38</span>
+          <span class="text-xs text-on-surface-variant font-medium">Avg 4.2 days wait</span>
+        </div>
+      </div>
+      <div
+        class="bg-surface-container-lowest p-6 rounded-xl border-l-4 border-error shadow-[0_12px_32px_rgba(25,28,30,0.06)]">
+        <p class="text-sm font-semibold text-on-surface-variant mb-1">SLA Overdue</p>
+        <div class="flex items-baseline gap-2">
+          <span class="text-3xl font-bold headline-font text-error">12</span>
+          <span class="text-xs text-error font-medium">Requires immediate action</span>
+        </div>
+      </div>
+      <div
+        class="bg-surface-container-lowest p-6 rounded-xl border-l-4 border-tertiary-container shadow-[0_12px_32px_rgba(25,28,30,0.06)]">
+        <p class="text-sm font-semibold text-on-surface-variant mb-1">Resolved this Month</p>
+        <div class="flex items-baseline gap-2">
+          <span class="text-3xl font-bold headline-font text-tertiary-container">215</span>
+          <span class="text-xs text-tertiary font-medium">89% satisfaction rate</span>
+        </div>
+      </div>
+    </section>
+    <!-- Quick Filters -->
+    <section class="mb-6 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div
+          class="bg-surface-container-high px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-surface-container-highest transition-colors">
+          <span class="material-symbols-outlined text-sm">filter_list</span>
+          <span class="text-sm font-semibold">Dispute Type</span>
+        </div>
+        <div
+          class="bg-surface-container-high px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-surface-container-highest transition-colors">
+          <span class="material-symbols-outlined text-sm">priority_high</span>
+          <span class="text-sm font-semibold">Priority</span>
+        </div>
+        <div
+          class="bg-surface-container-high px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-surface-container-highest transition-colors">
+          <span class="material-symbols-outlined text-sm">location_on</span>
+          <span class="text-sm font-semibold">Region</span>
+        </div>
+      </div>
+      <div class="text-sm font-medium text-on-surface-variant">
+        Showing 12 of 124 disputes
+      </div>
+    </section>
+    <!-- Dispute Queue Table -->
+    <div class="bg-surface-container-low rounded-2xl overflow-hidden shadow-sm">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="bg-surface-container-high/50 text-on-surface-variant border-b border-outline-variant/20">
+            <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest headline-font">Reference ID</th>
+            <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest headline-font">Parcel ID</th>
+            <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest headline-font">Type</th>
+            <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest headline-font">Submitter</th>
+            <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest headline-font">Date</th>
+            <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest headline-font">Priority</th>
+            <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest headline-font">SLA Status</th>
+            <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest headline-font">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-outline-variant/10">
+          <tr class="hover:bg-surface-container-lowest transition-colors group">
+            <td class="px-6 py-4 font-mono text-sm text-primary font-bold">#DS-2024-0892</td>
+            <td class="px-6 py-4 text-sm font-medium">AB/UMH/772-B</td>
+            <td class="px-6 py-4">
+              <span class="text-sm font-medium">Boundary Overlap</span>
+            </td>
+            <td class="px-6 py-4 text-sm">Chief Nnamdi O.</td>
+            <td class="px-6 py-4 text-sm text-on-surface-variant">Oct 12, 2023</td>
+            <td class="px-6 py-4">
+              <span
+                class="px-3 py-1 bg-error-container text-on-error-container text-[10px] font-bold rounded-full uppercase">Emergency</span>
+            </td>
+            <td class="px-6 py-4">
+              <span class="text-xs font-bold text-error">Overdue</span>
+            </td>
+            <td class="px-6 py-4">
+              <div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                <button
+                  class="p-2 bg-surface-container-highest rounded-lg text-primary hover:bg-primary hover:text-white transition-all">
+                  <span class="material-symbols-outlined text-sm">visibility</span>
                 </button>
-<div class="flex gap-2">
-<span class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded text-xs font-bold">1</span>
-<span class="w-8 h-8 flex items-center justify-center hover:bg-surface-container-high rounded text-xs font-bold cursor-pointer">2</span>
-<span class="w-8 h-8 flex items-center justify-center hover:bg-surface-container-high rounded text-xs font-bold cursor-pointer">3</span>
-</div>
-<button class="text-sm font-semibold text-primary flex items-center gap-1 hover:underline">
-                    Next <span class="material-symbols-outlined text-lg">chevron_right</span>
-</button>
-</footer>
-</div>
-<!-- Secondary Information / Map View Toggle -->
-<section class="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
-<div class="lg:col-span-2 bg-surface-container-low rounded-2xl p-6 relative overflow-hidden h-[400px]">
-<div class="absolute inset-0 z-0">
-<img alt="GIS Map View" class="w-full h-full object-cover grayscale opacity-40 mix-blend-multiply" data-alt="a detailed top-down GIS land registry map of an urban area with color-coded parcels showing boundary lines and administrative zones" data-location="Umuahia, Nigeria" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACid4lm_2-q-B6ed5yxwIMy4yYn4-9oKKSxtucCPVAYBeYQ-XZC-NP9Y7xHQbXTd6ANcwJUPkcQwurxjhbvo1ydlXIw9Dw81C66mtyM2uT-dKbZUrX9-uaOr0RWzFo51u8CLH11WMEGzdAieabgDNFU2neqyDsT6o2auqJki7no8r2D0S6SpNtITuYezHD3WaPnad2pmqZ4J5EIA6GEKu4N_xywxG-6jCPDlG0g1dg4PNOwN1H6DrWbyyeCdwaZfVknZtHrUH72eZj"/>
-</div>
-<div class="relative z-10 flex flex-col h-full">
-<div class="flex justify-between items-start mb-4">
-<div class="bg-surface/80 backdrop-blur-md px-4 py-2 rounded-xl shadow-sm border border-outline-variant/20">
-<h3 class="font-bold headline-font text-sm">Geospatial Distribution</h3>
-<p class="text-xs text-on-surface-variant font-medium">Umuahia North - Conflict Zones</p>
-</div>
-<div class="flex gap-2">
-<button class="bg-primary text-white p-2 rounded-lg shadow-sm">
-<span class="material-symbols-outlined">layers</span>
-</button>
-<button class="bg-surface text-on-surface p-2 rounded-lg shadow-sm border border-outline-variant/20">
-<span class="material-symbols-outlined">my_location</span>
-</button>
-</div>
-</div>
-</div>
-<div class="absolute bottom-6 left-6 z-10 flex gap-4">
-<div class="bg-surface/90 backdrop-blur-md p-3 rounded-lg flex items-center gap-3 border border-outline-variant/20 shadow-lg">
-<div class="w-3 h-3 bg-error rounded-full"></div>
-<span class="text-xs font-bold">High Conflict Area</span>
-</div>
-</div>
-</div>
-<div class="space-y-6">
-<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/20">
-<h3 class="font-bold headline-font mb-4 flex items-center gap-2">
-<span class="material-symbols-outlined text-primary">event_note</span>
-                        Recent Activity
-                    </h3>
-<div class="space-y-4">
-<div class="flex gap-3">
-<div class="w-2 h-2 mt-1.5 bg-secondary rounded-full flex-shrink-0"></div>
-<div>
-<p class="text-sm font-semibold">Mediator Assigned</p>
-<p class="text-xs text-on-surface-variant">Barr. Uche G. was assigned to #DS-2024-0811</p>
-<p class="text-[10px] text-outline mt-1 font-bold">2 HOURS AGO</p>
-</div>
-</div>
-<div class="flex gap-3">
-<div class="w-2 h-2 mt-1.5 bg-primary rounded-full flex-shrink-0"></div>
-<div>
-<p class="text-sm font-semibold">New Dispute Lodged</p>
-<p class="text-xs text-on-surface-variant">New Fraudulent Title report in Aba South</p>
-<p class="text-[10px] text-outline mt-1 font-bold">4 HOURS AGO</p>
-</div>
-</div>
-<div class="flex gap-3">
-<div class="w-2 h-2 mt-1.5 bg-tertiary-container rounded-full flex-shrink-0"></div>
-<div>
-<p class="text-sm font-semibold">Case Resolved</p>
-<p class="text-xs text-on-surface-variant">#DS-2024-0712 closed with title rectification</p>
-<p class="text-[10px] text-outline mt-1 font-bold">YESTERDAY</p>
-</div>
-</div>
-</div>
-<button class="w-full mt-6 py-2 border border-outline-variant text-on-surface-variant text-xs font-bold rounded-lg hover:bg-surface-container-high transition-colors">
-                        View Complete Audit Log
-                    </button>
-</div>
-<div class="bg-primary text-white p-6 rounded-2xl shadow-lg relative overflow-hidden group cursor-pointer">
-<div class="relative z-10">
-<h4 class="font-bold headline-font text-lg mb-1">Registry Guide</h4>
-<p class="text-sm text-on-primary-container font-medium mb-4">Update your knowledge on the 2024 Land Act mediation protocols.</p>
-<span class="text-xs font-bold uppercase tracking-widest flex items-center gap-2">
-                            Download PDF <span class="material-symbols-outlined text-sm">download</span>
-</span>
-</div>
-<span class="material-symbols-outlined absolute -bottom-4 -right-4 text-white/10 text-9xl transition-transform group-hover:scale-110">menu_book</span>
-</div>
-</div>
-</section>
-</main>
-<div hx-get="partials/footer.html" hx-trigger="load" hx-swap="outerHTML"></div>
-</body></html>
+                <button
+                  class="p-2 bg-surface-container-highest rounded-lg text-secondary hover:bg-secondary hover:text-white transition-all">
+                  <span class="material-symbols-outlined text-sm">group_add</span>
+                </button>
+              </div>
+            </td>
+          </tr>
+          <tr class="hover:bg-surface-container-lowest transition-colors group">
+            <td class="px-6 py-4 font-mono text-sm text-primary font-bold">#DS-2024-0901</td>
+            <td class="px-6 py-4 text-sm font-medium">AB/ABA/019-Z</td>
+            <td class="px-6 py-4">
+              <span class="text-sm font-medium">Fraudulent Title</span>
+            </td>
+            <td class="px-6 py-4 text-sm">Amara Property Group</td>
+            <td class="px-6 py-4 text-sm text-on-surface-variant">Oct 14, 2023</td>
+            <td class="px-6 py-4">
+              <span
+                class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-bold rounded-full uppercase">High</span>
+            </td>
+            <td class="px-6 py-4">
+              <span class="text-xs font-bold text-on-surface-variant">2 days remaining</span>
+            </td>
+            <td class="px-6 py-4">
+              <div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                <button
+                  class="p-2 bg-surface-container-highest rounded-lg text-primary hover:bg-primary hover:text-white transition-all">
+                  <span class="material-symbols-outlined text-sm">visibility</span>
+                </button>
+                <button
+                  class="p-2 bg-surface-container-highest rounded-lg text-secondary hover:bg-secondary hover:text-white transition-all">
+                  <span class="material-symbols-outlined text-sm">group_add</span>
+                </button>
+              </div>
+            </td>
+          </tr>
+          <tr class="hover:bg-surface-container-lowest transition-colors group">
+            <td class="px-6 py-4 font-mono text-sm text-primary font-bold">#DS-2024-0915</td>
+            <td class="px-6 py-4 text-sm font-medium">AB/OHZ/441-A</td>
+            <td class="px-6 py-4">
+              <span class="text-sm font-medium">Inheritance Claim</span>
+            </td>
+            <td class="px-6 py-4 text-sm">Estate of G. Okeke</td>
+            <td class="px-6 py-4 text-sm text-on-surface-variant">Oct 15, 2023</td>
+            <td class="px-6 py-4">
+              <span
+                class="px-3 py-1 bg-surface-container-highest text-on-surface-variant text-[10px] font-bold rounded-full uppercase">Normal</span>
+            </td>
+            <td class="px-6 py-4">
+              <span class="text-xs font-bold text-on-surface-variant">5 days remaining</span>
+            </td>
+            <td class="px-6 py-4">
+              <div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                <button
+                  class="p-2 bg-surface-container-highest rounded-lg text-primary hover:bg-primary hover:text-white transition-all">
+                  <span class="material-symbols-outlined text-sm">visibility</span>
+                </button>
+                <button
+                  class="p-2 bg-surface-container-highest rounded-lg text-secondary hover:bg-secondary hover:text-white transition-all">
+                  <span class="material-symbols-outlined text-sm">group_add</span>
+                </button>
+              </div>
+            </td>
+          </tr>
+          <tr class="hover:bg-surface-container-lowest transition-colors group">
+            <td class="px-6 py-4 font-mono text-sm text-primary font-bold">#DS-2024-0922</td>
+            <td class="px-6 py-4 text-sm font-medium">AB/UMH/112-C</td>
+            <td class="px-6 py-4">
+              <span class="text-sm font-medium">Boundary Overlap</span>
+            </td>
+            <td class="px-6 py-4 text-sm">Ibeku Dev. Assoc.</td>
+            <td class="px-6 py-4 text-sm text-on-surface-variant">Oct 16, 2023</td>
+            <td class="px-6 py-4">
+              <span
+                class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-bold rounded-full uppercase">High</span>
+            </td>
+            <td class="px-6 py-4">
+              <span class="text-xs font-bold text-on-surface-variant">6 days remaining</span>
+            </td>
+            <td class="px-6 py-4">
+              <div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                <button
+                  class="p-2 bg-surface-container-highest rounded-lg text-primary hover:bg-primary hover:text-white transition-all">
+                  <span class="material-symbols-outlined text-sm">visibility</span>
+                </button>
+                <button
+                  class="p-2 bg-surface-container-highest rounded-lg text-secondary hover:bg-secondary hover:text-white transition-all">
+                  <span class="material-symbols-outlined text-sm">group_add</span>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <footer
+        class="p-4 bg-surface-container-low/50 flex items-center justify-between border-t border-outline-variant/10">
+        <button class="text-sm font-semibold text-primary flex items-center gap-1 hover:underline">
+          <span class="material-symbols-outlined text-lg">chevron_left</span> Previous
+        </button>
+        <div class="flex gap-2">
+          <span
+            class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded text-xs font-bold">1</span>
+          <span
+            class="w-8 h-8 flex items-center justify-center hover:bg-surface-container-high rounded text-xs font-bold cursor-pointer">2</span>
+          <span
+            class="w-8 h-8 flex items-center justify-center hover:bg-surface-container-high rounded text-xs font-bold cursor-pointer">3</span>
+        </div>
+        <button class="text-sm font-semibold text-primary flex items-center gap-1 hover:underline">
+          Next <span class="material-symbols-outlined text-lg">chevron_right</span>
+        </button>
+      </footer>
+    </div>
+    <!-- Secondary Information / Map View Toggle -->
+    <section class="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-2 bg-surface-container-low rounded-2xl p-6 relative overflow-hidden h-[400px]">
+        <div class="absolute inset-0 z-0">
+          <img alt="GIS Map View" class="w-full h-full object-cover grayscale opacity-40 mix-blend-multiply"
+            data-alt="a detailed top-down GIS land registry map of an urban area with color-coded parcels showing boundary lines and administrative zones"
+            data-location="Umuahia, Nigeria"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuACid4lm_2-q-B6ed5yxwIMy4yYn4-9oKKSxtucCPVAYBeYQ-XZC-NP9Y7xHQbXTd6ANcwJUPkcQwurxjhbvo1ydlXIw9Dw81C66mtyM2uT-dKbZUrX9-uaOr0RWzFo51u8CLH11WMEGzdAieabgDNFU2neqyDsT6o2auqJki7no8r2D0S6SpNtITuYezHD3WaPnad2pmqZ4J5EIA6GEKu4N_xywxG-6jCPDlG0g1dg4PNOwN1H6DrWbyyeCdwaZfVknZtHrUH72eZj" />
+        </div>
+        <div class="relative z-10 flex flex-col h-full">
+          <div class="flex justify-between items-start mb-4">
+            <div class="bg-surface/80 backdrop-blur-md px-4 py-2 rounded-xl shadow-sm border border-outline-variant/20">
+              <h3 class="font-bold headline-font text-sm">Geospatial Distribution</h3>
+              <p class="text-xs text-on-surface-variant font-medium">Umuahia North - Conflict Zones</p>
+            </div>
+            <div class="flex gap-2">
+              <button class="bg-primary text-white p-2 rounded-lg shadow-sm">
+                <span class="material-symbols-outlined">layers</span>
+              </button>
+              <button class="bg-surface text-on-surface p-2 rounded-lg shadow-sm border border-outline-variant/20">
+                <span class="material-symbols-outlined">my_location</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="absolute bottom-6 left-6 z-10 flex gap-4">
+          <div
+            class="bg-surface/90 backdrop-blur-md p-3 rounded-lg flex items-center gap-3 border border-outline-variant/20 shadow-lg">
+            <div class="w-3 h-3 bg-error rounded-full"></div>
+            <span class="text-xs font-bold">High Conflict Area</span>
+          </div>
+        </div>
+      </div>
+      <div class="space-y-6">
+        <div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/20">
+          <h3 class="font-bold headline-font mb-4 flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">event_note</span>
+            Recent Activity
+          </h3>
+          <div class="space-y-4">
+            <div class="flex gap-3">
+              <div class="w-2 h-2 mt-1.5 bg-secondary rounded-full flex-shrink-0"></div>
+              <div>
+                <p class="text-sm font-semibold">Mediator Assigned</p>
+                <p class="text-xs text-on-surface-variant">Barr. Uche G. was assigned to #DS-2024-0811</p>
+                <p class="text-[10px] text-outline mt-1 font-bold">2 HOURS AGO</p>
+              </div>
+            </div>
+            <div class="flex gap-3">
+              <div class="w-2 h-2 mt-1.5 bg-primary rounded-full flex-shrink-0"></div>
+              <div>
+                <p class="text-sm font-semibold">New Dispute Lodged</p>
+                <p class="text-xs text-on-surface-variant">New Fraudulent Title report in Aba South</p>
+                <p class="text-[10px] text-outline mt-1 font-bold">4 HOURS AGO</p>
+              </div>
+            </div>
+            <div class="flex gap-3">
+              <div class="w-2 h-2 mt-1.5 bg-tertiary-container rounded-full flex-shrink-0"></div>
+              <div>
+                <p class="text-sm font-semibold">Case Resolved</p>
+                <p class="text-xs text-on-surface-variant">#DS-2024-0712 closed with title rectification</p>
+                <p class="text-[10px] text-outline mt-1 font-bold">YESTERDAY</p>
+              </div>
+            </div>
+          </div>
+          <button
+            class="w-full mt-6 py-2 border border-outline-variant text-on-surface-variant text-xs font-bold rounded-lg hover:bg-surface-container-high transition-colors">
+            View Complete Audit Log
+          </button>
+        </div>
+        <div class="bg-primary text-white p-6 rounded-2xl shadow-lg relative overflow-hidden group cursor-pointer">
+          <div class="relative z-10">
+            <h4 class="font-bold headline-font text-lg mb-1">Registry Guide</h4>
+            <p class="text-sm text-on-primary-container font-medium mb-4">Update your knowledge on the 2024 Land Act
+              mediation protocols.</p>
+            <span class="text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+              Download PDF <span class="material-symbols-outlined text-sm">download</span>
+            </span>
+          </div>
+          <span
+            class="material-symbols-outlined absolute -bottom-4 -right-4 text-white/10 text-9xl transition-transform group-hover:scale-110">menu_book</span>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div hx-get="partials/footer.html" hx-trigger="load" hx-swap="outerHTML"></div>
+</body>
+
+</html>

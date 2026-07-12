@@ -21,194 +21,224 @@
   <div hx-get="partials/header.html" hx-trigger="load" hx-swap="outerHTML"></div>
 
 
-<!-- SideNavBar -->
-<div hx-get="partials/sidebar-dashboard.html" hx-trigger="load" hx-swap="outerHTML"></div>
-<!-- Main Content -->
-<main class="pl-72 pt-16 min-h-screen bg-surface">
-<div class="max-w-7xl mx-auto p-8">
-<!-- Page Header -->
-<header class="flex justify-between items-end mb-10">
-<div>
-<nav class="flex items-center gap-2 text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2">
-<span>Registry</span>
-<span class="material-symbols-outlined text-[10px]" data-icon="chevron_right">chevron_right</span>
-<span class="text-primary">Parcel AB-UM-229-X</span>
-</nav>
-<h1 class="text-4xl font-black tracking-tight text-on-surface">Umuahia North Sector 4</h1>
-</div>
-<div class="flex gap-3">
-<button class="px-5 py-2.5 rounded-xl bg-surface-container-highest text-on-surface font-semibold text-sm flex items-center gap-2 hover:bg-surface-dim transition-colors">
-<span class="material-symbols-outlined text-lg" data-icon="print">print</span> Print Record
-                    </button>
-<button class="px-5 py-2.5 rounded-xl bg-primary text-on-primary font-semibold text-sm flex items-center gap-2 shadow-lg shadow-primary/10 hover:opacity-90 transition-opacity">
-<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span> Amend Details
-                    </button>
-</div>
-</header>
-<!-- Bento Grid Layout -->
-<div class="grid grid-cols-12 gap-6">
-<!-- Column Left: Summary & GIS (8 cols) -->
-<div class="col-span-8 space-y-6">
-<!-- Parcel Summary Card -->
-<section class="bg-surface-container-lowest p-8 rounded-full border border-outline-variant/10 relative overflow-hidden">
-<div class="absolute top-0 right-0 p-8">
-<span class="bg-tertiary-container/10 text-tertiary px-4 py-1.5 rounded-full text-xs font-bold flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-secondary"></span>
-                                VALID DIGITAL C OF O
-                            </span>
-</div>
-<div class="grid grid-cols-3 gap-8">
-<div>
-<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Parcel ID</p>
-<p class="text-xl font-bold text-primary">AB-UM-229-X</p>
-</div>
-<div>
-<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Primary Owner</p>
-<p class="text-xl font-bold text-on-surface">Chief Dr. Azuikpe O.</p>
-</div>
-<div>
-<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Land Use Type</p>
-<p class="text-xl font-bold text-on-surface">Residential (R1)</p>
-</div>
-<div>
-<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Area Size</p>
-<p class="text-xl font-bold text-on-surface">1,240.50 SQM</p>
-</div>
-<div>
-<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Date Issued</p>
-<p class="text-xl font-bold text-on-surface">Oct 14, 2021</p>
-</div>
-<div>
-<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Security Code</p>
-<p class="text-xl font-bold text-on-surface font-mono">DGL-9932-8</p>
-</div>
-</div>
-</section>
-<!-- GIS & Ownership Split -->
-<div class="grid grid-cols-2 gap-6">
-<!-- GIS Thumbnail -->
-<section class="bg-surface-container-low rounded-full overflow-hidden flex flex-col min-h-[400px]">
-<div class="p-6 border-b border-outline-variant/10 flex justify-between items-center">
-<h3 class="font-bold text-primary flex items-center gap-2">
-<span class="material-symbols-outlined" data-icon="map">map</span> GIS Visualization
-                                </h3>
-<button class="text-xs font-bold text-secondary hover:underline uppercase tracking-tighter">Open Full Map</button>
-</div>
-<div class="flex-1 relative group">
-<img alt="GIS parcel map" class="w-full h-full object-cover" data-alt="high resolution satellite view of an urban residential parcel with highlighted boundaries and clean cartographic overlays" data-location="Umuahia" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCejwiVXeLz2MSPz4bwcAJRMaFwq4K1Cfq5GXtvRtL-ZY5yZsS23eySBBBP2Bilb-DeysatvCpFHzc-1wpd_GWHYKKFiSZfRyEzL58EgVhrI5zUK9eSmRZO-_ff_6nVYi4bi42HwvMN_BSOwQAUbNN6R3mt53cKVhi9jt7msrbTWQVcQIPthzYXCM0YZQlGxMo3jIoaH4_lik7EX2zfR4H0y9I3iuepUuTFPZoK_pNk-wS9KyPwVuJYyZRj0HQ6-fxsRUvTTWxSP-FW"/>
-<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-<span class="bg-white px-4 py-2 rounded-xl text-primary font-bold text-sm shadow-xl">Activate Layers</span>
-</div>
-</div>
-</section>
-<!-- Ownership History -->
-<section class="bg-surface-container-lowest p-6 rounded-full border border-outline-variant/10">
-<h3 class="font-bold text-primary mb-6 flex items-center gap-2">
-<span class="material-symbols-outlined" data-icon="history">history</span> Ownership History
-                            </h3>
-<div class="relative pl-6 border-l-2 border-surface-container-high space-y-8">
-<div class="relative">
-<div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-primary border-4 border-white"></div>
-<div class="mb-1 text-xs font-bold text-primary">CURRENT HOLDER</div>
-<p class="font-bold text-on-surface leading-tight">Chief Dr. Azuikpe O.</p>
-<p class="text-xs text-on-surface-variant mt-1">Acquired Oct 2021 • Transfer of Deed</p>
-</div>
-<div class="relative">
-<div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-outline-variant border-4 border-white"></div>
-<div class="mb-1 text-xs font-bold text-on-surface-variant">PREVIOUS OWNER</div>
-<p class="font-bold text-on-surface leading-tight">Estate of Elder Kalu Anya</p>
-<p class="text-xs text-on-surface-variant mt-1">2005 - 2021 • Statutory Right of Occupancy</p>
-</div>
-<div class="relative">
-<div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-outline-variant border-4 border-white"></div>
-<div class="mb-1 text-xs font-bold text-on-surface-variant">ORIGINAL GRANT</div>
-<p class="font-bold text-on-surface leading-tight">Abia State Govt Grant</p>
-<p class="text-xs text-on-surface-variant mt-1">June 1998 • Initial Allocation</p>
-</div>
-</div>
-</section>
-</div>
-</div>
-<!-- Column Right: Document Vault (4 cols) -->
-<div class="col-span-4">
-<section class="bg-surface-container-high/50 p-6 rounded-full h-full border border-outline-variant/10">
-<div class="flex justify-between items-center mb-6">
-<h3 class="font-bold text-primary flex items-center gap-2">
-<span class="material-symbols-outlined" data-icon="folder_zip">folder_zip</span> Document Vault
-                            </h3>
-<button class="p-1.5 rounded-lg hover:bg-surface-container-highest transition-all">
-<span class="material-symbols-outlined text-on-surface-variant" data-icon="upload_file">upload_file</span>
-</button>
-</div>
-<div class="space-y-3">
-<!-- Doc Item -->
-<div class="group bg-surface-container-lowest p-4 rounded-xl flex items-center gap-4 hover:shadow-md transition-all cursor-pointer">
-<div class="w-12 h-12 bg-primary/5 rounded-lg flex items-center justify-center text-primary">
-<span class="material-symbols-outlined" data-icon="description">description</span>
-</div>
-<div class="flex-1 overflow-hidden">
-<p class="font-bold text-sm text-on-surface truncate">Digital_C_of_O.pdf</p>
-<p class="text-[10px] text-on-surface-variant uppercase font-bold">14 Oct 2021 • 2.4 MB</p>
-</div>
-<div class="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-<button class="p-1.5 rounded-lg hover:bg-surface-container-low text-primary"><span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span></button>
-<button class="p-1.5 rounded-lg hover:bg-surface-container-low text-primary"><span class="material-symbols-outlined text-sm" data-icon="download">download</span></button>
-</div>
-</div>
-<div class="group bg-surface-container-lowest p-4 rounded-xl flex items-center gap-4 hover:shadow-md transition-all cursor-pointer">
-<div class="w-12 h-12 bg-secondary/5 rounded-lg flex items-center justify-center text-secondary">
-<span class="material-symbols-outlined" data-icon="architecture">architecture</span>
-</div>
-<div class="flex-1 overflow-hidden">
-<p class="font-bold text-sm text-on-surface truncate">Approved_Survey_Plan.dwg</p>
-<p class="text-[10px] text-on-surface-variant uppercase font-bold">02 Aug 2021 • 15.8 MB</p>
-</div>
-<div class="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-<button class="p-1.5 rounded-lg hover:bg-surface-container-low text-primary"><span class="material-symbols-outlined text-sm" data-icon="download">download</span></button>
-</div>
-</div>
-<div class="group bg-surface-container-lowest p-4 rounded-xl flex items-center gap-4 hover:shadow-md transition-all cursor-pointer">
-<div class="w-12 h-12 bg-tertiary-container/5 rounded-lg flex items-center justify-center text-tertiary-fixed-dim">
-<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
-</div>
-<div class="flex-1 overflow-hidden">
-<p class="font-bold text-sm text-on-surface truncate">Deed_of_Assignment_Scan.pdf</p>
-<p class="text-[10px] text-on-surface-variant uppercase font-bold">12 Sep 2021 • 4.1 MB</p>
-</div>
-<div class="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-<button class="p-1.5 rounded-lg hover:bg-surface-container-low text-primary"><span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span></button>
-</div>
-</div>
-<div class="group bg-surface-container-lowest p-4 rounded-xl flex items-center gap-4 hover:shadow-md transition-all cursor-pointer">
-<div class="w-12 h-12 bg-error-container/10 rounded-lg flex items-center justify-center text-error">
-<span class="material-symbols-outlined" data-icon="task">task</span>
-</div>
-<div class="flex-1 overflow-hidden">
-<p class="font-bold text-sm text-on-surface truncate">Site_Inspection_Report.pdf</p>
-<p class="text-[10px] text-on-surface-variant uppercase font-bold">29 Jul 2021 • 1.2 MB</p>
-</div>
-<div class="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-<button class="p-1.5 rounded-lg hover:bg-surface-container-low text-primary"><span class="material-symbols-outlined text-sm" data-icon="download">download</span></button>
-</div>
-</div>
-</div>
-<div class="mt-8 p-4 bg-primary rounded-xl text-on-primary">
-<p class="text-xs font-bold uppercase tracking-widest opacity-80 mb-2">Registry Note</p>
-<p class="text-xs leading-relaxed">Verification audit completed on Oct 12, 2023. No encumbrances found on this parcel. Cleared for transfer transactions.</p>
-</div>
-</section>
-</div>
-</div>
-<!-- Bottom Actions -->
-<footer class="mt-12 flex justify-center gap-4">
-<button class="px-8 py-4 bg-surface-container-lowest border border-outline-variant/20 rounded-xl font-bold text-sm text-primary flex items-center gap-3 hover:bg-surface-container transition-all">
-<span class="material-symbols-outlined" data-icon="share">share</span> Generate Certified Copy
-                </button>
-<button class="px-8 py-4 bg-surface-container-lowest border border-outline-variant/20 rounded-xl font-bold text-sm text-primary flex items-center gap-3 hover:bg-surface-container transition-all">
-<span class="material-symbols-outlined" data-icon="verified">verified</span> Request Encumbrance Certificate
-                </button>
-</footer>
-</div>
-</main>
-<div hx-get="partials/footer.html" hx-trigger="load" hx-swap="outerHTML"></div>
-</body></html>
+  <!-- SideNavBar -->
+  <div hx-get="partials/sidebar-dashboard.html" hx-trigger="load" hx-swap="outerHTML"></div>
+  <!-- Main Content -->
+  <main class="md:pl-72 pt-16 min-h-screen bg-surface">
+    <div class="max-w-7xl mx-auto p-8">
+      <!-- Page Header -->
+      <header class="flex justify-between items-end mb-10">
+        <div>
+          <nav class="flex items-center gap-2 text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2">
+            <span>Registry</span>
+            <span class="material-symbols-outlined text-[10px]" data-icon="chevron_right">chevron_right</span>
+            <span class="text-primary">Parcel AB-UM-229-X</span>
+          </nav>
+          <h1 class="text-4xl font-black tracking-tight text-on-surface">Umuahia North Sector 4</h1>
+        </div>
+        <div class="flex gap-3">
+          <button
+            class="px-5 py-2.5 rounded-xl bg-surface-container-highest text-on-surface font-semibold text-sm flex items-center gap-2 hover:bg-surface-dim transition-colors">
+            <span class="material-symbols-outlined text-lg" data-icon="print">print</span> Print Record
+          </button>
+          <button
+            class="px-5 py-2.5 rounded-xl bg-primary text-on-primary font-semibold text-sm flex items-center gap-2 shadow-lg shadow-primary/10 hover:opacity-90 transition-opacity">
+            <span class="material-symbols-outlined text-lg" data-icon="edit">edit</span> Amend Details
+          </button>
+        </div>
+      </header>
+      <!-- Bento Grid Layout -->
+      <div class="grid grid-cols-12 gap-6">
+        <!-- Column Left: Summary & GIS (8 cols) -->
+        <div class="col-span-8 space-y-6">
+          <!-- Parcel Summary Card -->
+          <section
+            class="bg-surface-container-lowest p-8 rounded-full border border-outline-variant/10 relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-8">
+              <span
+                class="bg-tertiary-container/10 text-tertiary px-4 py-1.5 rounded-full text-xs font-bold flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-secondary"></span>
+                VALID DIGITAL C OF O
+              </span>
+            </div>
+            <div class="grid grid-cols-3 gap-8">
+              <div>
+                <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Parcel ID</p>
+                <p class="text-xl font-bold text-primary">AB-UM-229-X</p>
+              </div>
+              <div>
+                <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Primary Owner</p>
+                <p class="text-xl font-bold text-on-surface">Chief Dr. Azuikpe O.</p>
+              </div>
+              <div>
+                <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Land Use Type</p>
+                <p class="text-xl font-bold text-on-surface">Residential (R1)</p>
+              </div>
+              <div>
+                <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Area Size</p>
+                <p class="text-xl font-bold text-on-surface">1,240.50 SQM</p>
+              </div>
+              <div>
+                <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Date Issued</p>
+                <p class="text-xl font-bold text-on-surface">Oct 14, 2021</p>
+              </div>
+              <div>
+                <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Security Code</p>
+                <p class="text-xl font-bold text-on-surface font-mono">DGL-9932-8</p>
+              </div>
+            </div>
+          </section>
+          <!-- GIS & Ownership Split -->
+          <div class="grid grid-cols-2 gap-6">
+            <!-- GIS Thumbnail -->
+            <section class="bg-surface-container-low rounded-full overflow-hidden flex flex-col min-h-[400px]">
+              <div class="p-6 border-b border-outline-variant/10 flex justify-between items-center">
+                <h3 class="font-bold text-primary flex items-center gap-2">
+                  <span class="material-symbols-outlined" data-icon="map">map</span> GIS Visualization
+                </h3>
+                <button class="text-xs font-bold text-secondary hover:underline uppercase tracking-tighter">Open Full
+                  Map</button>
+              </div>
+              <div class="flex-1 relative group">
+                <img alt="GIS parcel map" class="w-full h-full object-cover"
+                  data-alt="high resolution satellite view of an urban residential parcel with highlighted boundaries and clean cartographic overlays"
+                  data-location="Umuahia"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCejwiVXeLz2MSPz4bwcAJRMaFwq4K1Cfq5GXtvRtL-ZY5yZsS23eySBBBP2Bilb-DeysatvCpFHzc-1wpd_GWHYKKFiSZfRyEzL58EgVhrI5zUK9eSmRZO-_ff_6nVYi4bi42HwvMN_BSOwQAUbNN6R3mt53cKVhi9jt7msrbTWQVcQIPthzYXCM0YZQlGxMo3jIoaH4_lik7EX2zfR4H0y9I3iuepUuTFPZoK_pNk-wS9KyPwVuJYyZRj0HQ6-fxsRUvTTWxSP-FW" />
+                <div
+                  class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span class="bg-white px-4 py-2 rounded-xl text-primary font-bold text-sm shadow-xl">Activate
+                    Layers</span>
+                </div>
+              </div>
+            </section>
+            <!-- Ownership History -->
+            <section class="bg-surface-container-lowest p-6 rounded-full border border-outline-variant/10">
+              <h3 class="font-bold text-primary mb-6 flex items-center gap-2">
+                <span class="material-symbols-outlined" data-icon="history">history</span> Ownership History
+              </h3>
+              <div class="relative pl-6 border-l-2 border-surface-container-high space-y-8">
+                <div class="relative">
+                  <div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-primary border-4 border-white"></div>
+                  <div class="mb-1 text-xs font-bold text-primary">CURRENT HOLDER</div>
+                  <p class="font-bold text-on-surface leading-tight">Chief Dr. Azuikpe O.</p>
+                  <p class="text-xs text-on-surface-variant mt-1">Acquired Oct 2021 • Transfer of Deed</p>
+                </div>
+                <div class="relative">
+                  <div
+                    class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-outline-variant border-4 border-white">
+                  </div>
+                  <div class="mb-1 text-xs font-bold text-on-surface-variant">PREVIOUS OWNER</div>
+                  <p class="font-bold text-on-surface leading-tight">Estate of Elder Kalu Anya</p>
+                  <p class="text-xs text-on-surface-variant mt-1">2005 - 2021 • Statutory Right of Occupancy</p>
+                </div>
+                <div class="relative">
+                  <div
+                    class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-outline-variant border-4 border-white">
+                  </div>
+                  <div class="mb-1 text-xs font-bold text-on-surface-variant">ORIGINAL GRANT</div>
+                  <p class="font-bold text-on-surface leading-tight">Abia State Govt Grant</p>
+                  <p class="text-xs text-on-surface-variant mt-1">June 1998 • Initial Allocation</p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <!-- Column Right: Document Vault (4 cols) -->
+        <div class="col-span-4">
+          <section class="bg-surface-container-high/50 p-6 rounded-full h-full border border-outline-variant/10">
+            <div class="flex justify-between items-center mb-6">
+              <h3 class="font-bold text-primary flex items-center gap-2">
+                <span class="material-symbols-outlined" data-icon="folder_zip">folder_zip</span> Document Vault
+              </h3>
+              <button class="p-1.5 rounded-lg hover:bg-surface-container-highest transition-all">
+                <span class="material-symbols-outlined text-on-surface-variant"
+                  data-icon="upload_file">upload_file</span>
+              </button>
+            </div>
+            <div class="space-y-3">
+              <!-- Doc Item -->
+              <div
+                class="group bg-surface-container-lowest p-4 rounded-xl flex items-center gap-4 hover:shadow-md transition-all cursor-pointer">
+                <div class="w-12 h-12 bg-primary/5 rounded-lg flex items-center justify-center text-primary">
+                  <span class="material-symbols-outlined" data-icon="description">description</span>
+                </div>
+                <div class="flex-1 overflow-hidden">
+                  <p class="font-bold text-sm text-on-surface truncate">Digital_C_of_O.pdf</p>
+                  <p class="text-[10px] text-on-surface-variant uppercase font-bold">14 Oct 2021 • 2.4 MB</p>
+                </div>
+                <div class="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <button class="p-1.5 rounded-lg hover:bg-surface-container-low text-primary"><span
+                      class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span></button>
+                  <button class="p-1.5 rounded-lg hover:bg-surface-container-low text-primary"><span
+                      class="material-symbols-outlined text-sm" data-icon="download">download</span></button>
+                </div>
+              </div>
+              <div
+                class="group bg-surface-container-lowest p-4 rounded-xl flex items-center gap-4 hover:shadow-md transition-all cursor-pointer">
+                <div class="w-12 h-12 bg-secondary/5 rounded-lg flex items-center justify-center text-secondary">
+                  <span class="material-symbols-outlined" data-icon="architecture">architecture</span>
+                </div>
+                <div class="flex-1 overflow-hidden">
+                  <p class="font-bold text-sm text-on-surface truncate">Approved_Survey_Plan.dwg</p>
+                  <p class="text-[10px] text-on-surface-variant uppercase font-bold">02 Aug 2021 • 15.8 MB</p>
+                </div>
+                <div class="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <button class="p-1.5 rounded-lg hover:bg-surface-container-low text-primary"><span
+                      class="material-symbols-outlined text-sm" data-icon="download">download</span></button>
+                </div>
+              </div>
+              <div
+                class="group bg-surface-container-lowest p-4 rounded-xl flex items-center gap-4 hover:shadow-md transition-all cursor-pointer">
+                <div
+                  class="w-12 h-12 bg-tertiary-container/5 rounded-lg flex items-center justify-center text-tertiary-fixed-dim">
+                  <span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+                </div>
+                <div class="flex-1 overflow-hidden">
+                  <p class="font-bold text-sm text-on-surface truncate">Deed_of_Assignment_Scan.pdf</p>
+                  <p class="text-[10px] text-on-surface-variant uppercase font-bold">12 Sep 2021 • 4.1 MB</p>
+                </div>
+                <div class="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <button class="p-1.5 rounded-lg hover:bg-surface-container-low text-primary"><span
+                      class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span></button>
+                </div>
+              </div>
+              <div
+                class="group bg-surface-container-lowest p-4 rounded-xl flex items-center gap-4 hover:shadow-md transition-all cursor-pointer">
+                <div class="w-12 h-12 bg-error-container/10 rounded-lg flex items-center justify-center text-error">
+                  <span class="material-symbols-outlined" data-icon="task">task</span>
+                </div>
+                <div class="flex-1 overflow-hidden">
+                  <p class="font-bold text-sm text-on-surface truncate">Site_Inspection_Report.pdf</p>
+                  <p class="text-[10px] text-on-surface-variant uppercase font-bold">29 Jul 2021 • 1.2 MB</p>
+                </div>
+                <div class="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <button class="p-1.5 rounded-lg hover:bg-surface-container-low text-primary"><span
+                      class="material-symbols-outlined text-sm" data-icon="download">download</span></button>
+                </div>
+              </div>
+            </div>
+            <div class="mt-8 p-4 bg-primary rounded-xl text-on-primary">
+              <p class="text-xs font-bold uppercase tracking-widest opacity-80 mb-2">Registry Note</p>
+              <p class="text-xs leading-relaxed">Verification audit completed on Oct 12, 2023. No encumbrances found on
+                this parcel. Cleared for transfer transactions.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+      <!-- Bottom Actions -->
+      <footer class="mt-12 flex justify-center gap-4">
+        <button
+          class="px-8 py-4 bg-surface-container-lowest border border-outline-variant/20 rounded-xl font-bold text-sm text-primary flex items-center gap-3 hover:bg-surface-container transition-all">
+          <span class="material-symbols-outlined" data-icon="share">share</span> Generate Certified Copy
+        </button>
+        <button
+          class="px-8 py-4 bg-surface-container-lowest border border-outline-variant/20 rounded-xl font-bold text-sm text-primary flex items-center gap-3 hover:bg-surface-container transition-all">
+          <span class="material-symbols-outlined" data-icon="verified">verified</span> Request Encumbrance Certificate
+        </button>
+      </footer>
+    </div>
+  </main>
+  <div hx-get="partials/footer.html" hx-trigger="load" hx-swap="outerHTML"></div>
+</body>
+
+</html>
